@@ -1,0 +1,101 @@
+---
+// Nav.astro
+---
+<nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-container mx-auto px-6 flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <img
+        id="logo-white"
+        src="/brand/01-logo-on-green.png"
+        alt="Vayda Wellness"
+        class="h-10 w-auto transition-opacity duration-300"
+      />
+      <img
+        id="logo-dark"
+        src="/brand/01-logo-dark-on-cream.png"
+        alt="Vayda Wellness"
+        class="h-10 w-auto absolute opacity-0 transition-opacity duration-300"
+      />
+    </a>
+
+    <!-- Desktop Links -->
+    <ul id="nav-links" class="hidden md:flex items-center gap-8 text-white font-sans text-sm font-medium tracking-wider">
+      <li><a href="/" class="hover:opacity-70 transition-opacity">Home</a></li>
+      <li><a href="/about" class="hover:opacity-70 transition-opacity">About</a></li>
+      <li><a href="/the-vayda-method" class="hover:opacity-70 transition-opacity">The Vayda Method</a></li>
+      <li><a href="/programs" class="hover:opacity-70 transition-opacity">Programs</a></li>
+      <li><a href="/blog" class="hover:opacity-70 transition-opacity">Blog</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-4">
+      <a
+        href="/quiz"
+        class="hidden md:inline-flex bg-forest text-white font-sans text-sm font-medium tracking-wider px-5 py-2.5 rounded hover:bg-opacity-90 transition-all"
+      >
+        Take the Quiz
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger" class="md:hidden text-white p-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-cream/95 backdrop-blur-sm">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <a href="/" class="text-charcoal font-sans text-sm font-medium tracking-wider">Home</a>
+      <a href="/about" class="text-charcoal font-sans text-sm font-medium tracking-wider">About</a>
+      <a href="/the-vayda-method" class="text-charcoal font-sans text-sm font-medium tracking-wider">The Vayda Method</a>
+      <a href="/programs" class="text-charcoal font-sans text-sm font-medium tracking-wider">Programs</a>
+      <a href="/blog" class="text-charcoal font-sans text-sm font-medium tracking-wider">Blog</a>
+      <a href="/quiz" class="bg-forest text-white font-sans text-sm font-medium tracking-wider px-5 py-2.5 rounded text-center">Take the Quiz</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('nav');
+  const logoWhite = document.getElementById('logo-white');
+  const logoDark = document.getElementById('logo-dark');
+  const navLinks = document.getElementById('nav-links');
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 60;
+    nav!.classList.toggle('scrolled', scrolled);
+
+    if (scrolled) {
+      nav!.classList.add('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
+      nav!.classList.remove('bg-transparent');
+      logoWhite!.classList.add('opacity-0');
+      logoDark!.classList.remove('opacity-0');
+      navLinks!.querySelectorAll('a').forEach(a => {
+        a.classList.remove('text-white');
+        a.classList.add('text-charcoal');
+      });
+      hamburger!.querySelector('svg')!.classList.remove('text-white');
+      hamburger!.querySelector('svg')!.classList.add('text-charcoal');
+    } else {
+      nav!.classList.remove('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
+      logoWhite!.classList.remove('opacity-0');
+      logoDark!.classList.add('opacity-0');
+      navLinks!.querySelectorAll('a').forEach(a => {
+        a.classList.add('text-white');
+        a.classList.remove('text-charcoal');
+      });
+      hamburger!.querySelector('svg')!.classList.add('text-white');
+      hamburger!.querySelector('svg')!.classList.remove('text-charcoal');
+    }
+  });
+
+  hamburger!.addEventListener('click', () => {
+    mobileMenu!.classList.toggle('hidden');
+  });
+</script>
