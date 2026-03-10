@@ -1,0 +1,587 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+---
+
+<BaseLayout
+  title="Discover What's Driving Your Chronic Pain — Free Quiz | Vayda Wellness"
+  description="Take 5 minutes to map which of your body's systems needs attention and get a personalized next step. Free assessment by Dr. Vayda."
+>
+
+  <!-- ===== HERO ===== -->
+  <section
+    class="relative min-h-screen flex items-center bg-cover bg-center"
+    style="background-image: url('/photos/hero.jpg')"
+  >
+    <div class="absolute inset-0 bg-forest/75"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-white py-32">
+
+      <SectionEyebrow text="Free Assessment" class="text-cream" />
+
+      <h1 class="font-serif font-bold italic text-4xl md:text-[64px] text-white leading-tight mb-6">
+        Discover What's Driving Your Chronic Pain
+      </h1>
+
+      <p class="font-sans text-xl text-white/80 leading-relaxed mb-4 max-w-2xl mx-auto">
+        Your doctor says it's normal. Your labs came back "fine." But you know something is off.
+      </p>
+      <p class="font-sans text-lg text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Take 5 minutes to map which of your body's systems needs attention — and get a personalized next step.
+      </p>
+
+      <button
+        id="start-quiz-btn"
+        class="bg-white text-forest font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-cream hover:shadow-xl hover:scale-[1.02] transition-all"
+      >
+        Take the Free Quiz →
+      </button>
+
+      <p class="font-sans text-sm text-white/50 mt-4">5 minutes · Free · Instant results</p>
+
+      <div class="flex flex-wrap justify-center gap-8 mt-12 text-white/40 font-sans text-xs tracking-widest uppercase">
+        <span>500+ People Assessed</span>
+        <span class="text-sage">·</span>
+        <span>20+ Years of Practice</span>
+        <span class="text-sage">·</span>
+        <span>Science-Based</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ APP ===== -->
+  <section id="quiz-app" class="hidden bg-cream py-16 md:py-24">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <!-- QUESTIONS VIEW -->
+      <div id="quiz-questions">
+
+        <!-- Progress -->
+        <div class="mb-10">
+          <div class="flex items-center justify-between mb-3">
+            <span id="quiz-category" class="font-sans text-sm font-medium tracking-widest uppercase text-sage"></span>
+            <span id="quiz-progress-text" class="font-sans text-sm text-charcoal/50"></span>
+          </div>
+          <div class="w-full h-1 bg-beige rounded-full overflow-hidden">
+            <div
+              id="quiz-progress-fill"
+              class="h-full bg-forest rounded-full transition-all duration-300 ease-out"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Question text -->
+        <h2
+          id="quiz-question-text"
+          class="font-serif font-bold text-2xl md:text-3xl text-charcoal mb-8 leading-snug"
+        ></h2>
+
+        <!-- Options -->
+        <div id="quiz-options" class="flex flex-col gap-3 mb-10"></div>
+
+        <!-- Navigation -->
+        <div class="flex items-center justify-between">
+          <button
+            id="quiz-back-btn"
+            class="font-sans text-sm text-charcoal/50 underline underline-offset-2 hover:text-charcoal transition-colors invisible"
+          >
+            ← Back
+          </button>
+          <button
+            id="quiz-next-btn"
+            class="bg-forest text-cream font-sans font-semibold text-sm tracking-wide px-8 py-4 rounded-full transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-forest/90"
+            disabled
+          >
+            Next →
+          </button>
+        </div>
+
+      </div><!-- /quiz-questions -->
+
+      <!-- EMAIL CAPTURE VIEW -->
+      <div id="email-capture" class="hidden">
+        <div class="text-center max-w-xl mx-auto">
+          <h2 class="font-serif font-bold italic text-3xl text-charcoal mb-4">
+            Your results are ready.
+          </h2>
+          <p class="font-sans text-charcoal/70 mb-8 leading-relaxed">
+            Enter your email to see which systems need attention and get your personalized next step.
+          </p>
+          <form id="email-form" class="flex flex-col gap-4">
+            <input
+              type="text"
+              id="lead-name"
+              placeholder="Your first name"
+              class="border border-beige rounded-lg px-5 py-4 font-sans text-charcoal focus:outline-none focus:border-forest bg-white"
+              required
+            />
+            <input
+              type="email"
+              id="lead-email"
+              placeholder="Your email address"
+              class="border border-beige rounded-lg px-5 py-4 font-sans text-charcoal focus:outline-none focus:border-forest bg-white"
+              required
+            />
+            <button
+              type="submit"
+              id="email-submit-btn"
+              class="bg-forest text-cream font-sans font-semibold py-4 px-8 rounded-full hover:bg-forest/90 transition-all"
+            >
+              See My Results →
+            </button>
+          </form>
+          <p class="font-sans text-xs text-charcoal/40 mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div><!-- /email-capture -->
+
+      <!-- RESULTS VIEW -->
+      <div id="quiz-results" class="hidden">
+
+        <!-- Zone badge + headline + copy -->
+        <div class="text-center mb-10">
+          <div
+            id="results-zone-badge"
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans text-sm font-semibold mb-6"
+          ></div>
+          <h2
+            id="results-headline"
+            class="font-serif font-bold italic text-3xl md:text-4xl text-charcoal mb-5 leading-snug"
+          ></h2>
+          <p
+            id="results-copy"
+            class="font-sans text-charcoal/70 leading-relaxed text-lg max-w-xl mx-auto"
+          ></p>
+        </div>
+
+        <!-- Pillar breakdown -->
+        <div class="bg-white rounded-2xl border border-beige p-8 mb-10">
+          <h3 class="font-sans text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-7">
+            Your System Scores
+          </h3>
+
+          <!-- Sleep -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-sans text-sm font-medium text-charcoal">Sleep</span>
+              <span id="sleep-score-label" class="font-sans text-sm text-charcoal/50"></span>
+            </div>
+            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+              <div
+                id="sleep-score-bar"
+                class="h-full rounded-full transition-all duration-700 ease-out"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Digestion -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-sans text-sm font-medium text-charcoal">Digestion</span>
+              <span id="digestion-score-label" class="font-sans text-sm text-charcoal/50"></span>
+            </div>
+            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+              <div
+                id="digestion-score-bar"
+                class="h-full rounded-full transition-all duration-700 ease-out"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Stress -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-sans text-sm font-medium text-charcoal">Stress</span>
+              <span id="stress-score-label" class="font-sans text-sm text-charcoal/50"></span>
+            </div>
+            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+              <div
+                id="stress-score-bar"
+                class="h-full rounded-full transition-all duration-700 ease-out"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center">
+          <a
+            id="results-cta"
+            href="/7-day-reset"
+            class="inline-block bg-forest text-cream font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl hover:scale-[1.02] transition-all"
+          ></a>
+          <p class="font-sans text-xs text-charcoal/40 mt-4">Structured 7-day protocol designed by Dr. Vayda</p>
+        </div>
+
+      </div><!-- /quiz-results -->
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+// ==================== QUIZ DATA ====================
+const questions = [
+  // SLEEP
+  {
+    id: 1, category: 'Sleep', pillar: 'sleep',
+    text: 'How would you describe your sleep most nights?',
+    options: [
+      { text: 'I sleep soundly and wake refreshed', score: 0 },
+      { text: 'I fall asleep okay but wake during the night', score: 1 },
+      { text: 'I have trouble falling asleep or staying asleep', score: 2 },
+      { text: 'I rarely feel rested, no matter how long I sleep', score: 3 },
+    ],
+  },
+  {
+    id: 2, category: 'Sleep', pillar: 'sleep',
+    text: 'How often do you wake between 2\u20134am with a racing mind?',
+    options: [
+      { text: 'Rarely or never', score: 0 },
+      { text: 'Once a week', score: 1 },
+      { text: 'Several times a week', score: 2 },
+      { text: 'Almost every night', score: 3 },
+    ],
+  },
+  {
+    id: 3, category: 'Sleep', pillar: 'sleep',
+    text: 'In the 90 minutes before bed, what do you typically do?',
+    options: [
+      { text: 'Wind down with reading, stretching, or relaxation', score: 0 },
+      { text: 'Watch TV or casual phone use', score: 1 },
+      { text: 'Work, emails, or intense screen time', score: 2 },
+      { text: "I don't have a routine \u2014 I crash when exhausted", score: 3 },
+    ],
+  },
+  {
+    id: 4, category: 'Sleep', pillar: 'sleep',
+    text: 'How do you feel within 30 minutes of waking?',
+    options: [
+      { text: 'Alert and ready for the day', score: 0 },
+      { text: 'Groggy but functional after coffee', score: 1 },
+      { text: 'Sluggish \u2014 takes hours to feel normal', score: 2 },
+      { text: 'Exhausted before the day even starts', score: 3 },
+    ],
+  },
+  // DIGESTION
+  {
+    id: 5, category: 'Digestion', pillar: 'digestion',
+    text: 'How would you describe your digestion on a typical day?',
+    options: [
+      { text: 'Smooth and predictable', score: 0 },
+      { text: 'Mostly fine with occasional discomfort', score: 1 },
+      { text: 'Frequent bloating, gas, or irregularity', score: 2 },
+      { text: 'Constant issues that affect my daily life', score: 3 },
+    ],
+  },
+  {
+    id: 6, category: 'Digestion', pillar: 'digestion',
+    text: 'How do you feel after eating a meal?',
+    options: [
+      { text: 'Energized and satisfied', score: 0 },
+      { text: 'Comfortable but sometimes heavy', score: 1 },
+      { text: 'Often bloated or sluggish', score: 2 },
+      { text: 'Tired, foggy, or uncomfortable most times', score: 3 },
+    ],
+  },
+  {
+    id: 7, category: 'Digestion', pillar: 'digestion',
+    text: 'How fast do you typically eat?',
+    options: [
+      { text: 'I eat slowly and mindfully', score: 0 },
+      { text: 'Moderate pace, usually seated', score: 1 },
+      { text: 'Fast \u2014 often multitasking or distracted', score: 2 },
+      { text: 'Very fast \u2014 meals are rarely a priority', score: 3 },
+    ],
+  },
+  {
+    id: 8, category: 'Digestion', pillar: 'digestion',
+    text: 'Do you regularly experience heartburn, acid reflux, or stomach discomfort?',
+    options: [
+      { text: 'Rarely or never', score: 0 },
+      { text: 'Occasionally (once a week)', score: 1 },
+      { text: 'Frequently (several times a week)', score: 2 },
+      { text: 'Daily or almost daily', score: 3 },
+    ],
+  },
+  // STRESS
+  {
+    id: 9, category: 'Stress', pillar: 'stress',
+    text: 'How would you describe your overall stress level?',
+    options: [
+      { text: 'Manageable \u2014 I feel in control', score: 0 },
+      { text: 'Moderate \u2014 busy but handling it', score: 1 },
+      { text: 'High \u2014 often overwhelmed', score: 2 },
+      { text: "Constant \u2014 I can't remember the last time I felt calm", score: 3 },
+    ],
+  },
+  {
+    id: 10, category: 'Stress', pillar: 'stress',
+    text: 'How does your body respond to stress?',
+    options: [
+      { text: 'I recover quickly', score: 0 },
+      { text: 'Some tension but it passes', score: 1 },
+      { text: 'Physical symptoms (headaches, tight shoulders, jaw clenching)', score: 2 },
+      { text: 'My body holds stress constantly', score: 3 },
+    ],
+  },
+  {
+    id: 11, category: 'Stress', pillar: 'stress',
+    text: 'Do you have a daily practice to calm your nervous system?',
+    options: [
+      { text: 'Yes, I practice daily (meditation, breathwork, yoga, etc.)', score: 0 },
+      { text: 'Sometimes, a few times a week', score: 1 },
+      { text: "Rarely \u2014 I know I should but don't", score: 2 },
+      { text: "Never \u2014 I don't have time or don't know how", score: 3 },
+    ],
+  },
+  {
+    id: 12, category: 'Stress', pillar: 'stress',
+    text: 'Around 3pm, how do you typically feel?',
+    options: [
+      { text: 'Still energized and focused', score: 0 },
+      { text: 'A slight dip but manageable', score: 1 },
+      { text: 'Significant energy crash \u2014 need caffeine or sugar', score: 2 },
+      { text: 'Completely drained \u2014 struggle to function', score: 3 },
+    ],
+  },
+];
+
+// ==================== ZONE DEFINITIONS ====================
+const zones: Record<string, { emoji: string; name: string; color: string; bg: string }> = {
+  green:  { emoji: '\uD83D\uDFE2', name: 'Early Signals',    color: '#2D4A35', bg: 'rgba(45,74,53,0.12)'   },
+  yellow: { emoji: '\uD83D\uDFE1', name: 'Active Imbalance', color: '#C4A837', bg: 'rgba(196,168,55,0.12)' },
+  orange: { emoji: '\uD83D\uDFE0', name: 'Chronic Cascade',  color: '#C47A37', bg: 'rgba(196,122,55,0.12)' },
+  red:    { emoji: '\uD83D\uDD34', name: 'Critical Load',    color: '#C43737', bg: 'rgba(196,55,55,0.12)'  },
+};
+
+const zoneContent: Record<string, { headline: string; copy: string; cta: string }> = {
+  green: {
+    headline: "Your body is whispering. Now is the time to listen.",
+    copy: "Your results show early-stage signals across one or more systems. The good news: you're catching this before it becomes chronic. Small, targeted changes now can prevent the cascade from accelerating.",
+    cta: "Start Your 7-Day Reset \u2192",
+  },
+  yellow: {
+    headline: "Your body is sending clear signals. It's time to respond.",
+    copy: "Your results reveal an active imbalance across multiple systems. You've likely been feeling this for a while \u2014 fatigue, discomfort, or symptoms that don't fully resolve. The pattern is recognizable. And it's addressable.",
+    cta: "Start Your 7-Day Reset \u2192",
+  },
+  orange: {
+    headline: "Multiple systems are under strain. The cascade is active.",
+    copy: "Your results show significant imbalance across Sleep, Digestion, and Stress. When these three systems are simultaneously compromised, recovery becomes harder without a structured protocol. This is exactly what the Vayda Method addresses.",
+    cta: "Get Your 7-Day Reset Protocol \u2192",
+  },
+  red: {
+    headline: "Your body has been signaling for a long time. It needs a reset.",
+    copy: "Your results show a high-load pattern across all three pillars. This level of systemic stress doesn't resolve on its own \u2014 it compounds. The 7-Day Reset is designed specifically for this starting point.",
+    cta: "Start the 7-Day Reset \u2014 Today \u2192",
+  },
+};
+
+// ==================== STATE ====================
+let currentQ = 0;
+const answers: (number | null)[] = new Array(12).fill(null);
+
+// ==================== HELPERS ====================
+function getScores(): Record<string, number> {
+  const s: Record<string, number> = { sleep: 0, digestion: 0, stress: 0 };
+  for (let i = 0; i < questions.length; i++) {
+    if (answers[i] !== null) {
+      s[questions[i].pillar] += questions[i].options[answers[i] as number].score;
+    }
+  }
+  return s;
+}
+
+function getZoneKey(total: number): string {
+  if (total <= 9)  return 'green';
+  if (total <= 18) return 'yellow';
+  if (total <= 27) return 'orange';
+  return 'red';
+}
+
+function pillarBarColor(score: number): string {
+  if (score <= 3) return '#2D4A35';
+  if (score <= 7) return '#C4A837';
+  return '#C43737';
+}
+
+// ==================== RENDER QUESTION ====================
+function renderQuestion() {
+  const q = questions[currentQ];
+  const total = questions.length;
+
+  // Progress
+  const pct = ((currentQ + 1) / total) * 100;
+  (document.getElementById('quiz-progress-fill') as HTMLElement).style.width = `${pct}%`;
+  (document.getElementById('quiz-progress-text') as HTMLElement).textContent = `${currentQ + 1} / ${total}`;
+  (document.getElementById('quiz-category') as HTMLElement).textContent = q.category;
+
+  // Question text (safe textContent)
+  (document.getElementById('quiz-question-text') as HTMLElement).textContent = q.text;
+
+  // Options — built with DOM methods, no innerHTML
+  const container = document.getElementById('quiz-options') as HTMLElement;
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.dataset.index = String(i);
+    btn.textContent = opt.text;
+
+    const baseClasses = 'w-full text-left px-6 py-4 rounded-xl border font-sans text-base transition-all duration-150'.split(' ');
+    const selectedClasses = 'bg-forest text-cream border-forest'.split(' ');
+    const unselectedClasses = 'bg-white text-charcoal border-beige hover:border-sage'.split(' ');
+
+    btn.classList.add(...baseClasses);
+    if (answers[currentQ] === i) {
+      btn.classList.add(...selectedClasses);
+    } else {
+      btn.classList.add(...unselectedClasses);
+    }
+
+    btn.addEventListener('click', () => selectOption(i));
+    container.appendChild(btn);
+  });
+
+  // Back button visibility
+  const backBtn = document.getElementById('quiz-back-btn') as HTMLButtonElement;
+  backBtn.classList.toggle('invisible', currentQ === 0);
+
+  // Next button state
+  const nextBtn = document.getElementById('quiz-next-btn') as HTMLButtonElement;
+  nextBtn.disabled = answers[currentQ] === null;
+  nextBtn.textContent = currentQ === total - 1 ? 'See My Results \u2192' : 'Next \u2192';
+}
+
+// ==================== SELECT OPTION ====================
+function selectOption(idx: number) {
+  answers[currentQ] = idx;
+
+  const container = document.getElementById('quiz-options') as HTMLElement;
+  container.querySelectorAll('button').forEach((btn, i) => {
+    const isSelected = i === idx;
+    btn.classList.toggle('bg-forest', isSelected);
+    btn.classList.toggle('text-cream', isSelected);
+    btn.classList.toggle('border-forest', isSelected);
+    btn.classList.toggle('bg-white', !isSelected);
+    btn.classList.toggle('text-charcoal', !isSelected);
+    btn.classList.toggle('border-beige', !isSelected);
+    btn.classList.toggle('hover:border-sage', !isSelected);
+  });
+
+  (document.getElementById('quiz-next-btn') as HTMLButtonElement).disabled = false;
+}
+
+// ==================== NAVIGATION ====================
+function goNext() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < questions.length - 1) {
+    currentQ++;
+    renderQuestion();
+    document.getElementById('quiz-app')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    showEmailCapture();
+  }
+}
+
+function goBack() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuestion();
+  }
+}
+
+// ==================== EMAIL CAPTURE ====================
+function showEmailCapture() {
+  document.getElementById('quiz-questions')!.classList.add('hidden');
+  document.getElementById('email-capture')!.classList.remove('hidden');
+  document.getElementById('quiz-app')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ==================== RESULTS ====================
+function showResults() {
+  document.getElementById('email-capture')!.classList.add('hidden');
+
+  const scores = getScores();
+  const total = scores.sleep + scores.digestion + scores.stress;
+  const zoneKey = getZoneKey(total);
+  const zone = zones[zoneKey];
+  const content = zoneContent[zoneKey];
+
+  // Zone badge
+  const badge = document.getElementById('results-zone-badge') as HTMLElement;
+  badge.textContent = `${zone.emoji} ${zone.name}`;
+  badge.style.backgroundColor = zone.bg;
+  badge.style.color = zone.color;
+
+  // Headline + copy (safe textContent)
+  (document.getElementById('results-headline') as HTMLElement).textContent = content.headline;
+  (document.getElementById('results-copy') as HTMLElement).textContent = content.copy;
+
+  // CTA text
+  (document.getElementById('results-cta') as HTMLElement).textContent = content.cta;
+
+  // Pillar bars
+  (['sleep', 'digestion', 'stress'] as const).forEach(p => {
+    const score = scores[p];
+    const pct = (score / 12) * 100;
+    const bar = document.getElementById(`${p}-score-bar`) as HTMLElement;
+    bar.style.backgroundColor = pillarBarColor(score);
+    (document.getElementById(`${p}-score-label`) as HTMLElement).textContent = `${score} / 12`;
+    requestAnimationFrame(() => {
+      setTimeout(() => { bar.style.width = `${pct}%`; }, 80);
+    });
+  });
+
+  document.getElementById('quiz-results')!.classList.remove('hidden');
+  document.getElementById('quiz-app')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ==================== FORM SUBMIT ====================
+async function handleEmailSubmit(e: Event) {
+  e.preventDefault();
+
+  const name  = (document.getElementById('lead-name') as HTMLInputElement).value.trim();
+  const email = (document.getElementById('lead-email') as HTMLInputElement).value.trim();
+  const btn   = document.getElementById('email-submit-btn') as HTMLButtonElement;
+
+  btn.textContent = 'Loading\u2026';
+  btn.disabled = true;
+
+  const scores  = getScores();
+  const total   = scores.sleep + scores.digestion + scores.stress;
+  const zoneKey = getZoneKey(total);
+  const zone    = zoneKey.charAt(0).toUpperCase() + zoneKey.slice(1);
+
+  try {
+    await fetch('/api/submit-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, totalScore: total, zone, scores }),
+    });
+  } catch {
+    // Non-blocking: show results regardless of API error
+  }
+
+  showResults();
+}
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('start-quiz-btn')!.addEventListener('click', () => {
+    const quizApp = document.getElementById('quiz-app')!;
+    quizApp.classList.remove('hidden');
+    quizApp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    renderQuestion();
+  });
+
+  document.getElementById('quiz-next-btn')!.addEventListener('click', goNext);
+  document.getElementById('quiz-back-btn')!.addEventListener('click', goBack);
+  document.getElementById('email-form')!.addEventListener('submit', handleEmailSubmit);
+});
+</script>
