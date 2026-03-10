@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+import { Leaf, Droplets, Wind, Moon, Brain, FlaskConical, Mountain } from 'lucide-astro';
+---
+<BaseLayout
+  title="The Vayda Method — A Whole-Body Diagnostic Framework | Vayda Wellness"
+  description="Seven systems. One root cause. One path forward. The Vayda Method is a whole-body diagnostic framework built on 20 years of practice."
+>
+
+  <!-- 1. PAGE HERO -->
+  <section
+    class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: url('/photos/ramesh-teaching.jpg')"
+  >
+    <div class="absolute inset-0 bg-forest/75"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 pt-32 pb-20 text-center text-white">
+      <SectionEyebrow text="The Framework" class="text-sage" />
+      <h1 class="font-serif font-bold italic text-5xl md:text-[72px] text-white leading-tight mb-6">
+        The Vayda Method
+      </h1>
+      <p class="font-sans text-body-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
+        A whole-body diagnostic framework built on 20 years of practice. Seven systems. One root cause. One path forward.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. THE CORE IDEA -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <!-- Left: text -->
+        <div class="reveal">
+          <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
+            Your symptoms are signals. Not the problem.
+          </h2>
+          <p class="font-sans text-body text-charcoal/80 leading-relaxed">
+            Most people spend years treating symptoms — pain medication for chronic pain, thyroid meds for fatigue, antidepressants for mood. These address the signals, not the source. The Vayda Method starts from a different premise: every symptom is the body communicating an imbalance in one or more of its seven core systems. Find the imbalance. Fix the root. Watch the symptoms resolve.
+          </p>
+        </div>
+        <!-- Right: photo -->
+        <div class="reveal reveal-delay-2">
+          <img
+            src="/photos/meditation-group.jpg"
+            alt="Group meditation session"
+            class="rounded-2xl w-full aspect-[4/3] object-cover shadow-xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. THE 7 SYSTEMS -->
+  <section class="bg-beige py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <SectionEyebrow text="The Seven Systems" />
+        <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
+          Where the Vayda Method begins.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- System 1 -->
+        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <Leaf size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 01</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Nutrition & Food</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The quality, timing, and composition of what you eat shapes every downstream system. The Vayda Method personalizes nutrition to your biology — not a generic plan.</p>
+          </div>
+        </div>
+
+        <!-- System 2 -->
+        <div class="reveal reveal-delay-2 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <Droplets size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 02</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Hydration & Detox</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Chronic dehydration is invisible and widespread. Proper hydration enables cellular function, toxin elimination, and cognitive clarity. Most people never reach optimal levels.</p>
+          </div>
+        </div>
+
+        <!-- System 3 -->
+        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <Wind size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 03</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Movement & Breath</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Movement isn't just exercise. The right combination of strength, mobility, and breathwork activates healing pathways that no supplement can replicate.</p>
+          </div>
+        </div>
+
+        <!-- System 4 -->
+        <div class="reveal reveal-delay-2 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <Moon size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 04</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Sleep & Recovery</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Sleep is where every other system consolidates its gains. Without deep, restorative sleep, no protocol will hold. It's not optional — it's foundational.</p>
+          </div>
+        </div>
+
+        <!-- System 5 -->
+        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <Brain size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 05</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Mind & Nervous System</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">A chronically activated nervous system suppresses healing. Meditation, mindset work, and stress regulation aren't soft — they're physiologically essential.</p>
+          </div>
+        </div>
+
+        <!-- System 6 -->
+        <div class="reveal reveal-delay-2 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <FlaskConical size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 06</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Lab Work & Biomarkers</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Intuition is valuable. Data is irreplaceable. Biomarker analysis reveals what symptoms often hide — hormonal patterns, inflammatory markers, micronutrient deficiencies.</p>
+          </div>
+        </div>
+
+        <!-- System 7 — full width -->
+        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow md:col-span-2">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
+            <Mountain size={22} />
+          </div>
+          <div>
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 07</p>
+            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Environment & Lifestyle</h3>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Where you live, how you work, what you're exposed to — these forces shape your biology daily. Environmental toxins, EMF, light cycles, and social connection are all active inputs in your health equation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS — 3 STEPS -->
+  <section class="bg-forest py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <SectionEyebrow text="The Process" class="text-sage" />
+        <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-cream leading-tight">
+          From first conversation to full protocol.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="reveal reveal-delay-1 text-center">
+          <div class="w-14 h-14 rounded-full border-2 border-sage text-sage font-serif font-bold text-2xl flex items-center justify-center mx-auto mb-6">1</div>
+          <h3 class="font-sans font-bold text-xl text-white mb-4">Root Cause Assessment</h3>
+          <p class="font-sans text-sm text-cream/60 leading-relaxed">We map all seven systems to identify where your health chain is breaking down.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="reveal reveal-delay-2 text-center">
+          <div class="w-14 h-14 rounded-full border-2 border-sage text-sage font-serif font-bold text-2xl flex items-center justify-center mx-auto mb-6">2</div>
+          <h3 class="font-sans font-bold text-xl text-white mb-4">Personalized Protocol</h3>
+          <p class="font-sans text-sm text-cream/60 leading-relaxed">You receive a unified plan — not a generic program. Every element calibrated to your biology.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="reveal reveal-delay-3 text-center">
+          <div class="w-14 h-14 rounded-full border-2 border-sage text-sage font-serif font-bold text-2xl flex items-center justify-center mx-auto mb-6">3</div>
+          <h3 class="font-sans font-bold text-xl text-white mb-4">Guided Implementation</h3>
+          <p class="font-sans text-sm text-cream/60 leading-relaxed">You're not left to figure it out alone. Ramesh guides the entire process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SCIENCE BACKING -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
+          Grounded in evidence.
+        </h2>
+        <p class="font-sans text-body text-charcoal/70 mt-6 max-w-2xl mx-auto leading-relaxed">
+          The Vayda Method isn't alternative medicine. It draws from peer-reviewed research, functional medicine, and 20+ years of clinical observation.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Reference 1 -->
+        <div class="reveal reveal-delay-1 bg-beige rounded-2xl p-8 border border-beige/60">
+          <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-4">Immunology</p>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-3">Dr. Valter Longo</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Peer-reviewed research demonstrating that targeted fasting protocols (72h) trigger a measurable reset of the immune system — clearing damaged cells and regenerating new ones.</p>
+        </div>
+        <!-- Reference 2 -->
+        <div class="reveal reveal-delay-2 bg-beige rounded-2xl p-8 border border-beige/60">
+          <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-4">Nutrition</p>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-3">Dr. Michael Pollan</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The plant-based whole food framework: "Eat food. Not too much. Mostly plants." A simple principle backed by decades of epidemiological evidence linking diet quality to long-term health outcomes.</p>
+        </div>
+        <!-- Reference 3 -->
+        <div class="reveal reveal-delay-3 bg-beige rounded-2xl p-8 border border-beige/60">
+          <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-4">Nervous System</p>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-3">HRV Research</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Modern heart rate variability research confirms what Eastern traditions understood for centuries: nervous system regulation is a trainable skill with direct, measurable effects on recovery and resilience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA -->
+  <section
+    class="relative bg-cover bg-center bg-fixed py-16 md:py-24"
+    style="background-image: url('/photos/hero.jpg')"
+  >
+    <div class="absolute inset-0 bg-charcoal/80"></div>
+    <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-[56px] text-white mb-10 leading-tight">
+        Ready to understand your root cause?
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/quiz"
+          class="inline-block bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-8 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
+        >
+          Take the Free Quiz
+        </a>
+        <a
+          href="/programs"
+          class="inline-block border border-white text-white hover:bg-white hover:text-forest font-sans font-medium text-sm tracking-wider px-8 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
+        >
+          View Programs
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

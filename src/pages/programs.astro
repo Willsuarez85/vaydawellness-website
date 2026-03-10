@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import FAQItem from '../components/FAQItem.astro';
+import { ArrowRight, Check } from 'lucide-astro';
+
+const faqs = [
+  {
+    question: "How do I know which program is right for me?",
+    answer: "Start with the free quiz. It maps your symptoms to the Vayda Method systems and gives you a personalized recommendation for which program fits your current situation. Most people find clarity within 5 minutes."
+  },
+  {
+    question: "Do I need to live near Asheville?",
+    answer: "No. While Ramesh is based near Asheville, NC, everything is available remotely. Online programs are self-paced and globally accessible. 1:1 coaching sessions are conducted via video call."
+  },
+  {
+    question: "How long before I see results?",
+    answer: "Most clients notice meaningful changes within 4 to 6 weeks. Some experience dramatic shifts within days. Results depend on your starting point, consistency, and which systems need the most attention."
+  }
+];
+---
+<BaseLayout
+  title="Programs — Choose Your Path to Healing | Vayda Wellness"
+  description="The Free Quiz, online programs, and 1:1 coaching with Ramesh Roar. Choose your entry point into the Vayda Method."
+>
+
+  <!-- 1. PAGE HERO -->
+  <section
+    class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: url('/photos/coaching.jpg')"
+  >
+    <div class="absolute inset-0 bg-charcoal/80"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 pt-32 pb-20 text-center text-white">
+      <SectionEyebrow text="Work With Ramesh" class="text-sage" />
+      <h1 class="font-serif font-bold italic text-5xl md:text-[72px] text-white leading-tight mb-6">
+        Choose your path to healing.
+      </h1>
+      <p class="font-sans text-body-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
+        Whether you're just starting or ready for a full transformation — there's a right entry point for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. PROGRAMS GRID -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+        <!-- Card 1: Free Quiz -->
+        <div class="reveal reveal-delay-1 flex flex-col bg-beige rounded-2xl overflow-hidden border border-beige/60 hover:shadow-lg transition-shadow">
+          <div class="p-8 flex flex-col flex-1">
+            <div class="mb-6">
+              <span class="inline-block bg-forest/10 text-forest font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                Start Here · Free
+              </span>
+            </div>
+            <h2 class="font-serif font-bold text-2xl text-charcoal mb-4 leading-tight">
+              Discover Your Root Cause
+            </h2>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed mb-8">
+              Not sure where to start? The 5-minute quiz maps your symptoms to the Vayda Method systems and tells you exactly where your body needs attention first.
+            </p>
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Instant results</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Personalized system breakdown</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Recommended next step</span>
+              </li>
+            </ul>
+            <a
+              href="/quiz"
+              class="mt-auto w-full text-center bg-forest text-white hover:bg-forest/90 font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
+            >
+              Take the Quiz — Free
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Online Programs (highlighted) -->
+        <div class="reveal reveal-delay-2 flex flex-col bg-forest rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
+          <div class="p-8 flex flex-col flex-1">
+            <div class="mb-6">
+              <span class="inline-block bg-white/20 text-white font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                Most Popular · $$
+              </span>
+            </div>
+            <h2 class="font-serif font-bold text-2xl text-white mb-4 leading-tight">
+              The Vayda Method Online
+            </h2>
+            <p class="font-sans text-sm text-cream/75 leading-relaxed mb-8">
+              Self-paced programs built on the complete Vayda Method. Learn the framework, implement the protocol, and start resolving the root cause — on your schedule.
+            </p>
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Full 7-system curriculum</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Meal & movement plans</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Guided meditations</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Community access</span>
+              </li>
+            </ul>
+            <a
+              href="/programs/online"
+              class="mt-auto w-full text-center bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
+            >
+              View Programs
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: 1:1 Coaching -->
+        <div class="reveal reveal-delay-3 flex flex-col bg-charcoal rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
+          <!-- Photo -->
+          <div class="h-48 overflow-hidden">
+            <img src="/photos/coaching.jpg" alt="1:1 Coaching with Ramesh" class="w-full h-full object-cover opacity-70" />
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="mb-6">
+              <span class="inline-block bg-white/10 text-cream font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                Premium · $$$
+              </span>
+            </div>
+            <h2 class="font-serif font-bold text-2xl text-white mb-4 leading-tight">
+              Private Coaching with Ramesh
+            </h2>
+            <p class="font-sans text-sm text-cream/65 leading-relaxed mb-8">
+              The most direct path to transformation. Ramesh reviews your labs, maps your systems, and builds a protocol designed exclusively for your biology.
+            </p>
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Full root cause assessment</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Custom 12-week protocol</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Weekly 1:1 sessions</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Lab work review</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-sage flex-shrink-0" />
+                <span class="font-sans text-sm text-cream/80">Ongoing support</span>
+              </li>
+            </ul>
+            <a
+              href="/contact"
+              class="mt-auto w-full text-center bg-sage text-white hover:bg-sage/80 font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
+            >
+              Apply Now
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TESTIMONIALS -->
+  <section
+    class="relative bg-cover bg-center py-24"
+    style="background-image: url('/photos/meditation-group.jpg')"
+  >
+    <div class="absolute inset-0 bg-charcoal/90"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <SectionEyebrow text="What People Are Saying" class="text-sage" />
+        <h2 class="font-serif font-bold italic text-4xl md:text-5xl text-cream mt-4">
+          Real people. Real results.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <TestimonialCard
+          quote="Ramesh and his amazing coaching changed my life. At 77, I am feeling like I am 45. Indeed, people find it hard to believe what I have accomplished. I just put together a 20-year plan that may turn into the most productive time of my life."
+          name="Max Paul Franklin"
+          role="Asheville, NC"
+        />
+        <TestimonialCard
+          quote="For 19 years, I sought answers and relief for multiple neurological conditions. I saw dozens of doctors, acupuncturists, dietitians, surgeons, physical therapists, and many more. Then I found Ramesh and his fasting program. In 6 days, all my neurological pain was gone. I mean, gone."
+          name="Jared Navarre"
+          role="Nashville, TN"
+        />
+        <TestimonialCard
+          quote="I had tried everything — elimination diets, supplements, therapy. Nothing addressed the root. The Vayda Method was the first time someone looked at everything together. Six weeks later, I finally feel like myself again."
+          name="Sarah M."
+          role="Charlotte, NC"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="reveal font-serif font-bold text-4xl md:text-h2 text-charcoal mb-12 text-center leading-tight">
+        Common questions
+      </h2>
+      <div class="divide-y divide-beige">
+        {faqs.map((faq, i) => (
+          <div class:list={['reveal', i > 0 && `reveal-delay-${i}`]}>
+            <FAQItem question={faq.question} answer={faq.answer} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FINAL CTA -->
+  <section class="bg-forest py-16 md:py-24">
+    <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-[56px] text-white mb-8 leading-tight">
+        Your body is ready to heal.
+      </h2>
+      <a
+        href="/quiz"
+        class="inline-block bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-10 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
+      >
+        Start with the Free Quiz
+      </a>
+      <p class="font-sans text-sm text-white/50 mt-5">5 minutes. No email required.</p>
+    </div>
+  </section>
+
+</BaseLayout>
