@@ -6,19 +6,7 @@ import ProblemCard from '../components/ProblemCard.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import PricingCard from '../components/PricingCard.astro';
 import FAQItem from '../components/FAQItem.astro';
-import BrainIcon from '../components/icons/BrainIcon.astro';
-import BalanceIcon from '../components/icons/BalanceIcon.astro';
-import RootIcon from '../components/icons/RootIcon.astro';
-import LeafIcon from '../components/icons/LeafIcon.astro';
-import DropIcon from '../components/icons/DropIcon.astro';
-import MovementIcon from '../components/icons/MovementIcon.astro';
-import MoonIcon from '../components/icons/MoonIcon.astro';
-import MindIcon from '../components/icons/MindIcon.astro';
-import LabIcon from '../components/icons/LabIcon.astro';
-import EarthIcon from '../components/icons/EarthIcon.astro';
-import QuizIcon from '../components/icons/QuizIcon.astro';
-import BookIcon from '../components/icons/BookIcon.astro';
-import CoachIcon from '../components/icons/CoachIcon.astro';
+import { Brain, Scale, TreeDeciduous, Leaf, Droplets, Wind, Moon, Zap, FlaskConical, Mountain, ArrowRight, BookOpen, Users } from 'lucide-astro';
 ---
 <BaseLayout>
 
@@ -38,24 +26,33 @@ import CoachIcon from '../components/icons/CoachIcon.astro';
         <ProblemCard
           title="Brain Fog & Fatigue"
           description="You push through every day running on empty, wondering why you can't think clearly or sustain your energy."
-          class="reveal reveal-delay-1"
+          class="reveal-delay-1"
         >
-          <BrainIcon class="w-8 h-8 text-sage" />
+          <Brain slot="icon" size={32} class="text-forest" />
         </ProblemCard>
         <ProblemCard
           title="Hormonal Imbalance"
           description="Your body feels like it's working against you — weight changes, mood swings, sleep issues that don't respond to 'normal' fixes."
-          class="reveal reveal-delay-2"
+          class="reveal-delay-2"
         >
-          <BalanceIcon class="w-8 h-8 text-sage" />
+          <Scale slot="icon" size={32} class="text-forest" />
         </ProblemCard>
         <ProblemCard
           title="No Root Cause Found"
           description="Every specialist treats one symptom. No one has connected the dots between all of them — until now."
-          class="reveal reveal-delay-3"
+          class="reveal-delay-3"
         >
-          <RootIcon class="w-8 h-8 text-sage" />
+          <TreeDeciduous slot="icon" size={32} class="text-forest" />
         </ProblemCard>
+      </div>
+
+      <!-- CTA #1 — After Problem Section -->
+      <div class="text-center mt-12">
+        <a href="#quiz" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-medium py-4 px-8 rounded-full hover:bg-forest/90 hover:shadow-lg hover:scale-[1.02] transition-all">
+          Find Your Root Cause — Take the Free Quiz
+          <ArrowRight size={18} />
+        </a>
+        <p class="font-sans text-charcoal/50 text-sm mt-3">5 minutes. No email required.</p>
       </div>
     </div>
   </section>
@@ -109,52 +106,57 @@ import CoachIcon from '../components/icons/CoachIcon.astro';
   <!-- 4. FEATURES / VAYDA METHOD PILLARS -->
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
+      <div class="text-center mb-8">
         <SectionEyebrow text="How We Work" class="reveal" />
         <h2 class="reveal font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
           Seven Systems. One Unified Path.
         </h2>
       </div>
+      <p class="font-sans text-charcoal/70 text-center max-w-2xl mx-auto mb-16 text-lg leading-relaxed">
+        Most practitioners treat one system at a time. The Vayda Method works differently —
+        it maps the relationship between all seven dimensions of your health, identifies
+        where the chain is breaking, and builds a unified protocol to restore balance from the root.
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Pillar 1 -->
-        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><LeafIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">1</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Nutrition & Food</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Fuel that works with your biology, not against it</p>
         </div>
         <!-- Pillar 2 -->
-        <div class="reveal reveal-delay-2 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><DropIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-2 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">2</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Hydration & Detox</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Your body's ability to cleanse and reset</p>
         </div>
         <!-- Pillar 3 -->
-        <div class="reveal reveal-delay-3 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><MovementIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-3 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">3</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Movement & Breath</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Strength and restoration without depletion</p>
         </div>
         <!-- Pillar 4 -->
-        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><MoonIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">4</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Sleep & Recovery</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The foundation of every system in the body</p>
         </div>
         <!-- Pillar 5 -->
-        <div class="reveal reveal-delay-2 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><MindIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-2 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">5</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Mind & Nervous System</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Stress, resilience, and your mental landscape</p>
         </div>
         <!-- Pillar 6 -->
-        <div class="reveal reveal-delay-3 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><LabIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-3 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">6</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Lab Work & Biomarkers</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Real data to guide real decisions</p>
         </div>
         <!-- Pillar 7 -->
-        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
-          <div class="mb-3"><EarthIcon class="w-6 h-6 text-sage" /></div>
+        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+          <div class="w-10 h-10 rounded-full bg-forest text-cream font-display text-lg font-bold flex items-center justify-center mx-auto mb-4">7</div>
           <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Environment & Lifestyle</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The hidden forces shaping your health daily</p>
         </div>
@@ -245,6 +247,14 @@ import CoachIcon from '../components/icons/CoachIcon.astro';
           >
             Learn more about Ramesh →
           </a>
+
+          <!-- CTA #2 — After About Section -->
+          <div class="mt-10">
+            <a href="/programs" class="inline-flex items-center gap-2 border-2 border-forest text-forest font-sans font-medium py-3 px-7 rounded-full hover:bg-forest hover:text-cream transition-all">
+              Work with Ramesh
+              <ArrowRight size={18} />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -265,7 +275,7 @@ import CoachIcon from '../components/icons/CoachIcon.astro';
           href="/quiz"
           class="reveal reveal-delay-1"
         >
-          <QuizIcon class="w-8 h-8 text-sage" />
+          <ArrowRight size={28} class="text-cream" />
         </PricingCard>
         <PricingCard
           title="Online Programs"
@@ -275,7 +285,7 @@ import CoachIcon from '../components/icons/CoachIcon.astro';
           href="/programs"
           class="reveal reveal-delay-2"
         >
-          <BookIcon class="w-8 h-8 text-sage" />
+          <BookOpen size={28} class="text-cream" />
         </PricingCard>
         <PricingCard
           title="1:1 Coaching"
@@ -285,7 +295,7 @@ import CoachIcon from '../components/icons/CoachIcon.astro';
           href="/contact"
           class="reveal reveal-delay-3"
         >
-          <CoachIcon class="w-8 h-8 text-sage" />
+          <Users size={28} class="text-cream" />
         </PricingCard>
       </div>
     </div>
