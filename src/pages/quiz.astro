@@ -49,178 +49,200 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
   </section>
 
   <!-- ===== QUIZ APP ===== -->
-  <section id="quiz-app" class="hidden bg-cream py-16 md:py-24">
+  <section id="quiz-app" class="hidden bg-beige/30 py-16 md:py-24">
     <div class="max-w-2xl mx-auto px-6">
+      <div class="bg-white rounded-2xl shadow-sm border border-beige/50 p-8 md:p-10">
 
-      <!-- QUESTIONS VIEW -->
-      <div id="quiz-questions">
+        <!-- QUESTIONS VIEW -->
+        <div id="quiz-questions">
 
-        <!-- Progress -->
-        <div class="mb-10">
-          <div class="flex items-center justify-between mb-3">
-            <span id="quiz-category" class="font-sans text-sm font-medium tracking-widest uppercase text-sage"></span>
-            <span id="quiz-progress-text" class="font-sans text-sm text-charcoal/50"></span>
-          </div>
-          <div class="w-full h-1 bg-beige rounded-full overflow-hidden">
-            <div
-              id="quiz-progress-fill"
-              class="h-full bg-forest rounded-full transition-all duration-300 ease-out"
-              style="width: 0%"
-            ></div>
-          </div>
-        </div>
-
-        <!-- Question text -->
-        <h2
-          id="quiz-question-text"
-          class="font-serif font-bold text-2xl md:text-3xl text-charcoal mb-8 leading-snug"
-        ></h2>
-
-        <!-- Options -->
-        <div id="quiz-options" class="flex flex-col gap-3 mb-10"></div>
-
-        <!-- Navigation -->
-        <div class="flex items-center justify-between">
-          <button
-            id="quiz-back-btn"
-            class="font-sans text-sm text-charcoal/50 underline underline-offset-2 hover:text-charcoal transition-colors invisible"
-          >
-            ← Back
-          </button>
-          <button
-            id="quiz-next-btn"
-            class="bg-forest text-cream font-sans font-semibold text-sm tracking-wide px-8 py-4 rounded-full transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-forest/90"
-            disabled
-          >
-            Next →
-          </button>
-        </div>
-
-      </div><!-- /quiz-questions -->
-
-      <!-- EMAIL CAPTURE VIEW -->
-      <div id="email-capture" class="hidden">
-        <div class="text-center max-w-xl mx-auto">
-          <h2 class="font-serif font-bold italic text-3xl text-charcoal mb-4">
-            Your results are ready.
-          </h2>
-          <p class="font-sans text-charcoal/70 mb-8 leading-relaxed">
-            Enter your email to see which systems need attention and get your personalized next step.
-          </p>
-          <form id="email-form" class="flex flex-col gap-4">
-            <input
-              type="text"
-              id="lead-name"
-              placeholder="Your first name"
-              class="border border-beige rounded-lg px-5 py-4 font-sans text-charcoal focus:outline-none focus:border-forest bg-white"
-              required
-            />
-            <input
-              type="email"
-              id="lead-email"
-              placeholder="Your email address"
-              class="border border-beige rounded-lg px-5 py-4 font-sans text-charcoal focus:outline-none focus:border-forest bg-white"
-              required
-            />
+          <!-- Back button — top left -->
+          <div class="mb-4">
             <button
-              type="submit"
-              id="email-submit-btn"
-              class="bg-forest text-cream font-sans font-semibold py-4 px-8 rounded-full hover:bg-forest/90 transition-all"
+              id="quiz-back-btn"
+              class="font-sans text-sm text-charcoal/40 hover:text-charcoal transition-colors invisible"
             >
-              See My Results →
+              ← Back
             </button>
-          </form>
-          <p class="font-sans text-xs text-charcoal/40 mt-4">No spam. Unsubscribe anytime.</p>
-        </div>
-      </div><!-- /email-capture -->
+          </div>
 
-      <!-- RESULTS VIEW -->
-      <div id="quiz-results" class="hidden">
+          <!-- Progress -->
+          <div class="mb-10">
+            <div class="flex items-center justify-between mb-3">
+              <span id="quiz-category" class="font-sans text-sm font-medium tracking-widest uppercase text-sage"></span>
+              <span id="quiz-progress-text" class="font-sans text-sm text-charcoal/50"></span>
+            </div>
+            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+              <div
+                id="quiz-progress-fill"
+                class="h-full bg-forest rounded-full transition-all duration-300 ease-out"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
 
-        <!-- Zone badge + headline + copy -->
-        <div class="text-center mb-10">
-          <div
-            id="results-zone-badge"
-            class="inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans text-sm font-semibold mb-6"
-          ></div>
+          <!-- Question text -->
           <h2
-            id="results-headline"
-            class="font-serif font-bold italic text-3xl md:text-4xl text-charcoal mb-5 leading-snug"
+            id="quiz-question-text"
+            class="font-serif font-bold text-2xl md:text-3xl text-charcoal mb-8 leading-snug"
           ></h2>
-          <p
-            id="results-copy"
-            class="font-sans text-charcoal/70 leading-relaxed text-lg max-w-xl mx-auto"
-          ></p>
-        </div>
 
-        <!-- Pillar breakdown -->
-        <div class="bg-white rounded-2xl border border-beige p-8 mb-10">
-          <h3 class="font-sans text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-7">
-            Your System Scores
-          </h3>
+          <!-- Options -->
+          <div id="quiz-options" class="flex flex-col gap-3 mb-6"></div>
 
-          <!-- Sleep -->
-          <div class="mb-6">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-sans text-sm font-medium text-charcoal">Sleep</span>
-              <span id="sleep-score-label" class="font-sans text-sm text-charcoal/50"></span>
+          <!-- Continue fallback — shown after 1.5s -->
+          <div id="quiz-continue-wrap" class="hidden text-center mt-2">
+            <button
+              id="quiz-next-btn"
+              class="font-sans text-sm text-charcoal/40 hover:text-charcoal/70 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              disabled
+            >
+              Continue →
+            </button>
+          </div>
+
+        </div><!-- /quiz-questions -->
+
+        <!-- EMAIL CAPTURE VIEW -->
+        <div id="email-capture" class="hidden">
+          <div class="text-center max-w-xl mx-auto">
+            <h2 class="font-serif font-bold italic text-3xl text-charcoal mb-4">
+              Your results are ready.
+            </h2>
+            <p class="font-sans text-charcoal/70 mb-8 leading-relaxed">
+              Enter your email to see which systems need attention and get your personalized next step.
+            </p>
+            <form id="email-form" class="flex flex-col gap-4">
+              <input
+                type="text"
+                id="lead-name"
+                placeholder="Your first name"
+                class="border border-beige rounded-lg px-5 py-4 font-sans text-charcoal focus:outline-none focus:border-forest bg-white"
+                required
+              />
+              <input
+                type="email"
+                id="lead-email"
+                placeholder="Your email address"
+                class="border border-beige rounded-lg px-5 py-4 font-sans text-charcoal focus:outline-none focus:border-forest bg-white"
+                required
+              />
+              <button
+                type="submit"
+                id="email-submit-btn"
+                class="bg-forest text-cream font-sans font-semibold py-4 px-8 rounded-full hover:bg-forest/90 transition-all"
+              >
+                See My Results →
+              </button>
+            </form>
+            <p class="font-sans text-xs text-charcoal/40 mt-4">No spam. Unsubscribe anytime.</p>
+          </div>
+        </div><!-- /email-capture -->
+
+        <!-- RESULTS VIEW -->
+        <div id="quiz-results" class="hidden">
+
+          <!-- Zone badge + headline + copy -->
+          <div class="text-center mb-10">
+            <div
+              id="results-zone-badge"
+              class="inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans text-sm font-semibold mb-6"
+            ></div>
+            <h2
+              id="results-headline"
+              class="font-serif font-bold italic text-3xl md:text-4xl text-charcoal mb-5 leading-snug"
+            ></h2>
+            <p
+              id="results-copy"
+              class="font-sans text-charcoal/70 leading-relaxed text-lg max-w-xl mx-auto"
+            ></p>
+          </div>
+
+          <!-- Pillar breakdown -->
+          <div class="bg-white rounded-2xl border border-beige p-8 mb-10">
+            <h3 class="font-sans text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-7">
+              Your System Scores
+            </h3>
+
+            <!-- Sleep -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-sans text-sm font-medium text-charcoal">Sleep</span>
+                <span id="sleep-score-label" class="font-sans text-sm text-charcoal/50"></span>
+              </div>
+              <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+                <div
+                  id="sleep-score-bar"
+                  class="h-full rounded-full transition-all duration-700 ease-out"
+                  style="width: 0%"
+                ></div>
+              </div>
             </div>
-            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
-              <div
-                id="sleep-score-bar"
-                class="h-full rounded-full transition-all duration-700 ease-out"
-                style="width: 0%"
-              ></div>
+
+            <!-- Digestion -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-sans text-sm font-medium text-charcoal">Digestion</span>
+                <span id="digestion-score-label" class="font-sans text-sm text-charcoal/50"></span>
+              </div>
+              <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+                <div
+                  id="digestion-score-bar"
+                  class="h-full rounded-full transition-all duration-700 ease-out"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Stress -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-sans text-sm font-medium text-charcoal">Stress</span>
+                <span id="stress-score-label" class="font-sans text-sm text-charcoal/50"></span>
+              </div>
+              <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+                <div
+                  id="stress-score-bar"
+                  class="h-full rounded-full transition-all duration-700 ease-out"
+                  style="width: 0%"
+                ></div>
+              </div>
             </div>
           </div>
 
-          <!-- Digestion -->
-          <div class="mb-6">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-sans text-sm font-medium text-charcoal">Digestion</span>
-              <span id="digestion-score-label" class="font-sans text-sm text-charcoal/50"></span>
-            </div>
-            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
-              <div
-                id="digestion-score-bar"
-                class="h-full rounded-full transition-all duration-700 ease-out"
-                style="width: 0%"
-              ></div>
-            </div>
+          <!-- CTA -->
+          <div class="text-center">
+            <a
+              id="results-cta"
+              href="/7-day-reset"
+              class="inline-block bg-forest text-cream font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl hover:scale-[1.02] transition-all"
+            ></a>
+            <p class="font-sans text-xs text-charcoal/40 mt-4">Structured 7-day protocol designed by Dr. Vayda</p>
           </div>
 
-          <!-- Stress -->
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-sans text-sm font-medium text-charcoal">Stress</span>
-              <span id="stress-score-label" class="font-sans text-sm text-charcoal/50"></span>
-            </div>
-            <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
-              <div
-                id="stress-score-bar"
-                class="h-full rounded-full transition-all duration-700 ease-out"
-                style="width: 0%"
-              ></div>
-            </div>
-          </div>
-        </div>
+        </div><!-- /quiz-results -->
 
-        <!-- CTA -->
-        <div class="text-center">
-          <a
-            id="results-cta"
-            href="/7-day-reset"
-            class="inline-block bg-forest text-cream font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl hover:scale-[1.02] transition-all"
-          ></a>
-          <p class="font-sans text-xs text-charcoal/40 mt-4">Structured 7-day protocol designed by Dr. Vayda</p>
-        </div>
-
-      </div><!-- /quiz-results -->
-
+      </div><!-- /white card -->
     </div>
   </section>
 
 </BaseLayout>
+
+<style>
+.quiz-slide-out {
+  animation: slideOut 150ms ease-in forwards;
+}
+.quiz-slide-in {
+  animation: slideIn 200ms ease-out forwards;
+}
+@keyframes slideOut {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
 
 <script>
 // ==================== QUIZ DATA ====================
@@ -381,11 +403,40 @@ const zoneContent: Record<string, { headline: string; copy: string; cta: string 
   },
 };
 
+// ==================== ICON MAPS ====================
+const questionIcons: Record<number, string[]> = {
+  1:  ['😴', '🌙', '💻', '😩'],
+  2:  ['😴', '🌙', '😰', '😩'],
+  3:  ['📖', '📺', '💻', '😴'],
+  4:  ['☀️', '☕', '🥱', '😩'],
+  5:  ['✅', '🙂', '😖', '😰'],
+  6:  ['⚡', '😊', '😖', '🤢'],
+  7:  ['🧘', '🪑', '⚡', '🏃'],
+  8:  ['✅', '🙂', '😖', '😰'],
+  9:  ['😌', '🙂', '😤', '🔥'],
+  10: ['💪', '😊', '🤕', '😫'],
+  11: ['🧘', '🌿', '😕', '🚫'],
+  12: ['⚡', '📉', '☕', '😵'],
+};
+
+const categoryIcons: Record<string, string> = {
+  Sleep:     '🌙',
+  Digestion: '🥗',
+  Stress:    '🧠',
+};
+
 // ==================== STATE ====================
 let currentQ = 0;
 const answers: (number | null)[] = new Array(12).fill(null);
+let autoAdvanceTimer: ReturnType<typeof setTimeout> | null = null;
+let continueLinkTimer: ReturnType<typeof setTimeout> | null = null;
 
 // ==================== HELPERS ====================
+function clearTimers() {
+  if (autoAdvanceTimer !== null) { clearTimeout(autoAdvanceTimer); autoAdvanceTimer = null; }
+  if (continueLinkTimer !== null) { clearTimeout(continueLinkTimer); continueLinkTimer = null; }
+}
+
 function getScores(): Record<string, number> {
   const s: Record<string, number> = { sleep: 0, digestion: 0, stress: 0 };
   for (let i = 0; i < questions.length; i++) {
@@ -409,16 +460,36 @@ function pillarBarColor(score: number): string {
   return '#C43737';
 }
 
+// ==================== ANIMATION ====================
+function animateTransition(callback: () => void) {
+  const container = document.getElementById('quiz-questions') as HTMLElement;
+  container.classList.add('quiz-slide-out');
+  setTimeout(() => {
+    container.classList.remove('quiz-slide-out');
+    callback();
+    container.classList.add('quiz-slide-in');
+    container.addEventListener('animationend', () => {
+      container.classList.remove('quiz-slide-in');
+    }, { once: true });
+  }, 150);
+}
+
 // ==================== RENDER QUESTION ====================
 function renderQuestion() {
+  clearTimers();
+
+  const continueWrap = document.getElementById('quiz-continue-wrap') as HTMLElement;
+  continueWrap.classList.add('hidden');
+
   const q = questions[currentQ];
   const total = questions.length;
+  const pct = Math.round(((currentQ + 1) / total) * 100);
 
   // Progress
-  const pct = ((currentQ + 1) / total) * 100;
   (document.getElementById('quiz-progress-fill') as HTMLElement).style.width = `${pct}%`;
-  (document.getElementById('quiz-progress-text') as HTMLElement).textContent = `${currentQ + 1} / ${total}`;
-  (document.getElementById('quiz-category') as HTMLElement).textContent = q.category;
+  const catIcon = categoryIcons[q.category] || '';
+  (document.getElementById('quiz-category') as HTMLElement).textContent = `${catIcon} ${q.category}`;
+  (document.getElementById('quiz-progress-text') as HTMLElement).textContent = `Question ${currentQ + 1} of ${total} · ${pct}%`;
 
   // Question text (safe textContent)
   (document.getElementById('quiz-question-text') as HTMLElement).textContent = q.text;
@@ -427,15 +498,16 @@ function renderQuestion() {
   const container = document.getElementById('quiz-options') as HTMLElement;
   while (container.firstChild) container.removeChild(container.firstChild);
 
+  const icons = questionIcons[q.id] || ['', '', '', ''];
+
   q.options.forEach((opt, i) => {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.dataset.index = String(i);
-    btn.textContent = opt.text;
 
-    const baseClasses = 'w-full text-left px-6 py-4 rounded-xl border font-sans text-base transition-all duration-150'.split(' ');
-    const selectedClasses = 'bg-forest text-cream border-forest'.split(' ');
-    const unselectedClasses = 'bg-white text-charcoal border-beige hover:border-sage'.split(' ');
+    const baseClasses = 'w-full text-left px-6 py-5 rounded-xl border font-sans text-base transition-all duration-150 flex items-center gap-4'.split(' ');
+    const selectedClasses = 'bg-forest text-cream border-forest scale-[1.01]'.split(' ');
+    const unselectedClasses = 'bg-white text-charcoal border-beige hover:border-sage hover:shadow-sm'.split(' ');
 
     btn.classList.add(...baseClasses);
     if (answers[currentQ] === i) {
@@ -444,6 +516,16 @@ function renderQuestion() {
       btn.classList.add(...unselectedClasses);
     }
 
+    // Emoji icon
+    const emojiSpan = document.createElement('span');
+    emojiSpan.textContent = icons[i] || '';
+    emojiSpan.className = 'text-2xl flex-shrink-0 w-8 text-center';
+
+    // Option text
+    const textSpan = document.createElement('span');
+    textSpan.textContent = opt.text;
+
+    btn.append(emojiSpan, textSpan);
     btn.addEventListener('click', () => selectOption(i));
     container.appendChild(btn);
   });
@@ -452,14 +534,20 @@ function renderQuestion() {
   const backBtn = document.getElementById('quiz-back-btn') as HTMLButtonElement;
   backBtn.classList.toggle('invisible', currentQ === 0);
 
-  // Next button state
+  // Continue button state
   const nextBtn = document.getElementById('quiz-next-btn') as HTMLButtonElement;
   nextBtn.disabled = answers[currentQ] === null;
-  nextBtn.textContent = currentQ === total - 1 ? 'See My Results \u2192' : 'Next \u2192';
+  nextBtn.textContent = currentQ === total - 1 ? 'See My Results \u2192' : 'Continue \u2192';
+
+  // If already answered (e.g. going back), show continue link immediately
+  if (answers[currentQ] !== null) {
+    continueWrap.classList.remove('hidden');
+  }
 }
 
 // ==================== SELECT OPTION ====================
 function selectOption(idx: number) {
+  clearTimers();
   answers[currentQ] = idx;
 
   const container = document.getElementById('quiz-options') as HTMLElement;
@@ -468,21 +556,37 @@ function selectOption(idx: number) {
     btn.classList.toggle('bg-forest', isSelected);
     btn.classList.toggle('text-cream', isSelected);
     btn.classList.toggle('border-forest', isSelected);
+    btn.classList.toggle('scale-[1.01]', isSelected);
     btn.classList.toggle('bg-white', !isSelected);
     btn.classList.toggle('text-charcoal', !isSelected);
     btn.classList.toggle('border-beige', !isSelected);
     btn.classList.toggle('hover:border-sage', !isSelected);
+    btn.classList.toggle('hover:shadow-sm', !isSelected);
   });
 
   (document.getElementById('quiz-next-btn') as HTMLButtonElement).disabled = false;
+
+  // Auto-advance after 600ms
+  autoAdvanceTimer = setTimeout(() => {
+    autoAdvanceTimer = null;
+    goNext();
+  }, 600);
+
+  // Show "Continue →" fallback after 1.5s (only if auto-advance hasn't fired)
+  continueLinkTimer = setTimeout(() => {
+    continueLinkTimer = null;
+    document.getElementById('quiz-continue-wrap')!.classList.remove('hidden');
+  }, 1500);
 }
 
 // ==================== NAVIGATION ====================
 function goNext() {
   if (answers[currentQ] === null) return;
   if (currentQ < questions.length - 1) {
-    currentQ++;
-    renderQuestion();
+    animateTransition(() => {
+      currentQ++;
+      renderQuestion();
+    });
     document.getElementById('quiz-app')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else {
     showEmailCapture();
@@ -491,8 +595,10 @@ function goNext() {
 
 function goBack() {
   if (currentQ > 0) {
-    currentQ--;
-    renderQuestion();
+    animateTransition(() => {
+      currentQ--;
+      renderQuestion();
+    });
   }
 }
 
