@@ -1,0 +1,470 @@
+---
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reset your Sleep, Digestion & Stress in 7 days. A gentle, guided protocol to break the fatigue cycle — without overhauling your entire life." />
+    <title>7-Day Reset | Vayda Wellness</title>
+    <link rel="icon" type="image/png" href="/brand/02-logo-symbol-dark-transparent.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-cream text-charcoal font-sans antialiased">
+
+    <!-- ===== MINIMAL HEADER ===== -->
+    <header class="bg-white border-b border-beige py-4">
+      <div class="max-w-container mx-auto px-6 flex justify-center">
+        <a href="/">
+          <img src="/brand/logo-nav-new.png" alt="Vayda Wellness" class="h-10" />
+        </a>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="bg-forest text-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+
+        <!-- Eyebrow badge -->
+        <span class="inline-block bg-cream/20 text-cream border border-cream/30 font-sans text-sm font-medium tracking-widest uppercase rounded-full px-5 py-2 mb-8">
+          Special Offer for Quiz Completers
+        </span>
+
+        <h1 class="font-serif font-bold italic text-4xl md:text-[56px] leading-tight mb-6 max-w-3xl mx-auto">
+          Reset Your Body in Just 7 Days
+        </h1>
+
+        <p class="font-sans text-lg md:text-xl text-cream/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+          A gentle, guided protocol to break the fatigue cycle — without overhauling your entire life.
+        </p>
+
+        <a
+          href="#buy"
+          class="inline-flex items-center gap-3 bg-cream text-forest font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-white hover:shadow-xl hover:scale-[1.02] transition-all mb-6"
+        >
+          Start Your 7-Day Reset — $47
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <p class="font-sans text-sm text-cream/60 flex items-center justify-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          7-Day Money-Back Guarantee · Instant Digital Access
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="bg-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-2xl mx-auto text-center">
+
+          <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-6">
+            You Took the Quiz. Now What?
+          </h2>
+
+          <p class="font-sans text-body-lg text-charcoal/70 leading-relaxed mb-12">
+            You've identified which pillar is out of balance. The question is: what do you do about it?
+          </p>
+
+          <div class="space-y-4 mb-12 text-left">
+            {[
+              'Try to figure it out yourself — more Googling, more supplements, more confusion',
+              'Wait and hope things improve on their own (they won\'t)',
+              'Sign up for another expensive program that asks you to change everything at once',
+            ].map((text) => (
+              <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-beige">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-beige flex items-center justify-center mt-0.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#657F66" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                </div>
+                <span class="font-sans text-body text-charcoal/80 leading-relaxed">{text}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="bg-forest/10 border border-forest/20 rounded-2xl p-8">
+            <p class="font-sans text-body-lg text-charcoal leading-relaxed">
+              <strong class="text-forest">Or give your body exactly what it needs:</strong><br />
+              a clear, structured signal that says "we're resetting now."
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOLUTION ===== -->
+    <section class="bg-forest text-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+
+        <SectionEyebrow text="The Solution" class="text-cream/70" />
+
+        <h2 class="font-serif font-bold italic text-3xl md:text-[48px] leading-tight mb-4 max-w-2xl mx-auto">
+          The 7-Day Reset
+        </h2>
+
+        <p class="font-sans text-xl text-cream/80 mb-6">
+          Transform Your Sleep, Digestion &amp; Stress. Feel Like Yourself Again.
+        </p>
+
+        <p class="font-sans text-body-lg text-cream/70 leading-relaxed max-w-2xl mx-auto">
+          A gentle, guided lifestyle protocol designed to help you experience a <strong class="text-cream">complete renewal of body, mind, and spirit</strong> — all in just 7 days.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ===== THREE PILLARS ===== -->
+    <section class="bg-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
+          Your 3 Systems. One Protocol.
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Sleep -->
+          <div class="bg-white rounded-2xl overflow-hidden border border-beige group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="/photos/meditation-group.jpg"
+                alt="Sleep reset"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-7">
+              <div class="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mb-4 text-2xl">🌙</div>
+              <h3 class="font-serif font-bold text-2xl text-charcoal mb-2">Sleep</h3>
+              <p class="font-sans text-body text-charcoal/70 leading-relaxed">Restore deep, uninterrupted sleep so you wake up actually rested.</p>
+            </div>
+          </div>
+
+          <!-- Digestion -->
+          <div class="bg-white rounded-2xl overflow-hidden border border-beige group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="/photos/coaching.jpg"
+                alt="Digestion reset"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-7">
+              <div class="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mb-4 text-2xl">🥗</div>
+              <h3 class="font-serif font-bold text-2xl text-charcoal mb-2">Digestion</h3>
+              <p class="font-sans text-body text-charcoal/70 leading-relaxed">Calm bloating, improve regularity, and support long-term gut health.</p>
+            </div>
+          </div>
+
+          <!-- Stress -->
+          <div class="bg-white rounded-2xl overflow-hidden border border-beige group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="/photos/ramesh-teaching.jpg"
+                alt="Stress reset"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-7">
+              <div class="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mb-4 text-2xl">🧠</div>
+              <h3 class="font-serif font-bold text-2xl text-charcoal mb-2">Stress</h3>
+              <p class="font-sans text-body text-charcoal/70 leading-relaxed">Regulate your nervous system and break the cortisol loop for good.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT YOU'LL RECEIVE ===== -->
+    <section class="bg-white">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+
+        <div class="text-center mb-14">
+          <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal mb-4">
+            What You'll Receive
+          </h2>
+          <p class="font-sans text-body-lg text-charcoal/60">
+            A complete digital wellness bundle designed to reset your energy in just 7 days.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 mb-12">
+
+          {[
+            {
+              title: '7-Day Intermittent Fasting Plan',
+              desc: 'Gently reset digestion, balance blood sugar, and ignite natural fat-burning without deprivation.',
+            },
+            {
+              title: 'Guided Yoga for Digestion',
+              desc: 'Simple postures that awaken vitality and support your body\'s natural cleansing process.',
+            },
+            {
+              title: 'Mindfulness Meditation Audio',
+              desc: 'Ease stress and nourish your nervous system with daily moments of stillness.',
+            },
+            {
+              title: 'Three Longevity Exercises',
+              desc: 'Science-backed movements to strengthen bones, improve flexibility, and preserve youthful mobility.',
+            },
+            {
+              title: 'Heart-Healthy Diet Guide',
+              desc: 'Foods and rhythms that purify, energize, and keep your heart strong.',
+            },
+            {
+              title: '6 Super Smoothie & Juice Recipes',
+              desc: 'Delicious, nutrient-rich recipes for healthy digestion, glowing skin, and natural detox.',
+            },
+          ].map((item) => (
+            <div class="flex items-start gap-4 bg-cream rounded-2xl p-6 border border-beige">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-forest flex items-center justify-center mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 class="font-sans font-semibold text-charcoal mb-1">{item.title}</h4>
+                <p class="font-sans text-sm text-charcoal/60 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        <!-- Value / Price display -->
+        <div class="text-center">
+          <p class="font-sans text-charcoal/50 text-lg">
+            Total value: <span class="line-through">$197</span>
+          </p>
+          <p class="font-serif font-bold italic text-4xl text-forest mt-1">
+            Today: $47
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="bg-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
+          What Others Are Saying
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          {[
+            {
+              quote: '"After just 3 days, I woke up feeling clear for the first time in months. The brain fog lifted. I didn\'t know how much I was suffering until I wasn\'t anymore."',
+              initials: 'MT',
+              name: 'Margaret T.',
+              role: 'Teacher, Age 58',
+            },
+            {
+              quote: '"I was skeptical — I\'ve tried so many things. But this was different. Simple, doable, and I actually felt the shift by day 2. My afternoon crashes are gone."',
+              initials: 'SR',
+              name: 'Susan R.',
+              role: 'Marketing Executive, 52',
+            },
+            {
+              quote: '"Ramesh\'s approach is so gentle but powerful. I finally understand why I felt the way I did. The meditation alone has changed my mornings completely."',
+              initials: 'LK',
+              name: 'Linda K.',
+              role: 'Retired Nurse, 61',
+            },
+          ].map((t) => (
+            <div class="bg-white rounded-2xl p-8 border border-beige flex flex-col">
+              <!-- Stars -->
+              <div class="flex gap-1 mb-5">
+                {[1,2,3,4,5].map(() => (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D4A35"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                ))}
+              </div>
+              <p class="font-sans text-body text-charcoal/80 leading-relaxed italic flex-grow mb-6">{t.quote}</p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-forest text-cream font-sans font-semibold text-sm flex items-center justify-center flex-shrink-0">
+                  {t.initials}
+                </div>
+                <div>
+                  <p class="font-sans font-semibold text-sm text-charcoal">{t.name}</p>
+                  <p class="font-sans text-sm text-charcoal/50">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY IT WORKS ===== -->
+    <section class="bg-forest text-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+
+        <div class="max-w-3xl mx-auto text-center">
+
+          <h2 class="font-serif font-bold italic text-3xl md:text-[42px] mb-6">
+            Why This Works
+          </h2>
+
+          <p class="font-sans text-body-lg text-cream/70 leading-relaxed mb-14">
+            This 7-day lifestyle reset integrates <strong class="text-cream">ancient wisdom and modern science</strong> — combining:
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6 mb-14 text-left">
+
+            {[
+              {
+                icon: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+                label: 'Intermittent fasting',
+                detail: 'for cellular rejuvenation',
+              },
+              {
+                icon: '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>',
+                label: 'Yoga',
+                detail: 'for circulation and digestion',
+              },
+              {
+                icon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+                label: 'Meditation',
+                detail: 'for nervous system support',
+              },
+              {
+                icon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+                label: 'Nutrition',
+                detail: 'for long-term vitality',
+              },
+            ].map((item) => (
+              <div class="flex items-start gap-4 bg-cream/10 rounded-2xl p-6 border border-cream/20">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cream/10 flex items-center justify-center">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" set:html={item.icon} />
+                </div>
+                <div>
+                  <p class="font-sans font-semibold text-cream">{item.label}</p>
+                  <p class="font-sans text-sm text-cream/60">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+          <p class="font-serif italic text-2xl md:text-3xl text-cream/90 leading-relaxed">
+            You'll experience what it feels like to be <strong class="text-cream not-italic font-bold">centered, energized, and deeply connected to your body's wisdom.</strong>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT RAMESH ===== -->
+    <section class="bg-white">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+          <div class="rounded-2xl overflow-hidden">
+            <img
+              src="/photos/ramesh-founder.jpg"
+              alt="Ramesh Roar, Co-founder Prama Institute"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div>
+            <SectionEyebrow text="Meet Your Guide" />
+            <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-8">
+              Why I Created This
+            </h2>
+
+            <div class="space-y-5 font-sans text-body text-charcoal/80 leading-relaxed">
+              <p>In 2004, I was diagnosed with <strong>chronic prostatitis</strong>.</p>
+              <p>I'd been a vegetarian for 30 years. Ate organic. Practiced yoga daily.</p>
+              <p><strong>And I suffered for over 3 years.</strong></p>
+              <p>Doctors gave me antibiotics. Pain management. The usual. Nothing worked.</p>
+              <p>Then I discovered <strong>juice fasting</strong>. 5 weeks later, I was symptom-free. I'd lost 50 pounds. And I finally understood what my body had been trying to tell me.</p>
+              <p>Since then, I've helped <strong>thousands of people</strong> through the Prama Institute decode their own signals and reclaim their vitality.</p>
+            </div>
+
+            <p class="font-serif italic text-lg text-charcoal mt-8">
+              — Ramesh Roar<br />
+              <span class="font-sans text-sm text-charcoal/50 not-italic">Co-founder, Prama Institute | 20+ years in holistic wellness</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section id="buy" class="bg-forest text-cream">
+      <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+
+        <div class="max-w-2xl mx-auto text-center">
+
+          <h2 class="font-serif font-bold italic text-4xl md:text-[52px] leading-tight mb-6">
+            Your Reset Starts Now
+          </h2>
+
+          <p class="font-sans text-body-lg text-cream/70 mb-12">
+            Take the first step toward restored sleep, calm digestion, and a quieter nervous system.
+          </p>
+
+          <!-- Price -->
+          <div class="mb-8">
+            <p class="font-sans text-cream/50 text-lg line-through mb-1">$197</p>
+            <p class="font-serif font-bold text-6xl text-cream">$47</p>
+            <p class="font-sans text-sm text-cream/50 mt-2 uppercase tracking-widest">One-Time · Instant Digital Access</p>
+          </div>
+
+          <a
+            href="https://buy.stripe.com/PLACEHOLDER"
+            class="inline-flex items-center gap-3 bg-cream text-forest font-sans font-semibold text-lg tracking-wide px-12 py-5 rounded-full hover:bg-white hover:shadow-2xl hover:scale-[1.02] transition-all mb-10"
+          >
+            Get Instant Access — $47
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <!-- Guarantee box -->
+          <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8 flex items-start gap-5 text-left">
+            <div class="flex-shrink-0 w-14 h-14 rounded-full bg-cream/10 flex items-center justify-center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-cream mb-2">100% Money-Back Guarantee</h4>
+              <p class="font-sans text-sm text-cream/70 leading-relaxed">
+                Try it for 7 days. If you don't feel a difference, email us and we'll refund every penny. No questions asked.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-charcoal text-white/50 py-10">
+      <div class="max-w-container mx-auto px-6 text-center space-y-3">
+        <img src="/brand/logo-nav-new.png" alt="Vayda Wellness" class="h-8 mx-auto opacity-50 mb-4" />
+        <p class="font-sans text-sm">© 2026 Vayda Wellness Center. All rights reserved.</p>
+        <p class="font-sans text-xs leading-relaxed max-w-xl mx-auto">
+          This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before starting any new wellness program.
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
+<style is:global>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+</style>
