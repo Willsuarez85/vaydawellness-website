@@ -1,13 +1,322 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+import ProblemCard from '../components/ProblemCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FAQItem from '../components/FAQItem.astro';
 ---
 <BaseLayout>
+
+  <!-- 1. HERO -->
   <Hero />
 
-  <!-- TODO: Recognition section -->
-  <!-- TODO: The Vayda Method section -->
-  <!-- TODO: Programs section -->
-  <!-- TODO: Testimonials section -->
-  <!-- TODO: CTA section -->
+  <!-- 2. PROBLEM AGITATION -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
+        You've tried everything. And yet something still feels off.
+      </h2>
+      <p class="font-sans text-body-lg text-charcoal/80 leading-relaxed mb-16 max-w-3xl mx-auto">
+        You eat well. You exercise. You've been to the doctor — labs came back "normal". But you're still exhausted, foggy, and not feeling like yourself. The problem isn't that something is wrong with you. The problem is that no one has looked at the whole picture.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ProblemCard
+          emoji="🧠"
+          title="Brain Fog & Fatigue"
+          description="You push through every day running on empty, wondering why you can't think clearly or sustain your energy."
+        />
+        <ProblemCard
+          emoji="⚖️"
+          title="Hormonal Imbalance"
+          description="Your body feels like it's working against you — weight changes, mood swings, sleep issues that don't respond to 'normal' fixes."
+        />
+        <ProblemCard
+          emoji="🔄"
+          title="No Root Cause Found"
+          description="Every specialist treats one symptom. No one has connected the dots between all of them — until now."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TRANSFORMATION (How it Works) — Parallax -->
+  <section
+    class="relative bg-cover bg-center bg-fixed py-16 md:py-24"
+    style="background-image: url('/photos/ramesh-teaching.jpg')"
+  >
+    <div class="absolute inset-0 bg-forest/50"></div>
+    <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+      <SectionEyebrow text="The Vayda Method" class="text-sage" />
+      <h2 class="font-serif font-bold italic text-4xl md:text-[56px] text-white mb-10 leading-tight">
+        True healing begins when the body is treated as a whole.
+      </h2>
+      <div class="flex flex-col sm:flex-row justify-center gap-8 mb-12">
+        <div class="flex items-start gap-3 text-left max-w-xs">
+          <span class="text-sage mt-1 flex-shrink-0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 1l1.5 4.5H14l-3.6 2.6 1.4 4.3L8 9.6l-3.8 2.8 1.4-4.3L2 5.5h4.5z"/>
+            </svg>
+          </span>
+          <p class="font-sans text-body text-white/90 leading-relaxed">Identify the root cause, not just manage symptoms</p>
+        </div>
+        <div class="flex items-start gap-3 text-left max-w-xs">
+          <span class="text-sage mt-1 flex-shrink-0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 1l1.5 4.5H14l-3.6 2.6 1.4 4.3L8 9.6l-3.8 2.8 1.4-4.3L2 5.5h4.5z"/>
+            </svg>
+          </span>
+          <p class="font-sans text-body text-white/90 leading-relaxed">A personalized whole-body protocol built for you</p>
+        </div>
+        <div class="flex items-start gap-3 text-left max-w-xs">
+          <span class="text-sage mt-1 flex-shrink-0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 1l1.5 4.5H14l-3.6 2.6 1.4 4.3L8 9.6l-3.8 2.8 1.4-4.3L2 5.5h4.5z"/>
+            </svg>
+          </span>
+          <p class="font-sans text-body text-white/90 leading-relaxed">Lasting results — not a lifetime of dependency</p>
+        </div>
+      </div>
+      <a
+        href="/the-vayda-method"
+        class="inline-block border border-white text-white hover:bg-white hover:text-forest font-sans font-medium text-sm tracking-wider px-8 py-4 rounded transition-colors"
+      >
+        Discover the Method →
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. FEATURES / VAYDA METHOD PILLARS -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <SectionEyebrow text="How We Work" />
+        <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
+          Seven Systems. One Unified Path.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Pilar 1 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">🌿</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Nutrition & Food</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Fuel that works with your biology, not against it</p>
+        </div>
+        <!-- Pilar 2 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">💧</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Hydration & Detox</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Your body's ability to cleanse and reset</p>
+        </div>
+        <!-- Pilar 3 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">🧘</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Movement & Breath</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Strength and restoration without depletion</p>
+        </div>
+        <!-- Pilar 4 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">😴</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Sleep & Recovery</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The foundation of every system in the body</p>
+        </div>
+        <!-- Pilar 5 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">🧠</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Mind & Nervous System</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Stress, resilience, and your mental landscape</p>
+        </div>
+        <!-- Pilar 6 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">🔬</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Lab Work & Biomarkers</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Real data to guide real decisions</p>
+        </div>
+        <!-- Pilar 7 -->
+        <div class="bg-beige rounded-xl p-6">
+          <div class="text-2xl mb-3">🌍</div>
+          <h3 class="font-sans font-medium text-charcoal mb-2">Environment & Lifestyle</h3>
+          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The hidden forces shaping your health daily</p>
+        </div>
+        <!-- Card 8 — CTA -->
+        <div class="bg-forest rounded-xl p-6 flex flex-col justify-between gap-6">
+          <p class="font-serif italic text-xl text-white leading-snug">
+            Ready to find your root cause?
+          </p>
+          <a
+            href="/quiz"
+            class="inline-block text-center bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-6 py-3 rounded transition-colors"
+          >
+            Take the Free Quiz
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SOCIAL PROOF -->
+  <section class="bg-beige py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="font-serif italic text-4xl md:text-h2 text-charcoal mb-14 leading-tight">
+        What people are saying
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+        <TestimonialCard
+          quote="I'd seen five different doctors over two years. In three months with Ramesh, I finally understood what was actually happening in my body. The fog lifted. I feel like myself again."
+          name="Sarah M."
+          role="Marketing Director, Austin TX"
+        />
+        <TestimonialCard
+          quote="The Vayda Method isn't a diet or a wellness trend. It's a completely different way of thinking about health. My energy, sleep, and focus have transformed in ways I didn't think were possible."
+          name="Daniel R."
+          role="Entrepreneur, Denver CO"
+        />
+        <TestimonialCard
+          quote="I was skeptical at first — I'd tried everything. But working through all seven systems together made it click. Ramesh connects dots that no one else bothered to connect."
+          name="Priya K."
+          role="Yoga Teacher, Asheville NC"
+        />
+      </div>
+      <!-- Trust bar -->
+      <div class="border-t border-beige/60 pt-10">
+        <p class="font-sans text-sm font-medium tracking-widest text-charcoal/60 uppercase">
+          Prama Institute Co-Founder &nbsp;·&nbsp; 20+ Years Teaching &nbsp;·&nbsp; 500+ Students Transformed
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ABOUT RAMESH -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Photo -->
+        <div class="order-1">
+          <img
+            src="/photos/ramesh-founder.jpg"
+            alt="Ramesh Roar — founder of Vayda Wellness, The Viking Yogi"
+            class="rounded-2xl aspect-square object-cover w-full"
+            loading="lazy"
+          />
+        </div>
+        <!-- Text -->
+        <div class="order-2">
+          <SectionEyebrow text="Meet Your Guide" />
+          <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
+            Ramesh Roar — The Viking Yogi
+          </h2>
+          <div class="space-y-5">
+            <p class="font-sans text-body text-charcoal/80 leading-relaxed">
+              Ramesh has spent more than two decades at the intersection of Eastern wellness and Western performance — what he calls the Viking Yogi path: the strength to face life's hardest challenges, and the wisdom to heal from them.
+            </p>
+            <p class="font-sans text-body text-charcoal/80 leading-relaxed">
+              As co-founder of the Prama Institute near Asheville, NC, he has guided hundreds of people back to balance — not through quick fixes, but through understanding the root systems that drive health.
+            </p>
+            <p class="font-sans text-body text-charcoal/80 leading-relaxed">
+              His approach starts where most practitioners stop: treating the whole body as one connected system.
+            </p>
+          </div>
+          <a
+            href="/about"
+            class="inline-block mt-8 font-sans font-medium text-sm tracking-wide text-forest border-b border-forest/40 hover:border-forest pb-0.5 transition-colors"
+          >
+            Learn more about Ramesh →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PRICING -->
+  <section class="bg-forest py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-white mb-14 leading-tight">
+        Choose your path to healing
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PricingCard
+          emoji="🎯"
+          title="The Quiz"
+          price="Free"
+          description="Start here. Discover what's driving your imbalance in 5 minutes."
+          cta="Take the Quiz"
+          href="/quiz"
+        />
+        <PricingCard
+          emoji="📚"
+          title="Online Programs"
+          price="$297+"
+          description="Self-paced courses built on the Vayda Method. Learn at your rhythm."
+          cta="View Programs"
+          href="/programs"
+        />
+        <PricingCard
+          emoji="🤝"
+          title="1:1 Coaching"
+          price="Custom"
+          description="Work directly with Ramesh. Personalized protocol. Real results."
+          cta="Apply Now"
+          href="/contact"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal mb-12 text-center leading-tight">
+        Common questions
+      </h2>
+      <div class="divide-y divide-beige">
+        <FAQItem
+          question="Is this functional medicine?"
+          answer="No — the Vayda Method is Ramesh's own holistic framework, built from 20+ years at the intersection of Eastern and Western wellness traditions. It is not a medical practice and does not replace professional medical care. It is a complementary system for understanding the root forces shaping your health."
+        />
+        <FAQItem
+          question="How is this different from seeing a nutritionist or therapist?"
+          answer="Traditional practitioners specialize in one domain. A nutritionist addresses food. A therapist addresses the mind. The Vayda Method treats all seven systems simultaneously — because your body doesn't work in silos. Lasting change happens when every system is seen and addressed together."
+        />
+        <FAQItem
+          question="Do I need to live near Asheville?"
+          answer="Not at all. All online programs are available globally and can be completed entirely at your own pace from anywhere in the world. 1:1 coaching sessions are also conducted remotely via video call."
+        />
+        <FAQItem
+          question="How long does it take to see results?"
+          answer="Most people begin noticing meaningful changes within 4–6 weeks of applying the method consistently. The depth and speed of transformation varies by individual, but the process is designed for sustainable, lasting results — not a quick fix."
+        />
+        <FAQItem
+          question="Is this right for men too?"
+          answer="Absolutely. The Vayda Method applies to any person regardless of gender. The seven systems — nutrition, hydration, movement, sleep, mind, lab work, and environment — are universal. Ramesh works with people of all backgrounds and life situations."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL CTA — Parallax -->
+  <section
+    class="relative bg-cover bg-center bg-fixed py-16 md:py-24"
+    style="background-image: url('/photos/hero.jpg')"
+  >
+    <div class="absolute inset-0 bg-forest/60"></div>
+    <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+      <h2 class="font-serif font-bold italic text-4xl md:text-[56px] text-white mb-6 leading-tight">
+        Your body is ready to heal. Are you?
+      </h2>
+      <p class="font-sans text-body-lg text-white/70 mb-10 max-w-xl mx-auto leading-relaxed">
+        Take the free 5-minute quiz and discover what's really driving your imbalance.
+      </p>
+      <a
+        href="/quiz"
+        class="inline-block bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-10 py-4 rounded transition-colors"
+      >
+        Take the Free Quiz Now
+      </a>
+      <p class="font-sans text-sm text-white/50 mt-5">
+        No commitment. No sales pitch. Just clarity.
+      </p>
+    </div>
+  </section>
+
 </BaseLayout>

@@ -1,0 +1,46 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+}
+const { question, answer } = Astro.props;
+---
+<div class="border-b border-beige" data-faq-item>
+  <button
+    class="w-full text-left flex items-center justify-between py-5 gap-4 group"
+    data-faq-trigger
+    aria-expanded="false"
+  >
+    <span class="font-sans font-medium text-charcoal text-body-lg group-hover:text-forest transition-colors">
+      {question}
+    </span>
+    <span
+      class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-sage transition-transform duration-200"
+      data-faq-icon
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="8" y1="2" x2="8" y2="14"/>
+        <line x1="2" y1="8" x2="14" y2="8"/>
+      </svg>
+    </span>
+  </button>
+  <div class="hidden pb-5" data-faq-answer>
+    <p class="font-sans text-body text-charcoal/80 leading-relaxed">{answer}</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-faq-trigger]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('[data-faq-item]');
+      if (!item) return;
+      const answer = item.querySelector('[data-faq-answer]') as HTMLElement;
+      const icon = trigger.querySelector('[data-faq-icon]') as HTMLElement;
+      const isOpen = !answer.classList.contains('hidden');
+
+      answer.classList.toggle('hidden', isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+    });
+  });
+</script>

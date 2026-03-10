@@ -1,0 +1,17 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  role: string;
+}
+const { quote, name, role } = Astro.props;
+---
+<div class="bg-cream shadow-sm rounded-xl p-8 flex flex-col gap-6">
+  <blockquote class="font-serif italic text-xl text-charcoal leading-relaxed">
+    "{quote}"
+  </blockquote>
+  <div>
+    <p class="font-sans font-bold text-sm text-charcoal">{name}</p>
+    <p class="font-sans text-sm text-charcoal/60 mt-0.5">{role}</p>
+  </div>
+</div>
