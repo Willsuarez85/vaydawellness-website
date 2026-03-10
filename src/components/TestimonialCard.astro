@@ -7,12 +7,11 @@ interface Props {
 }
 const { quote, name, role, class: className = '' } = Astro.props;
 ---
-<div class:list={['bg-cream shadow-sm rounded-xl p-8 flex flex-col gap-6 hover:shadow-md transition-shadow duration-300', className]}>
-  <blockquote class="font-serif italic text-xl text-charcoal leading-relaxed">
-    "{quote}"
-  </blockquote>
-  <div>
-    <p class="font-sans font-bold text-sm text-charcoal">{name}</p>
-    <p class="font-sans text-sm text-charcoal/60 mt-0.5">{role}</p>
+<div class:list={['bg-cream/10 border border-cream/20 backdrop-blur-sm rounded-2xl p-8 flex flex-col reveal', className]}>
+  <span class="font-display text-5xl text-sage leading-none mb-4">"</span>
+  <p class="font-display italic text-lg text-cream leading-relaxed flex-1">{quote}</p>
+  <div class="mt-6 pt-6 border-t border-cream/20">
+    <p class="font-sans font-bold text-cream text-sm">{name}</p>
+    <p class="font-sans text-cream/50 text-xs mt-1">{role}</p>
   </div>
 </div>

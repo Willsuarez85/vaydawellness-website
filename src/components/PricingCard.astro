@@ -5,33 +5,43 @@ interface Props {
   description: string;
   cta: string;
   href: string;
+  image?: string;
   class?: string;
 }
-const { title, price, description, cta, href, class: className = '' } = Astro.props;
+const { title, price, description, cta, href, image, class: className = '' } = Astro.props;
 
 const isFree = price.toLowerCase().includes('free');
 ---
-<div class:list={['bg-white/10 border border-white/20 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/15 transition-all', className]}>
+<div class:list={['bg-white/10 border border-white/20 rounded-2xl overflow-hidden flex flex-col hover:bg-white/15 transition-all', className]}>
 
-  <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-5">
-    <slot />
-  </div>
-
-  <h3 class="font-display text-2xl font-bold text-cream italic mb-2">{title}</h3>
-
-  {isFree ? (
-    <span class="font-sans text-cream/80 text-sm tracking-widest uppercase mb-4">Free to Start</span>
-  ) : (
-    <span class="font-display text-beige text-2xl font-bold mb-4 tracking-wider">{price}</span>
+  {image && (
+    <div class="h-40 overflow-hidden">
+      <img src={image} alt={title} class="w-full h-full object-cover opacity-60" />
+    </div>
   )}
 
-  <p class="font-sans text-cream/70 text-sm leading-relaxed mb-6 flex-1">{description}</p>
+  <div class="p-8 flex flex-col items-center text-center flex-1">
 
-  <a
-    href={href}
-    class="mt-auto w-full text-center bg-sage hover:bg-sage/80 text-cream font-sans font-medium py-3 px-6 rounded-lg transition-all text-sm tracking-wide"
-  >
-    {cta}
-  </a>
+    <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-5">
+      <slot />
+    </div>
 
+    <h3 class="font-display text-2xl font-bold text-cream italic mb-2">{title}</h3>
+
+    {isFree ? (
+      <span class="font-sans text-cream/80 text-sm tracking-widest uppercase mb-4">Free to Start</span>
+    ) : (
+      <span class="font-display text-beige text-2xl font-bold mb-4 tracking-wider">{price}</span>
+    )}
+
+    <p class="font-sans text-cream/70 text-sm leading-relaxed mb-6 flex-1">{description}</p>
+
+    <a
+      href={href}
+      class="mt-auto w-full text-center bg-sage hover:bg-sage/80 text-cream font-sans font-medium py-3 px-6 rounded-lg transition-all text-sm tracking-wide"
+    >
+      {cta}
+    </a>
+
+  </div>
 </div>
