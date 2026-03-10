@@ -3,10 +3,11 @@ interface Props {
   quote: string;
   name: string;
   role: string;
+  class?: string;
 }
-const { quote, name, role } = Astro.props;
+const { quote, name, role, class: className = '' } = Astro.props;
 ---
-<div class="bg-cream shadow-sm rounded-xl p-8 flex flex-col gap-6">
+<div class:list={['bg-cream shadow-sm rounded-xl p-8 flex flex-col gap-6 hover:shadow-md transition-shadow duration-300', className]}>
   <blockquote class="font-serif italic text-xl text-charcoal leading-relaxed">
     "{quote}"
   </blockquote>

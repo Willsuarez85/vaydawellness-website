@@ -6,6 +6,19 @@ import ProblemCard from '../components/ProblemCard.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import PricingCard from '../components/PricingCard.astro';
 import FAQItem from '../components/FAQItem.astro';
+import BrainIcon from '../components/icons/BrainIcon.astro';
+import BalanceIcon from '../components/icons/BalanceIcon.astro';
+import RootIcon from '../components/icons/RootIcon.astro';
+import LeafIcon from '../components/icons/LeafIcon.astro';
+import DropIcon from '../components/icons/DropIcon.astro';
+import MovementIcon from '../components/icons/MovementIcon.astro';
+import MoonIcon from '../components/icons/MoonIcon.astro';
+import MindIcon from '../components/icons/MindIcon.astro';
+import LabIcon from '../components/icons/LabIcon.astro';
+import EarthIcon from '../components/icons/EarthIcon.astro';
+import QuizIcon from '../components/icons/QuizIcon.astro';
+import BookIcon from '../components/icons/BookIcon.astro';
+import CoachIcon from '../components/icons/CoachIcon.astro';
 ---
 <BaseLayout>
 
@@ -15,7 +28,7 @@ import FAQItem from '../components/FAQItem.astro';
   <!-- 2. PROBLEM AGITATION -->
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
         You've tried everything. And yet something still feels off.
       </h2>
       <p class="font-sans text-body-lg text-charcoal/80 leading-relaxed mb-16 max-w-3xl mx-auto">
@@ -23,20 +36,26 @@ import FAQItem from '../components/FAQItem.astro';
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <ProblemCard
-          emoji="🧠"
           title="Brain Fog & Fatigue"
           description="You push through every day running on empty, wondering why you can't think clearly or sustain your energy."
-        />
+          class="reveal reveal-delay-1"
+        >
+          <BrainIcon class="w-8 h-8 text-sage" />
+        </ProblemCard>
         <ProblemCard
-          emoji="⚖️"
           title="Hormonal Imbalance"
           description="Your body feels like it's working against you — weight changes, mood swings, sleep issues that don't respond to 'normal' fixes."
-        />
+          class="reveal reveal-delay-2"
+        >
+          <BalanceIcon class="w-8 h-8 text-sage" />
+        </ProblemCard>
         <ProblemCard
-          emoji="🔄"
           title="No Root Cause Found"
           description="Every specialist treats one symptom. No one has connected the dots between all of them — until now."
-        />
+          class="reveal reveal-delay-3"
+        >
+          <RootIcon class="w-8 h-8 text-sage" />
+        </ProblemCard>
       </div>
     </div>
   </section>
@@ -46,10 +65,10 @@ import FAQItem from '../components/FAQItem.astro';
     class="relative bg-cover bg-center bg-fixed py-16 md:py-24"
     style="background-image: url('/photos/ramesh-teaching.jpg')"
   >
-    <div class="absolute inset-0 bg-forest/50"></div>
+    <div class="absolute inset-0 bg-forest/70"></div>
     <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-      <SectionEyebrow text="The Vayda Method" class="text-sage" />
-      <h2 class="font-serif font-bold italic text-4xl md:text-[56px] text-white mb-10 leading-tight">
+      <SectionEyebrow text="The Vayda Method" class="reveal text-sage" />
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-[56px] text-white mb-10 leading-tight">
         True healing begins when the body is treated as a whole.
       </h2>
       <div class="flex flex-col sm:flex-row justify-center gap-8 mb-12">
@@ -80,7 +99,7 @@ import FAQItem from '../components/FAQItem.astro';
       </div>
       <a
         href="/the-vayda-method"
-        class="inline-block border border-white text-white hover:bg-white hover:text-forest font-sans font-medium text-sm tracking-wider px-8 py-4 rounded transition-colors"
+        class="inline-block border border-white text-white hover:bg-white hover:text-forest font-sans font-medium text-sm tracking-wider px-8 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
       >
         Discover the Method →
       </a>
@@ -91,62 +110,62 @@ import FAQItem from '../components/FAQItem.astro';
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-14">
-        <SectionEyebrow text="How We Work" />
-        <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
+        <SectionEyebrow text="How We Work" class="reveal" />
+        <h2 class="reveal font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
           Seven Systems. One Unified Path.
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Pilar 1 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">🌿</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Nutrition & Food</h3>
+        <!-- Pillar 1 -->
+        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><LeafIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Nutrition & Food</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Fuel that works with your biology, not against it</p>
         </div>
-        <!-- Pilar 2 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">💧</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Hydration & Detox</h3>
+        <!-- Pillar 2 -->
+        <div class="reveal reveal-delay-2 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><DropIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Hydration & Detox</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Your body's ability to cleanse and reset</p>
         </div>
-        <!-- Pilar 3 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">🧘</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Movement & Breath</h3>
+        <!-- Pillar 3 -->
+        <div class="reveal reveal-delay-3 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><MovementIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Movement & Breath</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Strength and restoration without depletion</p>
         </div>
-        <!-- Pilar 4 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">😴</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Sleep & Recovery</h3>
+        <!-- Pillar 4 -->
+        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><MoonIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Sleep & Recovery</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The foundation of every system in the body</p>
         </div>
-        <!-- Pilar 5 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">🧠</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Mind & Nervous System</h3>
+        <!-- Pillar 5 -->
+        <div class="reveal reveal-delay-2 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><MindIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Mind & Nervous System</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Stress, resilience, and your mental landscape</p>
         </div>
-        <!-- Pilar 6 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">🔬</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Lab Work & Biomarkers</h3>
+        <!-- Pillar 6 -->
+        <div class="reveal reveal-delay-3 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><LabIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Lab Work & Biomarkers</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Real data to guide real decisions</p>
         </div>
-        <!-- Pilar 7 -->
-        <div class="bg-beige rounded-xl p-6">
-          <div class="text-2xl mb-3">🌍</div>
-          <h3 class="font-sans font-medium text-charcoal mb-2">Environment & Lifestyle</h3>
+        <!-- Pillar 7 -->
+        <div class="reveal reveal-delay-1 bg-beige rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="mb-3"><EarthIcon class="w-6 h-6 text-sage" /></div>
+          <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Environment & Lifestyle</h3>
           <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The hidden forces shaping your health daily</p>
         </div>
         <!-- Card 8 — CTA -->
-        <div class="bg-forest rounded-xl p-6 flex flex-col justify-between gap-6">
+        <div class="reveal reveal-delay-2 bg-forest rounded-xl p-6 flex flex-col justify-between gap-6">
           <p class="font-serif italic text-xl text-white leading-snug">
             Ready to find your root cause?
           </p>
           <a
             href="/quiz"
-            class="inline-block text-center bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-6 py-3 rounded transition-colors"
+            class="inline-block text-center bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-6 py-3 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
           >
             Take the Free Quiz
           </a>
@@ -158,7 +177,7 @@ import FAQItem from '../components/FAQItem.astro';
   <!-- 5. SOCIAL PROOF -->
   <section class="bg-beige py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="font-serif italic text-4xl md:text-h2 text-charcoal mb-14 leading-tight">
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-h2 text-charcoal mb-14 leading-tight">
         What people are saying
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
@@ -166,22 +185,25 @@ import FAQItem from '../components/FAQItem.astro';
           quote="I'd seen five different doctors over two years. In three months with Ramesh, I finally understood what was actually happening in my body. The fog lifted. I feel like myself again."
           name="Sarah M."
           role="Marketing Director, Austin TX"
+          class="reveal reveal-delay-1"
         />
         <TestimonialCard
           quote="The Vayda Method isn't a diet or a wellness trend. It's a completely different way of thinking about health. My energy, sleep, and focus have transformed in ways I didn't think were possible."
           name="Daniel R."
           role="Entrepreneur, Denver CO"
+          class="reveal reveal-delay-2"
         />
         <TestimonialCard
           quote="I was skeptical at first — I'd tried everything. But working through all seven systems together made it click. Ramesh connects dots that no one else bothered to connect."
           name="Priya K."
           role="Yoga Teacher, Asheville NC"
+          class="reveal reveal-delay-3"
         />
       </div>
       <!-- Trust bar -->
       <div class="border-t border-beige/60 pt-10">
         <p class="font-sans text-sm font-medium tracking-widest text-charcoal/60 uppercase">
-          Prama Institute Co-Founder &nbsp;·&nbsp; 20+ Years Teaching &nbsp;·&nbsp; 500+ Students Transformed
+          20+ Years Teaching &nbsp;·&nbsp; 500+ Students Transformed
         </p>
       </div>
     </div>
@@ -192,7 +214,7 @@ import FAQItem from '../components/FAQItem.astro';
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Photo -->
-        <div class="order-1">
+        <div class="order-1 reveal reveal-delay-1">
           <img
             src="/photos/ramesh-founder.jpg"
             alt="Ramesh Roar — founder of Vayda Wellness, The Viking Yogi"
@@ -201,7 +223,7 @@ import FAQItem from '../components/FAQItem.astro';
           />
         </div>
         <!-- Text -->
-        <div class="order-2">
+        <div class="order-2 reveal reveal-delay-2">
           <SectionEyebrow text="Meet Your Guide" />
           <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
             Ramesh Roar — The Viking Yogi
@@ -231,34 +253,40 @@ import FAQItem from '../components/FAQItem.astro';
   <!-- 7. PRICING -->
   <section class="bg-forest py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-white mb-14 leading-tight">
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-h2 text-white mb-14 leading-tight">
         Choose your path to healing
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <PricingCard
-          emoji="🎯"
           title="The Quiz"
-          price="Free"
+          price="Free to start"
           description="Start here. Discover what's driving your imbalance in 5 minutes."
           cta="Take the Quiz"
           href="/quiz"
-        />
+          class="reveal reveal-delay-1"
+        >
+          <QuizIcon class="w-8 h-8 text-sage" />
+        </PricingCard>
         <PricingCard
-          emoji="📚"
           title="Online Programs"
-          price="$297+"
+          price="$$"
           description="Self-paced courses built on the Vayda Method. Learn at your rhythm."
           cta="View Programs"
           href="/programs"
-        />
+          class="reveal reveal-delay-2"
+        >
+          <BookIcon class="w-8 h-8 text-sage" />
+        </PricingCard>
         <PricingCard
-          emoji="🤝"
           title="1:1 Coaching"
-          price="Custom"
+          price="$$$"
           description="Work directly with Ramesh. Personalized protocol. Real results."
           cta="Apply Now"
           href="/contact"
-        />
+          class="reveal reveal-delay-3"
+        >
+          <CoachIcon class="w-8 h-8 text-sage" />
+        </PricingCard>
       </div>
     </div>
   </section>
@@ -266,30 +294,30 @@ import FAQItem from '../components/FAQItem.astro';
   <!-- 8. FAQ -->
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal mb-12 text-center leading-tight">
+      <h2 class="reveal font-serif font-bold text-4xl md:text-h2 text-charcoal mb-12 text-center leading-tight">
         Common questions
       </h2>
       <div class="divide-y divide-beige">
-        <FAQItem
+        <div class="reveal"><FAQItem
           question="Is this functional medicine?"
           answer="No — the Vayda Method is Ramesh's own holistic framework, built from 20+ years at the intersection of Eastern and Western wellness traditions. It is not a medical practice and does not replace professional medical care. It is a complementary system for understanding the root forces shaping your health."
-        />
-        <FAQItem
+        /></div>
+        <div class="reveal reveal-delay-1"><FAQItem
           question="How is this different from seeing a nutritionist or therapist?"
           answer="Traditional practitioners specialize in one domain. A nutritionist addresses food. A therapist addresses the mind. The Vayda Method treats all seven systems simultaneously — because your body doesn't work in silos. Lasting change happens when every system is seen and addressed together."
-        />
-        <FAQItem
+        /></div>
+        <div class="reveal reveal-delay-2"><FAQItem
           question="Do I need to live near Asheville?"
           answer="Not at all. All online programs are available globally and can be completed entirely at your own pace from anywhere in the world. 1:1 coaching sessions are also conducted remotely via video call."
-        />
-        <FAQItem
+        /></div>
+        <div class="reveal reveal-delay-3"><FAQItem
           question="How long does it take to see results?"
           answer="Most people begin noticing meaningful changes within 4–6 weeks of applying the method consistently. The depth and speed of transformation varies by individual, but the process is designed for sustainable, lasting results — not a quick fix."
-        />
-        <FAQItem
+        /></div>
+        <div class="reveal reveal-delay-1"><FAQItem
           question="Is this right for men too?"
           answer="Absolutely. The Vayda Method applies to any person regardless of gender. The seven systems — nutrition, hydration, movement, sleep, mind, lab work, and environment — are universal. Ramesh works with people of all backgrounds and life situations."
-        />
+        /></div>
       </div>
     </div>
   </section>
@@ -299,17 +327,17 @@ import FAQItem from '../components/FAQItem.astro';
     class="relative bg-cover bg-center bg-fixed py-16 md:py-24"
     style="background-image: url('/photos/hero.jpg')"
   >
-    <div class="absolute inset-0 bg-forest/60"></div>
+    <div class="absolute inset-0 bg-forest/75"></div>
     <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-      <h2 class="font-serif font-bold italic text-4xl md:text-[56px] text-white mb-6 leading-tight">
+      <h2 class="reveal font-serif font-bold italic text-4xl md:text-[56px] text-white mb-6 leading-tight">
         Your body is ready to heal. Are you?
       </h2>
-      <p class="font-sans text-body-lg text-white/70 mb-10 max-w-xl mx-auto leading-relaxed">
+      <p class="reveal font-sans text-body-lg text-white/70 mb-10 max-w-xl mx-auto leading-relaxed">
         Take the free 5-minute quiz and discover what's really driving your imbalance.
       </p>
       <a
         href="/quiz"
-        class="inline-block bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-10 py-4 rounded transition-colors"
+        class="inline-block bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-10 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
       >
         Take the Free Quiz Now
       </a>
