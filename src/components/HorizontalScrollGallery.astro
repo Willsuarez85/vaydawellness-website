@@ -1,91 +1,98 @@
 ---
 interface Props {
   title?: string;
-  subtitle?: string;
 }
-
-const { title = 'Life. Movement. Healing.', subtitle = '' } = Astro.props;
+const { title = 'Life. Movement. Healing.' } = Astro.props;
 
 const photos = [
   { src: '/photos/ramesh/yoga-class-group.jpg', alt: 'Yoga class group session' },
-  { src: '/photos/ramesh/ramesh-meditating-studio.jpg', alt: 'Ramesh meditating in studio' },
-  { src: '/photos/ramesh/ramesh-coaching-session.jpg', alt: 'Ramesh one-on-one coaching' },
-  { src: '/photos/ramesh/yoga-class-stretching.jpg', alt: 'Yoga class stretching' },
-  { src: '/photos/ramesh/meditation-close.jpg', alt: 'Deep meditation' },
-  { src: '/photos/ramesh/studio-community.jpg', alt: 'Studio community' },
-  { src: '/photos/ramesh/yoga-tree-pose.jpg', alt: 'Yoga tree pose' },
+  { src: '/photos/ramesh/ramesh-meditating-studio.jpg', alt: 'Ramesh meditating' },
+  { src: '/photos/ramesh/ramesh-coaching-session.jpg', alt: 'Ramesh coaching' },
+  { src: '/photos/ramesh/yoga-class-stretching.jpg', alt: 'Yoga class' },
+  { src: '/photos/ramesh/meditation-close.jpg', alt: 'Meditation' },
+  { src: '/photos/ramesh/studio-community.jpg', alt: 'Community' },
+  { src: '/photos/ramesh/yoga-tree-pose.jpg', alt: 'Yoga practice' },
   { src: '/photos/ramesh/ramesh-portrait-outdoor.jpg', alt: 'Ramesh portrait' },
-  { src: '/photos/ramesh/group-gratitude-circle.jpg', alt: 'Group gratitude circle' },
-  { src: '/photos/ramesh/ramesh-meditating-plants.jpg', alt: 'Ramesh meditating with plants' },
-  { src: '/photos/ramesh/outdoor-group-session.jpg', alt: 'Outdoor group session' },
+  { src: '/photos/ramesh/group-gratitude-circle.jpg', alt: 'Group session' },
+  { src: '/photos/ramesh/ramesh-meditating-plants.jpg', alt: 'Meditation with plants' },
+  { src: '/photos/ramesh/outdoor-group-session.jpg', alt: 'Outdoor group' },
   { src: '/photos/ramesh/ramesh-teaching-class.jpg', alt: 'Ramesh teaching' },
 ];
 ---
 
-<section id="gallery-section" class="relative bg-charcoal" style="height: 400vh">
-  <div class="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-    <div class="mb-8 px-6 text-center">
-      <p class="mb-2 font-sans text-xs uppercase tracking-widest text-cream/40">The Vayda Community</p>
-      <h2 class="font-serif text-3xl font-bold italic text-cream md:text-4xl">{title}</h2>
-      {subtitle && <p class="mx-auto mt-4 max-w-2xl font-sans text-sm leading-relaxed text-cream/60">{subtitle}</p>}
+<section class="bg-forest py-16 md:py-20 overflow-hidden">
+  <div class="max-w-container mx-auto px-6 mb-10 text-center">
+    <p class="font-sans text-xs tracking-widest uppercase text-cream/40 mb-2">The Vayda Community</p>
+    <h2 class="font-serif font-bold italic text-3xl md:text-4xl text-cream">{title}</h2>
+  </div>
+
+  <div class="relative">
+    <div
+      id="gallery-track"
+      class="flex gap-4 px-8 overflow-x-hidden transition-transform duration-500 ease-out"
+      style="width: 100%"
+    >
+      <div id="gallery-inner" class="flex gap-4 transition-transform duration-500 ease-out will-change-transform">
+        {photos.map((photo) => (
+          <div class="flex-shrink-0 w-72 md:w-80 h-56 md:h-64 rounded-xl overflow-hidden">
+            <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+        ))}
+      </div>
     </div>
 
-    <div id="gallery-track" class="flex gap-4 px-8 will-change-transform" style="width: max-content">
-      {photos.map((photo) => (
-        <div class="h-64 w-72 flex-shrink-0 overflow-hidden rounded-xl md:h-80 md:w-96">
-          <img src={photo.src} alt={photo.alt} class="h-full w-full object-cover" loading="lazy" />
-        </div>
-      ))}
-    </div>
+    <button
+      id="gallery-prev"
+      aria-label="Previous photos"
+      class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-forest border border-cream/30 text-cream flex items-center justify-center hover:bg-forest/80 transition-all shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
 
-    <p id="gallery-hint" class="mt-6 text-center font-sans text-xs uppercase tracking-widest text-cream/30 transition-opacity duration-500">
-      Scroll to explore →
-    </p>
+    <button
+      id="gallery-next"
+      aria-label="Next photos"
+      class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-forest border border-cream/30 text-cream flex items-center justify-center hover:bg-forest/80 transition-all shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
 </section>
 
 <script>
-  const initHorizontalGallery = () => {
-    const section = document.getElementById('gallery-section');
-    const track = document.getElementById('gallery-track');
-    const hint = document.getElementById('gallery-hint');
+  const inner = document.getElementById('gallery-inner') as HTMLElement;
+  const prevBtn = document.getElementById('gallery-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('gallery-next') as HTMLButtonElement;
 
-    if (!section || !track || !hint) return;
+  if (inner && prevBtn && nextBtn) {
+    let offset = 0;
+    const STEP = 300;
 
-    let ticking = false;
+    function getMaxOffset() {
+      return -(inner.scrollWidth - window.innerWidth + 64);
+    }
 
-    const updateGallery = () => {
-      const rect = section.getBoundingClientRect();
-      const sectionHeight = section.offsetHeight;
-      const viewportH = window.innerHeight;
-      const scrolled = -rect.top;
-      const scrollable = sectionHeight - viewportH;
-      const progress = Math.max(0, Math.min(1, scrolled / scrollable));
-      const trackWidth = track.scrollWidth;
-      const visibleWidth = window.innerWidth;
-      const maxTranslate = Math.min(0, -(trackWidth - visibleWidth + 64));
-      const translateX = progress * maxTranslate;
+    function update() {
+      inner.style.transform = `translateX(${offset}px)`;
+      prevBtn.disabled = offset >= 0;
+      nextBtn.disabled = offset <= getMaxOffset();
+    }
 
-      track.style.transform = `translateX(${translateX}px)`;
-      hint.style.opacity = progress > 0.02 ? '0' : '1';
-      ticking = false;
-    };
+    prevBtn.addEventListener('click', () => {
+      offset = Math.min(0, offset + STEP);
+      update();
+    });
 
-    const requestUpdate = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateGallery);
-        ticking = true;
-      }
-    };
+    nextBtn.addEventListener('click', () => {
+      offset = Math.max(getMaxOffset(), offset - STEP);
+      update();
+    });
 
-    window.addEventListener('scroll', requestUpdate, { passive: true });
-    window.addEventListener('resize', requestUpdate, { passive: true });
-    updateGallery();
-  };
+    window.addEventListener('resize', () => {
+      offset = Math.max(getMaxOffset(), Math.min(0, offset));
+      update();
+    });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHorizontalGallery, { once: true });
-  } else {
-    initHorizontalGallery();
+    update();
   }
 </script>
