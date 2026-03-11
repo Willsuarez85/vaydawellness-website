@@ -127,7 +127,53 @@ const faqs = [
           </div>
         </div>
 
-        <div class="reveal reveal-delay-3 flex flex-col bg-beige rounded-2xl overflow-hidden border border-beige/60 hover:shadow-lg transition-shadow">
+        <!-- 4-Week Vitality Reset — Full-width featured card -->
+        <div class="reveal reveal-delay-3 md:col-span-2 flex flex-col md:flex-row bg-forest rounded-2xl overflow-hidden shadow-2xl hover:shadow-[0_25px_50px_rgba(45,74,53,0.35)] transition-shadow">
+          <div class="md:w-2/5 h-56 md:h-auto overflow-hidden flex-shrink-0">
+            <img src="/photos/ramesh/ramesh-coaching-session.jpg" alt="The 4-Week Vitality Reset" class="w-full h-full object-cover opacity-60" loading="lazy" />
+          </div>
+          <div class="p-8 md:p-10 flex flex-col flex-1">
+            <div class="mb-5 flex items-center gap-3">
+              <span class="inline-block bg-white/20 text-white font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                Full Transformation · $497
+              </span>
+              <span class="inline-block bg-cream/20 text-cream font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                ★ Most Complete
+              </span>
+            </div>
+            <h2 class="font-serif font-bold italic text-3xl text-white mb-3 leading-tight">
+              The 4-Week Vitality Reset
+            </h2>
+            <p class="font-sans text-sm text-cream/75 leading-relaxed mb-6">
+              Four weeks of guided, live transformation with Ramesh. The complete experience — for those ready to go deeper than a 7-day protocol.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+              {[
+                '4 live group calls with Ramesh (2 hrs each)',
+                'Weekly video lessons — lifetime access',
+                'Daily audio practices (28 sessions)',
+                'Private community for support & accountability',
+                'Private 1:1 consultation with Ramesh ($200 value)',
+              ].map((item) => (
+                <div class="flex items-start gap-2">
+                  <Check size={15} class="text-cream/60 flex-shrink-0 mt-0.5" />
+                  <span class="font-sans text-sm text-cream/80">{item}</span>
+                </div>
+              ))}
+            </div>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-auto">
+              <a
+                href="/4-week-vitality-reset"
+                class="inline-flex items-center justify-center gap-2 bg-cream text-forest hover:bg-white font-sans font-semibold text-sm tracking-wide py-4 px-8 rounded-lg transition-all"
+              >
+                See the Full Program →
+              </a>
+              <p class="font-sans text-xs text-cream/50">30-day money-back guarantee</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-4 flex flex-col bg-beige rounded-2xl overflow-hidden border border-beige/60 hover:shadow-lg transition-shadow">
           <div class="h-48 overflow-hidden">
             <img src="/photos/ramesh-teaching.jpg" alt="Book a session with Ramesh" class="w-full h-full object-cover opacity-75" loading="lazy" />
           </div>
@@ -170,7 +216,7 @@ const faqs = [
           </div>
         </div>
 
-        <div class="reveal reveal-delay-4 flex flex-col bg-charcoal rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="reveal reveal-delay-5 flex flex-col bg-charcoal rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
           <div class="h-48 overflow-hidden">
             <img src="/photos/coaching.jpg" alt="1:1 Health Coaching" class="w-full h-full object-cover opacity-70" loading="lazy" />
           </div>
