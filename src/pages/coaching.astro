@@ -2,6 +2,7 @@
 import SalesLayout from '../layouts/SalesLayout.astro';
 import WistiaVideo from '../components/WistiaVideo.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
 ---
 
 <SalesLayout
@@ -59,6 +60,11 @@ import TestimonialCard from '../components/TestimonialCard.astro';
       <p class="font-sans text-sm text-charcoal/50 text-center mt-4">
         This is the kind of transformation Ramesh's work makes possible.
       </p>
+      <div class="text-center mt-10">
+        <a href="#apply" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl transition-all">
+          Apply to Work With Ramesh →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -68,6 +74,10 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal">
           What's Included
         </h2>
+      </div>
+
+      <div class="max-w-2xl mx-auto mb-12 rounded-2xl overflow-hidden">
+        <img src="/photos/ramesh/ramesh-coaching-session.jpg" alt="Ramesh 1:1 coaching session" class="w-full h-64 object-cover" />
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -107,6 +117,12 @@ import TestimonialCard from '../components/TestimonialCard.astro';
           </ul>
         </div>
       </div>
+
+      <div class="text-center mt-12">
+        <a href="#apply" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 transition-all">
+          Apply Now →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -131,6 +147,9 @@ import TestimonialCard from '../components/TestimonialCard.astro';
           <p class="font-sans text-charcoal/80 leading-relaxed">People interested in eventually helping others through health coaching</p>
         </div>
       </div>
+      <div class="max-w-2xl mx-auto mt-10 rounded-2xl overflow-hidden">
+        <img src="/photos/ramesh/outdoor-group-session.jpg" alt="Vayda community" class="w-full h-48 object-cover" />
+      </div>
     </div>
   </section>
 
@@ -142,19 +161,26 @@ import TestimonialCard from '../components/TestimonialCard.astro';
       <p class="font-sans text-cream/70 leading-relaxed mb-10 max-w-2xl mx-auto">
         Ramesh reviews every application personally. If it's a good fit, you'll hear back within 48 hours to schedule a discovery call.
       </p>
-      <!-- GHL Form Embed — Replace with actual embed code from GoHighLevel -->
+      <div class="mb-10">
+        <a href="#apply" class="inline-flex items-center gap-2 bg-cream text-forest font-sans font-semibold px-10 py-5 rounded-full hover:bg-white hover:shadow-xl transition-all">
+          Start My Application →
+        </a>
+      </div>
       <div class="bg-white/10 rounded-2xl border border-white/20 p-8 text-center text-cream/40 min-h-[300px] flex items-center justify-center">
         <p class="font-sans text-sm">Application form loading… (GHL form embed pending)</p>
       </div>
     </div>
   </section>
 
-  <section class="bg-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
-      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
-        What Clients Are Saying
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+  <section class="bg-charcoal py-16">
+    <div class="max-w-container mx-auto px-6 py-4">
+      <div class="text-center mb-12">
+        <SectionEyebrow text="Client Results" class="text-cream" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-4xl text-cream mt-4">
+          What Clients Are Saying
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <TestimonialCard
           quote="In 6 days, all my neurological pain was gone. I mean, gone."
           name="Jared Navarre"
