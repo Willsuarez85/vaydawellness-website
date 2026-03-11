@@ -1,54 +1,162 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const sections = [
-  {
-    title: 'Information We Collect',
-    body: 'We may collect your name, email address, health assessment responses submitted through the quiz, and payment information processed securely via Stripe.',
-  },
-  {
-    title: 'How We Use Your Information',
-    body: 'We use your information to deliver programs, send relevant content, and improve our services. We do not sell your data.',
-  },
-  {
-    title: 'Third-Party Services',
-    body: 'We use trusted third-party platforms including Stripe for payments, GoHighLevel for CRM and email, Wistia for video delivery, and Vercel for hosting. Each service maintains its own privacy policy.',
-  },
-  {
-    title: 'Cookies',
-    body: 'We use minimal cookies for session management and analytics when GA4 is active.',
-  },
-  {
-    title: 'Your Rights',
-    body: 'You may request access to, correction of, or deletion of your personal data at any time by emailing us.',
-  },
-  {
-    title: 'Contact',
-    body: 'For privacy questions, contact us through the vaydahealth.com contact form or email us directly at [email@vaydahealth.com].',
-  },
-  {
-    title: 'Changes',
-    body: 'We may update this policy from time to time. Please check this page for the latest version.',
-  },
-];
+import SectionEyebrow from '../components/SectionEyebrow.astro';
 ---
 
-<BaseLayout title="Privacy Policy | Vayda Wellness" description="Privacy Policy for Vayda Wellness.">
-  <section class="bg-cream py-24 md:py-32">
-    <div class="mx-auto max-w-3xl px-6">
-      <div class="mb-12 text-center">
-        <h1 class="font-serif text-5xl font-bold italic text-charcoal md:text-[64px]">Privacy Policy</h1>
-        <p class="mt-4 font-sans text-base text-charcoal/60">Last updated: March 2026</p>
-      </div>
+<BaseLayout title="Privacy Policy | Vayda Wellness" description="Privacy Policy for Vayda Wellness." navLight={true}>
+  <section class="bg-forest pt-36 pb-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <SectionEyebrow text="Privacy Policy" class="text-sage/70" />
+      <h1 class="font-serif font-bold italic text-5xl md:text-[64px] text-white leading-tight mb-6">
+        Your privacy matters.
+      </h1>
+      <p class="font-sans text-body-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
+        Last updated: March 2026
+      </p>
+    </div>
+  </section>
 
-      <div class="space-y-10 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-beige md:p-10">
-        {sections.map((section) => (
-          <section>
-            <h2 class="font-serif text-3xl font-bold text-charcoal">{section.title}</h2>
-            <p class="mt-3 font-sans leading-relaxed text-charcoal/75">{section.body}</p>
-          </section>
-        ))}
-      </div>
+  <section class="bg-cream">
+    <div class="max-w-3xl mx-auto px-6 py-16 font-sans text-charcoal/80 leading-relaxed">
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Introduction</h2>
+        <p>
+          At Vayda Wellness, your privacy matters. This policy explains what information we collect, how we use it, and what rights you have. We keep it simple — because you deserve to understand exactly what's happening with your data.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">What We Collect</h2>
+        <p class="mb-4"><em>Information you give us:</em></p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Your name and email when you take the quiz or sign up for a program</li>
+          <li>Your health assessment responses from the quiz (used only to personalize your results and recommendations)</li>
+          <li>Payment information when you purchase a program — processed securely by Stripe. We never store your card details.</li>
+          <li>Messages you send via the contact form</li>
+        </ul>
+        <p class="mt-6 mb-4"><em>Information collected automatically:</em></p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Basic analytics (pages visited, time on site) — when Google Analytics is active</li>
+          <li>No invasive tracking. No selling your data. Ever.</li>
+        </ul>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">How We Use Your Information</h2>
+        <p class="mb-4">We use your information to:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Deliver the program or service you purchased</li>
+          <li>Send you relevant content, updates, and occasional offers from Vayda Wellness (you can unsubscribe anytime)</li>
+          <li>Improve how the website and programs work</li>
+          <li>Respond to your questions</li>
+        </ul>
+        <p class="mt-6">
+          We do not sell, rent, or share your personal information with third parties for their marketing purposes.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Third-Party Services We Use</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse text-left text-sm md:text-base">
+            <thead>
+              <tr class="border-b border-beige">
+                <th class="py-3 pr-4 font-semibold text-charcoal">Service</th>
+                <th class="py-3 pr-4 font-semibold text-charcoal">Purpose</th>
+                <th class="py-3 font-semibold text-charcoal">Their Privacy Policy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-beige/70">
+                <td class="py-3 pr-4">Stripe</td>
+                <td class="py-3 pr-4">Payment processing</td>
+                <td class="py-3"><a href="https://stripe.com/privacy" class="text-forest underline decoration-forest/30 underline-offset-4">stripe.com/privacy</a></td>
+              </tr>
+              <tr class="border-b border-beige/70">
+                <td class="py-3 pr-4">GoHighLevel</td>
+                <td class="py-3 pr-4">CRM &amp; email delivery</td>
+                <td class="py-3"><a href="https://www.gohighlevel.com/privacy-policy" class="text-forest underline decoration-forest/30 underline-offset-4">gohighlevel.com/privacy</a></td>
+              </tr>
+              <tr class="border-b border-beige/70">
+                <td class="py-3 pr-4">Wistia</td>
+                <td class="py-3 pr-4">Video hosting</td>
+                <td class="py-3"><a href="https://wistia.com/privacy" class="text-forest underline decoration-forest/30 underline-offset-4">wistia.com/privacy</a></td>
+              </tr>
+              <tr class="border-b border-beige/70">
+                <td class="py-3 pr-4">Vercel</td>
+                <td class="py-3 pr-4">Website hosting</td>
+                <td class="py-3"><a href="https://vercel.com/legal/privacy-policy" class="text-forest underline decoration-forest/30 underline-offset-4">vercel.com/legal/privacy</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-4">Google Analytics</td>
+                <td class="py-3 pr-4">Anonymous usage analytics</td>
+                <td class="py-3"><a href="https://policies.google.com/privacy" class="text-forest underline decoration-forest/30 underline-offset-4">policies.google.com/privacy</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-6">
+          Each of these services has its own privacy policy governing how they handle data.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Cookies</h2>
+        <p>
+          We use minimal cookies — primarily for session management and analytics. You can disable cookies in your browser settings, though some features may not work as intended.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Your Rights</h2>
+        <p class="mb-4">You have the right to:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Access</strong> the personal information we hold about you</li>
+          <li><strong>Correct</strong> any inaccurate information</li>
+          <li><strong>Delete</strong> your data — just ask and we'll remove it</li>
+          <li><strong>Unsubscribe</strong> from marketing emails at any time (every email has an unsubscribe link)</li>
+        </ul>
+        <p class="mt-6">
+          To exercise any of these rights, contact us through the form at <a href="/contact" class="text-forest underline decoration-forest/30 underline-offset-4">vaydahealth.com/contact</a>.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Children's Privacy</h2>
+        <p>
+          Our programs are intended for adults. We do not knowingly collect information from children under 13.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Changes to This Policy</h2>
+        <p>
+          We may update this policy occasionally. When we do, we'll update the date at the top of this page. Continued use of the website after changes means you accept the updated policy.
+        </p>
+      </section>
+
+      <hr class="border-beige my-8" />
+
+      <section>
+        <h2 class="font-serif font-bold text-2xl text-charcoal mb-4">Questions?</h2>
+        <p>
+          If you have any questions about this privacy policy, reach out at <a href="/contact" class="text-forest underline decoration-forest/30 underline-offset-4">vaydahealth.com/contact</a>. We read every message.
+        </p>
+      </section>
     </div>
   </section>
 </BaseLayout>
