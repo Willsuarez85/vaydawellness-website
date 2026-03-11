@@ -4,7 +4,10 @@ interface Props {
   class?: string;
 }
 const { text, class: className = '' } = Astro.props;
+
+// If a text-color class is passed, don't apply the default text-sage (avoids Tailwind conflict)
+const hasColorClass = className.includes('text-');
 ---
-<p class={`font-sans text-sm font-medium tracking-widest uppercase text-sage mb-4 ${className}`}>
+<p class={`font-sans text-sm font-medium tracking-widest uppercase mb-4 ${hasColorClass ? '' : 'text-sage'} ${className}`}>
   {text}
 </p>
