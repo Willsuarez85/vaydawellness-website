@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+import { Mail, MapPin, Clock } from 'lucide-astro';
+---
+<BaseLayout
+  title="Contact Ramesh Roar | Vayda Wellness"
+  description="Reach out to Ramesh Roar for coaching inquiries, program questions, or to learn more about the Vayda Method. Based in Charlotte, NC."
+>
+
+  <!-- 1. HERO -->
+  <section class="relative bg-forest pt-36 pb-24">
+    <div class="max-w-container mx-auto px-6 text-center">
+      <div class="reveal">
+        <SectionEyebrow text="Get in Touch" class="text-cream/70" />
+        <h1 class="font-serif font-bold italic text-5xl md:text-[72px] text-white leading-tight mb-6">
+          Let's Connect.
+        </h1>
+        <p class="font-sans text-body-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+          Whether you have questions about coaching, want to learn more about the Vayda Method, or simply aren't sure where to start — Ramesh reads every message personally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FORM + CONTACT INFO -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+
+        <!-- LEFT: Contact Form -->
+        <div class="lg:col-span-3 reveal">
+          <SectionEyebrow text="Send a Message" />
+          <h2 class="font-serif font-bold text-3xl md:text-h2 text-charcoal mb-8 leading-tight">
+            What's on your mind?
+          </h2>
+
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block font-sans text-sm font-medium text-charcoal mb-2">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Jane Smith"
+                class="w-full font-sans text-body text-charcoal bg-white border border-beige rounded-xl px-5 py-4 placeholder:text-charcoal/30 focus:outline-none focus:border-forest transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block font-sans text-sm font-medium text-charcoal mb-2">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="jane@example.com"
+                class="w-full font-sans text-body text-charcoal bg-white border border-beige rounded-xl px-5 py-4 placeholder:text-charcoal/30 focus:outline-none focus:border-forest transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block font-sans text-sm font-medium text-charcoal mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Share what's going on — what brings you here, what you've tried, or what you're hoping for."
+                class="w-full font-sans text-body text-charcoal bg-white border border-beige rounded-xl px-5 py-4 placeholder:text-charcoal/30 focus:outline-none focus:border-forest transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="inline-block bg-forest text-cream font-sans font-medium text-sm tracking-wider px-10 py-4 rounded-full hover:bg-charcoal hover:shadow-lg hover:scale-[1.02] transition-all"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT: Contact Info Cards -->
+        <div class="lg:col-span-2 space-y-5 reveal reveal-delay-2">
+          <SectionEyebrow text="Reach Ramesh" />
+          <h2 class="font-serif font-bold text-2xl md:text-3xl text-charcoal mb-6 leading-tight">
+            How to find him.
+          </h2>
+
+          <!-- Email -->
+          <div class="bg-white border border-beige rounded-2xl p-6 flex items-start gap-5">
+            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center text-forest mt-0.5">
+              <Mail size={18} />
+            </span>
+            <div>
+              <p class="font-sans font-semibold text-charcoal text-sm mb-1">Email</p>
+              <a
+                href="mailto:dr.ramesh@vaydawellness.com"
+                class="font-sans text-body text-sage hover:text-forest transition-colors break-all"
+              >
+                dr.ramesh@vaydawellness.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-white border border-beige rounded-2xl p-6 flex items-start gap-5">
+            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center text-forest mt-0.5">
+              <MapPin size={18} />
+            </span>
+            <div>
+              <p class="font-sans font-semibold text-charcoal text-sm mb-1">Location</p>
+              <p class="font-sans text-body text-charcoal/70 leading-relaxed">
+                Charlotte, NC area
+              </p>
+              <p class="font-sans text-sm text-charcoal/50 mt-1">
+                Virtual sessions available worldwide
+              </p>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="bg-white border border-beige rounded-2xl p-6 flex items-start gap-5">
+            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center text-forest mt-0.5">
+              <Clock size={18} />
+            </span>
+            <div>
+              <p class="font-sans font-semibold text-charcoal text-sm mb-1">Response Time</p>
+              <p class="font-sans text-body text-charcoal/70 leading-relaxed">
+                Within 24–48 hours
+              </p>
+              <p class="font-sans text-sm text-charcoal/50 mt-1">
+                Ramesh reads every message personally
+              </p>
+            </div>
+          </div>
+
+          <!-- Quiet note -->
+          <div class="bg-forest/5 border border-forest/15 rounded-2xl p-6">
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed italic">
+              "I don't believe in one-size-fits-all answers. If you reach out, I'll take the time to understand your situation before suggesting a path forward."
+            </p>
+            <p class="font-sans text-sm font-medium text-forest mt-3">— Ramesh Roar</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. NOT READY CTA -->
+  <section class="bg-beige/40 border-t border-beige py-16">
+    <div class="max-w-container mx-auto px-6 text-center reveal">
+      <p class="font-sans text-sm tracking-widest uppercase text-sage mb-4">Not ready to reach out yet?</p>
+      <p class="font-serif font-bold text-3xl md:text-4xl text-charcoal mb-6 leading-tight">
+        Start with the free quiz.
+      </p>
+      <p class="font-sans text-body text-charcoal/60 max-w-md mx-auto mb-8 leading-relaxed">
+        A 3-minute assessment that identifies which of your seven body systems needs the most attention — and gives you a clear starting point.
+      </p>
+      <a
+        href="/quiz"
+        class="inline-block bg-forest text-cream font-sans font-medium text-sm tracking-wider px-10 py-4 rounded-full hover:bg-charcoal hover:shadow-lg hover:scale-[1.02] transition-all"
+      >
+        Take the Free Quiz
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
