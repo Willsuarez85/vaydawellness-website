@@ -1,0 +1,167 @@
+---
+import SalesLayout from '../layouts/SalesLayout.astro';
+import WistiaVideo from '../components/WistiaVideo.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+---
+
+<SalesLayout
+  title="1:1 Health Coaching with Ramesh | Vayda Wellness"
+  description="Apply to work directly with Ramesh in a high-touch 1:1 health coaching program built around your biology, history, and goals."
+>
+  <header class="bg-white border-b border-beige py-4">
+    <div class="max-w-container mx-auto px-6 flex justify-center">
+      <a href="/">
+        <img src="/brand/logo-nav-new.png" alt="Vayda Wellness" class="h-10" />
+      </a>
+    </div>
+  </header>
+
+  <section class="bg-forest text-cream">
+    <div class="max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+      <span class="inline-block bg-cream/20 text-cream border border-cream/30 font-sans text-sm font-medium tracking-widest uppercase rounded-full px-5 py-2 mb-8">
+        Application Only · Limited Spots
+      </span>
+
+      <h1 class="font-serif font-bold italic text-4xl md:text-[56px] leading-tight mb-6 max-w-4xl mx-auto">
+        Work Directly With Ramesh. Transform Your Health From the Inside Out.
+      </h1>
+
+      <p class="font-sans text-lg md:text-xl text-cream/80 leading-relaxed mb-10 max-w-3xl mx-auto">
+        This isn't a course. It's a 1:1 partnership with Ramesh — built around your biology, your history, and your goals. For people who are done with band-aid solutions.
+      </p>
+
+      <a
+        href="#apply"
+        class="inline-flex items-center gap-3 bg-cream text-forest font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-white hover:shadow-xl hover:scale-[1.02] transition-all mb-8"
+      >
+        Apply Now →
+      </a>
+
+      <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+        {['500+ People Helped', '20+ Years Practice', 'Science-Based'].map((stat) => (
+          <span class="font-sans text-xs uppercase tracking-widest text-cream/40">{stat}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-3">
+        Hear From Someone Who's Been Through It
+      </h2>
+      <p class="font-sans text-charcoal/60 mb-10">Watch this 5-minute story.</p>
+      <WistiaVideo videoId="j13djtcnel" title="A client's transformation with the Vayda Method" />
+      <p class="font-sans text-sm text-charcoal/50 text-center mt-4">
+        This is the kind of transformation Ramesh's work makes possible.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-beige">
+    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+      <div class="text-center mb-14">
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal">
+          What's Included
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl border border-beige p-8">
+          <h3 class="font-sans font-semibold text-xs uppercase tracking-widest text-forest/60 mb-6">The Protocol</h3>
+          <ul class="space-y-4">
+            {[
+              'Full root cause assessment (first 2 weeks)',
+              'Lab work review and interpretation',
+              'Custom 12-week healing protocol',
+              'Meal, movement, and sleep optimization',
+              'Fasting protocols tailored to your biology'
+            ].map((item) => (
+              <li class="flex items-start gap-4 font-sans text-charcoal/80 leading-relaxed">
+                <span class="mt-1 text-forest">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-beige p-8">
+          <h3 class="font-sans font-semibold text-xs uppercase tracking-widest text-forest/60 mb-6">The Support</h3>
+          <ul class="space-y-4">
+            {[
+              'Weekly 60-minute 1:1 video sessions',
+              'Between-session messaging support',
+              'Progress tracking and protocol adjustments',
+              'Access to all Vayda Method digital resources',
+              'Session recordings for all calls'
+            ].map((item) => (
+              <li class="flex items-start gap-4 font-sans text-charcoal/80 leading-relaxed">
+                <span class="mt-1 text-forest">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+      <div class="text-center mb-14">
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal">
+          Who This Is For
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-cream rounded-2xl border border-beige p-8 text-center">
+          <div class="text-4xl mb-4">🎯</div>
+          <p class="font-sans text-charcoal/80 leading-relaxed">People with chronic, unresolved health issues who've tried everything</p>
+        </div>
+        <div class="bg-cream rounded-2xl border border-beige p-8 text-center">
+          <div class="text-4xl mb-4">💪</div>
+          <p class="font-sans text-charcoal/80 leading-relaxed">Those ready to commit 12 weeks to a full-body transformation</p>
+        </div>
+        <div class="bg-cream rounded-2xl border border-beige p-8 text-center">
+          <div class="text-4xl mb-4">🌱</div>
+          <p class="font-sans text-charcoal/80 leading-relaxed">People interested in eventually helping others through health coaching</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="bg-forest text-cream">
+    <div class="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-cream mb-4">
+        Apply to Work With Ramesh
+      </h2>
+      <p class="font-sans text-cream/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Ramesh reviews every application personally. If it's a good fit, you'll hear back within 48 hours to schedule a discovery call.
+      </p>
+      <!-- GHL Form Embed — Replace with actual embed code from GoHighLevel -->
+      <div class="bg-white/10 rounded-2xl border border-white/20 p-8 text-center text-cream/40 min-h-[300px] flex items-center justify-center">
+        <p class="font-sans text-sm">Application form loading… (GHL form embed pending)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
+        What Clients Are Saying
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <TestimonialCard
+          quote="In 6 days, all my neurological pain was gone. I mean, gone."
+          name="Jared Navarre"
+          role="Nashville, TN"
+        />
+        <TestimonialCard
+          quote="At 77, I am feeling like I am 45."
+          name="Max Paul Franklin"
+          role="Asheville, NC"
+        />
+      </div>
+    </div>
+  </section>
+</SalesLayout>
