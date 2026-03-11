@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "Do I need to live near Asheville?",
-    answer: "No. While Ramesh is based near Asheville, NC, everything is available remotely. Online programs are self-paced and globally accessible. 1:1 coaching sessions are conducted via video call."
+    answer: "No. While Ramesh is based near Asheville, NC, everything is available remotely. The quiz and digital reset are available globally, and both booking sessions and 1:1 coaching happen via video call."
   },
   {
     question: "How long before I see results?",
@@ -22,10 +22,9 @@ const faqs = [
 ---
 <BaseLayout
   title="Programs — Work With Ramesh | Vayda Wellness"
-  description="From the 7-Day Reset to 1:1 coaching — choose the support that fits where you are right now."
+  description="From the free quiz to the 7-Day Reset, private booking, and 1:1 coaching — choose the support that fits where you are right now."
 >
 
-  <!-- 1. PAGE HERO -->
   <section
     class="relative min-h-[70vh] flex items-center bg-cover bg-center"
     style="background-image: url('/photos/coaching.jpg')"
@@ -37,17 +36,15 @@ const faqs = [
         Choose your path to healing.
       </h1>
       <p class="font-sans text-body-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
-        Whether you're just starting or ready for a full transformation — there's a right entry point for you.
+        Whether you're just starting or ready for a full transformation — there's a right next step for you.
       </p>
     </div>
   </section>
 
-  <!-- 2. PROGRAMS GRID -->
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 
-        <!-- Card 1: Free Quiz -->
         <div class="reveal reveal-delay-1 flex flex-col bg-beige rounded-2xl overflow-hidden border border-beige/60 hover:shadow-lg transition-shadow">
           <div class="h-48 overflow-hidden">
             <img src="/photos/hero.jpg" alt="Discover your root cause" class="w-full h-full object-cover opacity-80" loading="lazy" />
@@ -62,7 +59,7 @@ const faqs = [
               Discover Your Root Cause
             </h2>
             <p class="font-sans text-sm text-charcoal/70 leading-relaxed mb-8">
-              Not sure where to start? The 5-minute quiz maps your symptoms to the Vayda Method systems and tells you exactly where your body needs attention first.
+              Not sure where to start? Take 5 minutes to map which of your body's systems needs attention first — and get a personalized next step.
             </p>
             <ul class="space-y-3 mb-8 flex-1">
               <li class="flex items-center gap-3">
@@ -75,81 +72,119 @@ const faqs = [
               </li>
               <li class="flex items-center gap-3">
                 <Check size={16} class="text-forest flex-shrink-0" />
-                <span class="font-sans text-sm text-charcoal/80">Recommended next step</span>
+                <span class="font-sans text-sm text-charcoal/80">No email required</span>
               </li>
             </ul>
             <a
               href="/quiz"
               class="mt-auto w-full text-center bg-forest text-white hover:bg-forest/90 font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
             >
-              Take the Quiz — Free
-              <ArrowRight size={16} />
+              Take the Free Quiz →
             </a>
           </div>
         </div>
 
-        <!-- Card 2: Online Programs (highlighted) -->
         <div class="reveal reveal-delay-2 flex flex-col bg-forest rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
           <div class="h-48 overflow-hidden">
-            <img src="/photos/ramesh-teaching.jpg" alt="Online programs" class="w-full h-full object-cover opacity-50" loading="lazy" />
+            <img src="/photos/ramesh-teaching.jpg" alt="The 7-Day Reset" class="w-full h-full object-cover opacity-50" loading="lazy" />
           </div>
           <div class="p-8 flex flex-col flex-1">
             <div class="mb-6">
               <span class="inline-block bg-white/20 text-white font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
-                Most Popular · $$
+                Most Popular · $47
               </span>
             </div>
             <h2 class="font-serif font-bold text-2xl text-white mb-4 leading-tight">
-              The Vayda Method Online
+              The 7-Day Reset
             </h2>
             <p class="font-sans text-sm text-cream/75 leading-relaxed mb-8">
-              Self-paced programs built on the complete Vayda Method. Learn the framework, implement the protocol, and start resolving the root cause — on your schedule.
+              A guided 7-day protocol to reset your Sleep, Digestion &amp; Stress — the three systems driving chronic pain and fatigue. Instant digital access.
             </p>
             <ul class="space-y-3 mb-8 flex-1">
               <li class="flex items-center gap-3">
                 <Check size={16} class="text-sage flex-shrink-0" />
-                <span class="font-sans text-sm text-cream/80">Full 7-system curriculum</span>
+                <span class="font-sans text-sm text-cream/80">Sleep optimization guide</span>
               </li>
               <li class="flex items-center gap-3">
                 <Check size={16} class="text-sage flex-shrink-0" />
-                <span class="font-sans text-sm text-cream/80">Meal & movement plans</span>
+                <span class="font-sans text-sm text-cream/80">Digestion reset protocol</span>
               </li>
               <li class="flex items-center gap-3">
                 <Check size={16} class="text-sage flex-shrink-0" />
-                <span class="font-sans text-sm text-cream/80">Guided meditations</span>
+                <span class="font-sans text-sm text-cream/80">Stress &amp; nervous system work</span>
               </li>
               <li class="flex items-center gap-3">
                 <Check size={16} class="text-sage flex-shrink-0" />
-                <span class="font-sans text-sm text-cream/80">Community access</span>
+                <span class="font-sans text-sm text-cream/80">7-day money-back guarantee</span>
               </li>
             </ul>
             <a
-              href="/programs"
+              href="/7-day-reset"
               class="mt-auto w-full text-center bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
             >
-              View Programs
-              <ArrowRight size={16} />
+              Start My Reset — $47 →
             </a>
           </div>
         </div>
 
-        <!-- Card 3: 1:1 Coaching -->
-        <div class="reveal reveal-delay-3 flex flex-col bg-charcoal rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
-          <!-- Photo -->
+        <div class="reveal reveal-delay-3 flex flex-col bg-beige rounded-2xl overflow-hidden border border-beige/60 hover:shadow-lg transition-shadow">
           <div class="h-48 overflow-hidden">
-            <img src="/photos/coaching.jpg" alt="1:1 Coaching with Ramesh" class="w-full h-full object-cover opacity-70" loading="lazy" />
+            <img src="/photos/ramesh-teaching.jpg" alt="Book a session with Ramesh" class="w-full h-full object-cover opacity-75" loading="lazy" />
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="mb-6">
+              <span class="inline-block bg-forest/10 text-forest font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                60 Minutes · 1:1
+              </span>
+            </div>
+            <h2 class="font-serif font-bold text-2xl text-charcoal mb-4 leading-tight">
+              Book a Session with Ramesh
+            </h2>
+            <p class="font-sans text-sm text-charcoal/70 leading-relaxed mb-8">
+              Dealing with a chronic health issue and want a second opinion? Book a private 60-minute session with Ramesh to get clarity on your root cause and a personalized path forward.
+            </p>
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Full intake review</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Root cause mapping</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Personalized protocol outline</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Check size={16} class="text-forest flex-shrink-0" />
+                <span class="font-sans text-sm text-charcoal/80">Recording included</span>
+              </li>
+            </ul>
+            <a
+              href="/booking"
+              class="mt-auto w-full text-center bg-forest text-white hover:bg-forest/90 font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
+            >
+              Book a Session →
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-4 flex flex-col bg-charcoal rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="h-48 overflow-hidden">
+            <img src="/photos/coaching.jpg" alt="1:1 Health Coaching" class="w-full h-full object-cover opacity-70" loading="lazy" />
           </div>
           <div class="p-8 flex flex-col flex-1">
             <div class="mb-6">
               <span class="inline-block bg-white/10 text-cream font-sans text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
-                Premium · $$$
+                Premium · Application Required
               </span>
             </div>
             <h2 class="font-serif font-bold text-2xl text-white mb-4 leading-tight">
-              Private Coaching with Ramesh
+              1:1 Health Coaching
             </h2>
             <p class="font-sans text-sm text-cream/65 leading-relaxed mb-8">
-              The most direct path to transformation. Ramesh reviews your labs, maps your systems, and builds a protocol designed exclusively for your biology.
+              Apply to work directly with Ramesh in a deep transformation program. Built for those ready to make lasting change and eventually help others do the same.
             </p>
             <ul class="space-y-3 mb-8 flex-1">
               <li class="flex items-center gap-3">
@@ -177,8 +212,7 @@ const faqs = [
               href="/coaching"
               class="mt-auto w-full text-center bg-sage text-white hover:bg-sage/80 font-sans font-medium text-sm tracking-wider py-4 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
             >
-              Apply Now
-              <ArrowRight size={16} />
+              Apply Now →
             </a>
           </div>
         </div>
@@ -187,7 +221,6 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 3. TESTIMONIALS -->
   <section
     class="relative bg-cover bg-center py-24"
     style="background-image: url('/photos/meditation-group.jpg')"
@@ -220,7 +253,6 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. FAQ -->
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="reveal font-serif font-bold text-4xl md:text-h2 text-charcoal mb-12 text-center leading-tight">
@@ -236,7 +268,6 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 5. FINAL CTA -->
   <section class="bg-forest py-16 md:py-24">
     <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
       <h2 class="reveal font-serif font-bold italic text-4xl md:text-[56px] text-white mb-8 leading-tight">
