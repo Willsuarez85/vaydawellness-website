@@ -6,45 +6,45 @@ import FAQItem from '../components/FAQItem.astro';
 
 const faqs = [
   {
-    question: 'How long is the session?',
+    question: 'How long is the consultation?',
     answer: "60 minutes via video call. You'll receive a calendar link and Zoom/Google Meet link after booking."
   },
   {
     question: 'Do I need to prepare anything?',
-    answer: 'Fill out the intake form when you book. The more detail you provide, the more value you\'ll get from the session.'
+    answer: 'Fill out the intake form when you book. The more detail you provide, the more value you\'ll get from the consultation.'
   },
   {
-    question: 'What happens after the session?',
+    question: 'What happens after the consultation?',
     answer: "You'll receive a recording within 24 hours. If you want to continue working with Ramesh, he'll recommend the right program for your situation."
   }
 ];
 ---
 
 <BaseLayout
-  title="Book a 60-Minute Session with Ramesh | Vayda Wellness"
+  title="Book a 60-Minute Consultation with Ramesh | Vayda Wellness"
   description="Book a private 60-minute consultation with Ramesh to review your symptoms, identify your root cause, and get a personalized path forward."
 >
   <section
     class="relative min-h-[70vh] flex items-center bg-cover bg-center"
     style="background-image: url('/photos/ramesh/ramesh-coaching-session.jpg')"
   >
-    <div class="absolute inset-0 bg-forest/92"></div>
+    <div class="absolute inset-0 bg-charcoal/85"></div>
     <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-28 text-center">
-      <SectionEyebrow text="Private Session" class="text-cream" />
-      <h1 class="font-serif font-bold italic text-4xl md:text-[56px] leading-tight mb-6 max-w-4xl mx-auto">
-        Book a 60-Minute Session with Ramesh
+      <SectionEyebrow text="Private Consultation" class="text-cream" />
+      <h1 class="font-serif font-bold italic text-4xl md:text-[56px] text-white leading-tight mb-6 max-w-4xl mx-auto">
+        Book a 60-Minute Consultation with Ramesh
       </h1>
-      <p class="font-sans text-lg md:text-xl text-cream/80 leading-relaxed mb-4 max-w-3xl mx-auto">
+      <p class="font-sans text-lg md:text-xl text-white/80 leading-relaxed mb-4 max-w-3xl mx-auto">
         Your Discover Your Root Cause consultation — a private 60-minute video call with Ramesh.
       </p>
-      <p class="font-sans text-lg md:text-xl text-cream/70 leading-relaxed mb-10 max-w-3xl mx-auto">
+      <p class="font-sans text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-3xl mx-auto">
         Chronic pain. Persistent fatigue. Confusing symptoms your doctor can't explain. In 60 minutes, Ramesh will review your case, identify the pattern, and give you a clear path forward.
       </p>
       <a
         href="#booking-form"
         class="inline-flex items-center gap-3 bg-cream text-forest font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-white hover:shadow-xl hover:scale-[1.02] transition-all"
       >
-        Book My Session →
+        Book My Consultation →
       </a>
     </div>
   </section>
@@ -89,7 +89,7 @@ const faqs = [
             'A full review of your symptoms and health history',
             'Root cause identification using the Vayda Method framework',
             'A personalized protocol outline you can start immediately',
-            'Recording of the session sent to you within 24 hours',
+            'Recording of the consultation sent to you within 24 hours',
             'A recommended next step (program, lifestyle change, or further testing)'
           ].map((item) => (
             <li class="flex items-start gap-4 font-sans text-charcoal/80 leading-relaxed">
@@ -102,34 +102,54 @@ const faqs = [
     </div>
   </section>
 
+  <div class="text-center py-10 bg-white">
+    <a href="#booking-form" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl transition-all">
+      Schedule My Consultation →
+    </a>
+  </div>
+
   <section id="booking-form" class="bg-beige py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal mb-4">
-        Schedule Your Session
+        Schedule Your Consultation
       </h2>
       <p class="font-sans text-charcoal/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-        Select a time that works for you. Ramesh personally reviews each intake form before your session.
+        Select a time that works for you. Ramesh personally reviews each intake form before your consultation.
       </p>
-      <!-- GHL Calendar Embed — Replace with actual embed code from GoHighLevel -->
+      <div class="mb-10">
+        <a href="#booking-form" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-8 py-4 rounded-full hover:bg-forest/90 transition-all">
+          Reserve My Consultation →
+        </a>
+      </div>
       <div class="bg-white rounded-2xl border border-beige p-8 text-center text-charcoal/40 min-h-[400px] flex items-center justify-center">
         <p class="font-sans text-sm">Calendar loading… (GHL embed pending)</p>
       </div>
     </div>
   </section>
 
-  <section class="bg-white py-16 md:py-24">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-10">
-        <SectionEyebrow text="Client Result" />
-        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal mt-4">
-          One conversation can change the trajectory.
-        </h2>
+  <section class="bg-charcoal py-16">
+    <div class="max-w-container mx-auto px-6">
+      <div class="text-center mb-12">
+        <SectionEyebrow text="Client Results" class="text-cream" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-4xl text-cream mt-4">Real people. Real results.</h2>
       </div>
-      <TestimonialCard
-        quote="Ramesh and his amazing coaching changed my life. At 77, I am feeling like I am 45."
-        name="Max Paul Franklin"
-        role="Asheville, NC"
-      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <TestimonialCard
+          quote="Ramesh and his amazing coaching changed my life. At 77, I am feeling like I am 45."
+          name="Max Paul Franklin"
+          role="Asheville, NC"
+        />
+        <TestimonialCard
+          quote="In 6 days, all my neurological pain was gone. I mean, gone."
+          name="Jared Navarre"
+          role="Nashville, TN"
+        />
+        <TestimonialCard
+          quote="Six weeks later, I finally feel like myself again."
+          name="Sarah M."
+          role="Charlotte, NC"
+        />
+      </div>
     </div>
   </section>
 
