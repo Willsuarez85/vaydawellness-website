@@ -16,8 +16,12 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     </div>
   </header>
 
-  <section class="bg-forest text-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+  <section
+    class="bg-forest text-cream relative bg-cover bg-center"
+    style="background-image: url('/photos/ramesh/outdoor-group-session.jpg')"
+  >
+    <div class="absolute inset-0 bg-forest/90"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-28 text-center">
       <span class="inline-block bg-cream/20 text-cream border border-cream/30 font-sans text-sm font-medium tracking-widest uppercase rounded-full px-5 py-2 mb-8">
         Application Only · Limited Spots
       </span>
