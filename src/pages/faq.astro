@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+import FAQItem from '../components/FAQItem.astro';
+
+const faqGroups = [
+  {
+    title: 'About Ramesh & The Vayda Method',
+    items: [
+      {
+        question: 'Who is Ramesh Bjonnes?',
+        answer:
+          'He is a globally recognized wellness educator with 20+ years of experience at the intersection of ancient wisdom and modern health science. Co-founder of the Prama Institute, he has helped 500+ people resolve chronic symptoms through his whole-body approach.',
+      },
+      {
+        question: 'What is the Vayda Method?',
+        answer:
+          'The Vayda Method is a 7-system framework for whole-body healing. Instead of treating symptoms in isolation, it addresses Sleep, Digestion, Stress, Movement, Nutrition, Nervous System, and Immunity as an interconnected system.',
+      },
+      {
+        question: 'Is this functional medicine?',
+        answer:
+          'The Vayda Method draws from functional medicine, Ayurveda, yoga science, and modern immunology. It is not a replacement for medical care — it is a complementary approach to finding and addressing root causes.',
+      },
+    ],
+  },
+  {
+    title: 'Programs & Products',
+    items: [
+      {
+        question: 'Where do I start?',
+        answer:
+          'Start with the free quiz at /quiz. It maps your symptoms to the Vayda Method systems in 5 minutes and gives you a personalized next step.',
+      },
+      {
+        question: 'What is the 7-Day Reset?',
+        answer:
+          'The 7-Day Reset is a video-based program you can take from home. It includes a guided 7-day protocol to reset your Sleep, Digestion, and Stress — the three systems most commonly driving chronic pain and fatigue. Instant digital access after purchase.',
+      },
+      {
+        question: 'What is a Booking Session?',
+        answer:
+          'A 60-minute private video call with Ramesh. He reviews your health history, identifies your root cause pattern, and gives you a personalized protocol outline. Think of it as your “Discover Your Root Cause” consultation.',
+      },
+      {
+        question: 'What is the 1:1 Coaching program?',
+        answer:
+          'This is Ramesh\'s flagship program — a 12-week 1:1 partnership where he builds and guides your full healing protocol. It requires an application because spots are limited.',
+      },
+      {
+        question: 'Do you offer refunds?',
+        answer: 'The 7-Day Reset comes with a 7-day money-back guarantee. No questions asked.',
+      },
+    ],
+  },
+  {
+    title: 'Logistics',
+    items: [
+      {
+        question: 'Where are you based?',
+        answer:
+          'Ramesh is based near Asheville, NC. All programs except in-person retreats are fully remote and accessible globally.',
+      },
+      {
+        question: 'How long before I see results?',
+        answer:
+          'Most clients notice meaningful changes within 4–6 weeks. Some experience significant shifts within days. Results depend on starting point, consistency, and which systems need the most attention.',
+      },
+      {
+        question: 'Can I do this alongside my existing medical treatment?',
+        answer:
+          'Yes. The Vayda Method is complementary to, not a replacement for, medical care. Always inform your doctor of any new wellness protocols.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title="FAQ | Vayda Wellness" description="Frequently asked questions about Ramesh, the Vayda Method, and Vayda Wellness programs.">
+  <section class="bg-forest py-24 text-cream md:py-32">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <SectionEyebrow text="Frequently Asked Questions" class="text-cream" />
+      <h1 class="mt-4 font-serif text-5xl font-bold italic leading-tight text-white md:text-[64px]">
+        Everything you need to know.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl font-sans text-lg leading-relaxed text-cream/75">
+        Answers about the Vayda Method, Ramesh’s programs, and how to find the right starting point for your healing journey.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-cream py-16 md:py-24">
+    <div class="mx-auto max-w-4xl space-y-14 px-6">
+      {faqGroups.map((group) => (
+        <section>
+          <h2 class="mb-6 font-serif text-3xl font-bold text-charcoal md:text-4xl">{group.title}</h2>
+          <div class="rounded-2xl border border-beige bg-white px-6 py-2 md:px-8">
+            {group.items.map((faq) => <FAQItem question={faq.question} answer={faq.answer} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-forest py-16 text-cream md:py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="font-serif text-4xl font-bold italic text-white md:text-[48px]">Still have questions?</h2>
+      <p class="mx-auto mt-4 max-w-xl font-sans text-lg leading-relaxed text-cream/75">
+        Reach out directly — Ramesh personally reads every message.
+      </p>
+      <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-full bg-cream px-8 py-4 font-sans text-sm font-medium tracking-wide text-forest transition-all hover:scale-[1.02] hover:bg-white hover:shadow-lg">
+        Contact Us →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
