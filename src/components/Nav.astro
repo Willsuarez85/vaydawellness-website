@@ -1,7 +1,16 @@
 ---
 // Nav.astro
+interface Props {
+  navLight?: boolean;
+}
+
+const { navLight = false } = Astro.props;
 ---
-<nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
+<nav
+  id="nav"
+  data-nav-light={navLight ? 'true' : 'false'}
+  class={`fixed top-0 w-full z-50 transition-all duration-300 ${navLight ? 'bg-cream/95 backdrop-blur-sm shadow-sm' : ''}`}
+>
   <div class="max-w-container mx-auto px-6 flex items-center justify-between h-20">
     <!-- Logo -->
     <a href="/" class="flex items-center group">
@@ -10,19 +19,19 @@
         id="logo-white"
         src="/brand/logo-footer-new.png"
         alt="Vayda"
-        class="h-10 w-auto transition-opacity duration-300"
+        class={`h-10 w-auto transition-opacity duration-300 ${navLight ? 'opacity-0' : ''}`}
       />
       <!-- Dark version: visible on scroll (light bg) -->
       <img
         id="logo-dark"
         src="/brand/logo-nav-new.png"
         alt="Vayda"
-        class="h-10 w-auto absolute opacity-0 transition-opacity duration-300"
+        class={`h-10 w-auto absolute transition-opacity duration-300 ${navLight ? '' : 'opacity-0'}`}
       />
     </a>
 
     <!-- Desktop Links -->
-    <ul id="nav-links" class="hidden md:flex items-center gap-8 text-white font-sans text-sm font-medium tracking-wider">
+    <ul id="nav-links" class={`hidden md:flex items-center gap-8 font-sans text-sm font-medium tracking-wider ${navLight ? 'text-charcoal' : 'text-white'}`}>
       <li><a href="/" class="hover:opacity-70 transition-opacity">Home</a></li>
       <li><a href="/about" class="hover:opacity-70 transition-opacity">About</a></li>
       <li><a href="/the-vayda-method" class="hover:opacity-70 transition-opacity">The Vayda Method</a></li>
@@ -40,7 +49,7 @@
       </a>
 
       <!-- Hamburger (mobile) -->
-      <button id="hamburger" class="md:hidden text-white p-2" aria-label="Menu">
+      <button id="hamburger" class={`md:hidden p-2 ${navLight ? 'text-charcoal' : 'text-white'}`} aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -64,36 +73,47 @@
 <script>
   const nav = document.getElementById('nav');
   const logoWhite = document.getElementById('logo-white');
-  const logoDark  = document.getElementById('logo-dark');
-  const navLinks  = document.getElementById('nav-links');
+  const logoDark = document.getElementById('logo-dark');
+  const navLinks = document.getElementById('nav-links');
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
+  const isNavLight = nav?.dataset.navLight === 'true';
 
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY > 60;
+  const applyNavState = (shouldBeScrolled) => {
+    if (!nav || !logoWhite || !logoDark || !navLinks || !hamburger) return;
 
-    if (scrolled) {
-      nav!.classList.add('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
-      logoWhite!.classList.add('opacity-0');
-      logoDark!.classList.remove('opacity-0');
-      navLinks!.querySelectorAll('a').forEach(a => {
+    if (shouldBeScrolled) {
+      nav.classList.add('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
+      logoWhite.classList.add('opacity-0');
+      logoDark.classList.remove('opacity-0');
+      navLinks.querySelectorAll('a').forEach((a) => {
         a.classList.remove('text-white');
         a.classList.add('text-charcoal');
       });
-      hamburger!.querySelector('svg')!.classList.replace('text-white', 'text-charcoal');
+      hamburger.classList.remove('text-white');
+      hamburger.classList.add('text-charcoal');
     } else {
-      nav!.classList.remove('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
-      logoWhite!.classList.remove('opacity-0');
-      logoDark!.classList.add('opacity-0');
-      navLinks!.querySelectorAll('a').forEach(a => {
+      nav.classList.remove('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
+      logoWhite.classList.remove('opacity-0');
+      logoDark.classList.add('opacity-0');
+      navLinks.querySelectorAll('a').forEach((a) => {
         a.classList.add('text-white');
         a.classList.remove('text-charcoal');
       });
-      hamburger!.querySelector('svg')!.classList.replace('text-charcoal', 'text-white');
+      hamburger.classList.remove('text-charcoal');
+      hamburger.classList.add('text-white');
     }
-  });
+  };
 
-  hamburger!.addEventListener('click', () => {
-    mobileMenu!.classList.toggle('hidden');
+  applyNavState(isNavLight || window.scrollY > 60);
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 60;
+    const shouldBeScrolled = scrolled || isNavLight;
+    applyNavState(shouldBeScrolled);
+  }, { passive: true });
+
+  hamburger?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
   });
 </script>
