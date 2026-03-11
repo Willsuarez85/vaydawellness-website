@@ -8,8 +8,8 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
 ---
 
 <BaseLayout
-  title="Blog — Vayda Wellness"
-  description="Root-cause wellness education. Insights for whole-body healing from Ramesh Bjonnes."
+  title="Wellness Insights — Root-Cause Health | Vayda Blog"
+  description="Articles on fatigue, sleep, digestion, stress, and whole-body healing from Ramesh Bjonnes of Vayda Wellness."
 >
   <!-- Hero -->
   <section class="bg-forest pt-40 pb-20 px-6">
@@ -40,7 +40,18 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
               year: 'numeric', month: 'long', day: 'numeric',
             });
             return (
-              <article class="bg-white rounded-2xl border border-beige p-8 flex flex-col hover:shadow-md transition-shadow duration-300">
+              <article class="bg-white rounded-2xl border border-beige flex flex-col hover:shadow-md transition-shadow duration-300 overflow-hidden">
+                {post.data.image && (
+                  <div class="w-full aspect-[16/9] rounded-t-2xl overflow-hidden">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="p-8 flex flex-col flex-1">
                 {post.data.tags && post.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-2 mb-4">
                     {post.data.tags.map((tag) => (
@@ -62,6 +73,7 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
                   >
                     Read More →
                   </a>
+                </div>
                 </div>
               </article>
             );

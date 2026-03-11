@@ -4,6 +4,7 @@ description: "Lasting wellness doesn't come from supplements or quick fixes. Dis
 pubDate: 2026-03-10
 tags: ["lifestyle medicine", "long-term wellness", "plant-based nutrition", "stress management", "holistic health"]
 author: "Ramesh Bjonnes"
+image: "/blog-images/lifestyle-medicine-header.jpg"
 ---
 
 # Lifestyle as the Foundation of Long-Term Wellness

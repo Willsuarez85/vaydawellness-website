@@ -4,6 +4,7 @@ description: "Taking a different pill for every symptom? Here's why the one-at-a
 pubDate: 2026-03-10
 tags: ["root cause healing", "chronic symptoms", "holistic health", "whole body wellness", "symptom management"]
 author: "Ramesh Bjonnes"
+image: "/blog-images/symptoms-coaching-header.jpg"
 ---
 
 # Why Treating Symptoms One by One Often Does Not Work

@@ -18,8 +18,27 @@ const date = post.data.pubDate.toLocaleDateString('en-US', {
 });
 ---
 
-<BaseLayout title={`${post.data.title} — Vayda Wellness`} description={post.data.description}>
-  <div class="pt-32 pb-24 px-6">
+<BaseLayout
+  title={`${post.data.title} — Vayda Wellness`}
+  description={post.data.description}
+  ogImage={post.data.image}
+  ogType="article"
+>
+  <div class="pb-24">
+
+    <!-- Header Image -->
+    {post.data.image && (
+      <div class="w-full mt-20 aspect-[16/9] overflow-hidden">
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="w-full h-full object-cover"
+          fetchpriority="high"
+        />
+      </div>
+    )}
+
+    <div class={post.data.image ? "pt-10 px-6" : "pt-32 px-6"}>
     <div class="max-w-2xl mx-auto">
 
       <!-- Back link -->
@@ -67,6 +86,7 @@ const date = post.data.pubDate.toLocaleDateString('en-US', {
         </a>
       </div>
 
+    </div>
     </div>
   </div>
 </BaseLayout>

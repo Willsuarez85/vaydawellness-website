@@ -40,7 +40,16 @@ const faqs = [
   }
 ];
 ---
-<BaseLayout>
+<BaseLayout
+  title="Vayda Wellness — Whole-Body Healing for Chronic Pain & Fatigue"
+  description="When doctors say 'normal' but your body says otherwise — Ramesh finds the root cause. Discover which of your 3 vital systems needs attention."
+>
+  <script slot="head" type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vayda Wellness",
+    "url": "https://vaydahealth.com"
+  })}</script>
 
   <!-- 1. HERO -->
   <Hero />
@@ -283,7 +292,8 @@ const faqs = [
         <div class="flex flex-col gap-4">
           <img src="/photos/ramesh-founder.jpg"
             alt="Ramesh Roar"
-            class="rounded-2xl w-full aspect-[3/4] object-cover object-top shadow-xl reveal" />
+            class="rounded-2xl w-full aspect-[3/4] object-cover object-top shadow-xl reveal"
+            loading="lazy" />
         </div>
       </div>
     </div>

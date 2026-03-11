@@ -4,6 +4,7 @@ description: "Struggling with brain fog, constant tiredness, and poor sleep? Lea
 pubDate: 2026-03-10
 tags: ["brain fog", "fatigue", "sleep issues", "chronic symptoms", "whole body healing"]
 author: "Ramesh Bjonnes"
+image: "/blog-images/brain-fog-header.jpg"
 ---
 
 # Brain Fog, Fatigue, and Sleep Issues: Could They Be Connected?

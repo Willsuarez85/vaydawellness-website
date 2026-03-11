@@ -3,13 +3,18 @@ export interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  canonicalUrl?: string;
 }
 
 const {
-  title = 'Vayda Wellness',
-  description = 'True healing begins when the body is treated as a whole.',
-  ogImage = '/photos/hero.jpg',
+  title = 'The 7-Day Reset — $47 | Vayda Wellness',
+  description = 'Reset your Sleep, Digestion & Stress in 7 days. A gentle, science-based protocol designed by Ramesh Bjonnes. 7-day guarantee.',
+  ogImage = '/brand/logo-footer-new.png',
+  canonicalUrl = Astro.url.href,
 } = Astro.props;
+
+const siteUrl = 'https://vaydahealth.com';
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 ---
 <!doctype html>
 <html lang="en">
@@ -17,11 +22,17 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
     <title>{title}</title>
 
     <link rel="icon" type="image/png" href="/brand/02-logo-symbol-dark-transparent.png" />

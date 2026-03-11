@@ -4,6 +4,7 @@ description: "Juice fasting triggers autophagy, reduces inflammation, and suppor
 pubDate: 2026-03-10
 tags: ["juice fasting", "autophagy", "body reset", "fasting science", "detox", "inflammation"]
 author: "Ramesh Bjonnes"
+image: "/blog-images/juice-fasting-header.jpg"
 ---
 
 # How Juice Fasting Can Reset Your Body (According to Science)

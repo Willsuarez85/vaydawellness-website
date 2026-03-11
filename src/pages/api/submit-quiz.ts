@@ -2,17 +2,35 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 
-const GHL_API_KEY = 'pit-32e6d329-713d-4b9f-b971-d1226e459fd1';
+// TODO: Set GHL_API_KEY in Vercel dashboard environment variables
+const GHL_API_KEY = import.meta.env.GHL_API_KEY;
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const corsHeaders = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': 'https://vaydahealth.com',
+};
 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
     const { name, email, totalScore, zone, scores } = body;
 
-    if (!email || !name) {
+    const trimmedName = typeof name === 'string' ? name.trim() : '';
+    const trimmedEmail = typeof email === 'string' ? email.trim().toLowerCase() : '';
+
+    if (!trimmedName || !trimmedEmail) {
       return new Response(JSON.stringify({ error: 'Name and email required' }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' },
+        headers: corsHeaders,
+      });
+    }
+
+    if (!EMAIL_REGEX.test(trimmedEmail)) {
+      return new Response(JSON.stringify({ error: 'Invalid email address' }), {
+        status: 400,
+        headers: corsHeaders,
       });
     }
 
@@ -24,15 +42,15 @@ export const POST: APIRoute = async ({ request }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        firstName: name,
-        email: email,
-        tags: ['quiz-lead', `zone-${zone.toLowerCase()}`],
+        firstName: trimmedName,
+        email: trimmedEmail,
+        tags: ['quiz-lead', `zone-${String(zone).toLowerCase()}`],
         customFields: [
           { key: 'quiz_score', field_value: String(totalScore) },
           { key: 'quiz_zone', field_value: zone },
-          { key: 'sleep_score', field_value: String(scores.sleep) },
-          { key: 'digestion_score', field_value: String(scores.digestion) },
-          { key: 'stress_score', field_value: String(scores.stress) },
+          { key: 'sleep_score', field_value: String(scores?.sleep ?? 0) },
+          { key: 'digestion_score', field_value: String(scores?.digestion ?? 0) },
+          { key: 'stress_score', field_value: String(scores?.stress ?? 0) },
         ],
       }),
     });
@@ -40,13 +58,13 @@ export const POST: APIRoute = async ({ request }) => {
     // GHL returns 200 or 201 on success; if it fails we still show results
     return new Response(JSON.stringify({ ok: true, status: ghlRes.status }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   } catch (err) {
     console.error('submit-quiz error:', err);
-    return new Response(JSON.stringify({ ok: false }), {
+    return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   }
 };
