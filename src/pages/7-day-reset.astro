@@ -181,8 +181,16 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <div class="w-full overflow-hidden" style="height: 300px">
-    <img src="/photos/ramesh/ramesh-meditating-plants.jpg" alt="The healing process" class="w-full h-full object-cover object-center" />
+  <div class="relative w-full overflow-hidden" style="height: 380px">
+    <img src="/photos/ramesh/outdoor-group-session.jpg" alt="Group healing session" class="w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-charcoal/50 flex items-center justify-center">
+      <div class="text-center px-6 max-w-2xl">
+        <p class="font-serif italic text-white text-2xl md:text-3xl leading-relaxed mb-4">
+          "Seven days. That's all your body needs to remember how to heal."
+        </p>
+        <p class="font-sans text-white/70 text-sm tracking-widest uppercase">— Ramesh Roar</p>
+      </div>
+    </div>
   </div>
 
   <section class="bg-cream">
@@ -473,21 +481,35 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
         </div>
 
         <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8 flex items-start gap-5 text-left">
-          <div class="flex-shrink-0 w-14 h-14 rounded-full bg-cream/10 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
+          <div class="flex-shrink-0 w-[70px] h-[70px] rounded-full border-2 border-cream/60 ring-4 ring-cream/20 flex flex-col items-center justify-center text-center gap-0.5">
+            <span class="text-cream font-sans font-bold text-lg leading-none">✓</span>
+            <span class="text-cream font-serif font-bold italic text-sm leading-none">7-Day</span>
+            <span class="text-cream/80 font-sans text-[9px] leading-none tracking-tight">Money Back</span>
           </div>
           <div>
             <h4 class="font-sans font-semibold text-cream mb-2">100% Money-Back Guarantee</h4>
             <p class="font-sans text-sm text-cream/70 leading-relaxed">
-              Try it for 7 days. If you don't feel a difference, email us and we'll refund every penny. No questions asked.
+              Try it for 7 days. If you don't feel a difference, email us and we'll refund every penny. No questions asked. We've never had to honor it — but it's there.
             </p>
           </div>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section class="bg-beige border-t border-beige">
+    <div class="max-w-container mx-auto px-6 py-12 text-center">
+      <p class="font-sans text-sm text-charcoal/50 uppercase tracking-widest mb-3">Ready for the full transformation?</p>
+      <h3 class="font-serif font-bold italic text-2xl md:text-3xl text-charcoal mb-4">
+        The 4-Week Vitality Reset — $497
+      </h3>
+      <p class="font-sans text-charcoal/70 mb-6 max-w-xl mx-auto">
+        4 live group calls with Ramesh, weekly video lessons, daily audio practices, private community, and a personal 1:1 consultation. The complete transformation.
+      </p>
+      <a href="/4-week-vitality-reset" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-8 py-4 rounded-full hover:bg-forest/90 transition-all">
+        See the 4-Week Program →
+      </a>
     </div>
   </section>
 

@@ -179,8 +179,16 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <div class="w-full overflow-hidden" style="height: 300px">
-    <img src="/photos/ramesh/ramesh-meditating-plants.jpg" alt="The transformation process" class="w-full h-full object-cover object-center" />
+  <div class="relative w-full overflow-hidden" style="height: 380px">
+    <img src="/photos/ramesh/ramesh-coaching-session.jpg" alt="Ramesh in a coaching session" class="w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-charcoal/50 flex items-center justify-center">
+      <div class="text-center px-6 max-w-2xl">
+        <p class="font-serif italic text-white text-2xl md:text-3xl leading-relaxed mb-4">
+          "This is where the real transformation happens. Not in a week — but over four weeks of guided, supported work."
+        </p>
+        <p class="font-sans text-white/70 text-sm tracking-widest uppercase">— Ramesh Roar</p>
+      </div>
+    </div>
   </div>
 
   <section class="bg-cream">
@@ -276,6 +284,16 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
         </div>
         <p class="font-sans text-charcoal/50 mb-1 text-sm">Today</p>
         <p class="font-serif font-bold italic text-4xl text-forest">$497</p>
+      </div>
+
+      <div class="bg-forest text-cream rounded-2xl max-w-md mx-auto p-8 text-center mt-10">
+        <p class="font-sans text-xs uppercase tracking-widest text-cream/60 mb-3">Ready to start?</p>
+        <p class="font-serif font-bold italic text-5xl text-cream mb-1">$497</p>
+        <p class="font-sans text-sm text-cream/50 line-through mb-6">$1,041 value</p>
+        <a href="#buy" class="inline-flex items-center justify-center gap-2 bg-cream text-forest font-sans font-semibold px-8 py-4 rounded-full hover:bg-white transition-all w-full">
+          Claim My Spot — $497
+        </a>
+        <p class="font-sans text-xs text-cream/50 mt-4">30-day guarantee · Limited spots · All calls recorded</p>
       </div>
 
     </div>
@@ -485,16 +503,15 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
         </div>
 
         <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8 flex items-start gap-5 text-left">
-          <div class="flex-shrink-0 w-14 h-14 rounded-full bg-cream/10 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
+          <div class="flex-shrink-0 w-[70px] h-[70px] rounded-full border-2 border-cream/60 ring-4 ring-cream/20 flex flex-col items-center justify-center text-center gap-0.5">
+            <span class="text-cream font-sans font-bold text-lg leading-none">✓</span>
+            <span class="text-cream font-serif font-bold italic text-sm leading-none">30-Day</span>
+            <span class="text-cream/80 font-sans text-[9px] leading-none tracking-tight">Money Back</span>
           </div>
           <div>
             <h4 class="font-sans font-semibold text-cream mb-2">30-Day Money-Back Guarantee</h4>
             <p class="font-sans text-sm text-cream/70 leading-relaxed">
-              Complete Week 1. If you don't feel it's right for you, email us within 30 days for a full refund — no questions asked.
+              Complete Week 1. If you don't feel it's right for you, email us within 30 days for a full refund — no questions asked. We've never had to honor it — but it's there.
             </p>
           </div>
         </div>

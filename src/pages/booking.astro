@@ -108,6 +108,44 @@ const faqs = [
     </a>
   </div>
 
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="rounded-2xl overflow-hidden" style="height: 480px">
+          <img
+            src="/photos/ramesh/ramesh-coaching-session.jpg"
+            alt="Ramesh in a one-on-one coaching session"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <SectionEyebrow text="Your Guide" />
+          <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-6">
+            What a Consultation with Ramesh Is Really Like
+          </h2>
+          <div class="space-y-4 font-sans text-charcoal/80 leading-relaxed">
+            <p>Ramesh doesn't give you a generic protocol. He reads your whole picture — symptoms, patterns, history — and identifies the <strong>one thread</strong> that, if pulled, changes everything.</p>
+            <p>In 20+ years co-founding the Prama Institute and working with thousands of clients, he's developed an ability to see what conventional medicine often misses: the compounding pattern underneath chronic symptoms.</p>
+            <p>The 60 minutes you spend with him is often described as the most clarifying health conversation people have ever had.</p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-6">
+            {[
+              { stat: '20+', label: 'Years Experience' },
+              { stat: '500+', label: 'Clients Helped' },
+              { stat: 'Prama', label: 'Institute Co-founder' },
+            ].map((item) => (
+              <div class="text-center">
+                <p class="font-serif font-bold italic text-3xl text-forest">{item.stat}</p>
+                <p class="font-sans text-xs uppercase tracking-widest text-charcoal/50 mt-1">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="booking-form" class="bg-beige py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal mb-4">
@@ -121,6 +159,18 @@ const faqs = [
           Reserve My Consultation →
         </a>
       </div>
+      <div class="grid grid-cols-3 gap-4 mb-10">
+        {[
+          { src: '/photos/ramesh/ramesh-portrait-outdoor.jpg', alt: 'Ramesh outdoors' },
+          { src: '/photos/ramesh/outdoor-group-session.jpg', alt: 'Group wellness session' },
+          { src: '/photos/ramesh/studio-community.jpg', alt: 'Vayda community studio' },
+        ].map((photo) => (
+          <div class="rounded-2xl overflow-hidden" style="height: 200px">
+            <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        ))}
+      </div>
+
       <div class="bg-white rounded-2xl border border-beige p-8 text-center text-charcoal/40 min-h-[400px] flex items-center justify-center">
         <p class="font-sans text-sm">Calendar loading… (GHL embed pending)</p>
       </div>
