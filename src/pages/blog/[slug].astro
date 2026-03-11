@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug ?? post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const date = post.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+---
+
+<BaseLayout title={`${post.data.title} — Vayda Wellness`} description={post.data.description}>
+  <div class="pt-32 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Back link -->
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 font-sans text-sm font-medium text-charcoal/50 hover:text-forest transition-colors mb-10"
+      >
+        ← All Articles
+      </a>
+
+      <!-- Header -->
+      <header class="mb-12">
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-3 mb-4">
+            {post.data.tags.map((tag) => (
+              <span class="font-sans text-xs font-medium tracking-widest uppercase text-sage">{tag}</span>
+            ))}
+          </div>
+        )}
+        <h1 class="font-serif italic font-bold text-h1 text-charcoal leading-tight mb-6">
+          {post.data.title}
+        </h1>
+        <div class="flex items-center gap-4 text-sm text-charcoal/50 font-sans">
+          <span>{post.data.author}</span>
+          <span>·</span>
+          <time>{date}</time>
+        </div>
+      </header>
+
+      <!-- Body -->
+      <article class="blog-body">
+        <Content />
+      </article>
+
+      <!-- CTA -->
+      <div class="mt-16 bg-forest/8 rounded-2xl p-8 border border-forest/20">
+        <p class="font-serif italic text-h3 text-charcoal mb-4 leading-snug">
+          Ready to find out what's driving your symptoms?
+        </p>
+        <a
+          href="/quiz"
+          class="inline-flex items-center gap-2 font-sans text-sm font-medium text-forest hover:underline"
+        >
+          Take the free quiz →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .blog-body h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #2D3436;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    line-height: 1.35;
+  }
+  .blog-body h3 {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #2D3436;
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+    line-height: 1.4;
+  }
+  .blog-body p {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    color: rgba(45, 52, 54, 0.8);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .blog-body strong {
+    color: #2D3436;
+    font-weight: 600;
+  }
+  .blog-body ul,
+  .blog-body ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .blog-body ul {
+    list-style-type: disc;
+  }
+  .blog-body ol {
+    list-style-type: decimal;
+  }
+  .blog-body li {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    color: rgba(45, 52, 54, 0.8);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  .blog-body ul > * + *,
+  .blog-body ol > * + * {
+    margin-top: 0.5rem;
+  }
+  .blog-body a {
+    color: #2D4A35;
+    text-decoration: underline;
+  }
+  .blog-body a:hover {
+    opacity: 0.75;
+  }
+  .blog-body blockquote {
+    border-left: 3px solid #657F66;
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(45, 52, 54, 0.75);
+  }
+  .blog-body hr {
+    border: none;
+    border-top: 1px solid #D7D5C6;
+    margin: 2.5rem 0;
+  }
+</style>
