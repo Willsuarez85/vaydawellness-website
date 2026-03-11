@@ -1,6 +1,7 @@
 ---
 import SalesLayout from '../layouts/SalesLayout.astro';
 import SectionEyebrow from '../components/SectionEyebrow.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 ---
 
 <SalesLayout
@@ -16,7 +17,7 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </header>
 
-  <section class="bg-forest text-cream relative bg-cover bg-center" style="background-image: url('/photos/ramesh/yoga-class-stretching.jpg')">
+  <section class="bg-forest text-cream relative bg-cover bg-center" style="background-image: url('/photos/ramesh/ramesh-teaching-class.jpg')">
     <div class="absolute inset-0 bg-forest/70"></div>
     <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-28 text-center">
 
@@ -180,7 +181,7 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
   </section>
 
   <div class="relative w-full overflow-hidden" style="height: 380px">
-    <img src="/photos/ramesh/ramesh-coaching-session.jpg" alt="Ramesh in a coaching session" class="w-full h-full object-cover object-center" />
+    <img src="/photos/ramesh/outdoor-group-session.jpg" alt="Group transformation session" class="w-full h-full object-cover object-center" />
     <div class="absolute inset-0 bg-charcoal/50 flex items-center justify-center">
       <div class="text-center px-6 max-w-2xl">
         <p class="font-serif italic text-white text-2xl md:text-3xl leading-relaxed mb-4">
@@ -262,31 +263,7 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
         </div>
       </div>
 
-      <div class="max-w-sm mx-auto text-center bg-white rounded-2xl border border-beige p-8">
-        <p class="font-sans text-xs uppercase tracking-widest text-charcoal/40 mb-5">Value Breakdown</p>
-        <div class="space-y-3 text-left mb-6">
-          {[
-            { label: 'Group Calls (4 × $125)', value: '$500' },
-            { label: 'Weekly Video Lessons', value: '$197' },
-            { label: 'Daily Audio Practices', value: '$97' },
-            { label: 'Community Access', value: '$47' },
-            { label: 'Private Consultation', value: '$200' },
-          ].map((row) => (
-            <div class="flex justify-between font-sans text-sm text-charcoal/70">
-              <span>{row.label}</span>
-              <span class="font-medium">{row.value}</span>
-            </div>
-          ))}
-          <div class="border-t border-beige pt-3 flex justify-between font-sans font-semibold text-charcoal">
-            <span>Total Value</span>
-            <span class="line-through text-charcoal/40">$1,041</span>
-          </div>
-        </div>
-        <p class="font-sans text-charcoal/50 mb-1 text-sm">Today</p>
-        <p class="font-serif font-bold italic text-4xl text-forest">$497</p>
-      </div>
-
-      <div class="bg-forest text-cream rounded-2xl max-w-md mx-auto p-8 text-center mt-10">
+      <div class="bg-forest text-cream rounded-2xl max-w-md mx-auto p-8 text-center mt-4">
         <p class="font-sans text-xs uppercase tracking-widest text-cream/60 mb-3">Ready to start?</p>
         <p class="font-serif font-bold italic text-5xl text-cream mb-1">$497</p>
         <p class="font-sans text-sm text-cream/50 line-through mb-6">$1,041 value</p>
@@ -307,56 +284,31 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     <p class="font-sans text-xs text-charcoal/40 mt-3">30-day money-back guarantee · All calls recorded</p>
   </div>
 
-  <section class="bg-white">
+  <section class="bg-charcoal">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
-
-      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
-        What Others Experienced
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            quote: '"I\'d done other programs, but the live calls with Ramesh changed everything. Week 3 was when it clicked — I finally understood what my body had been trying to tell me for years. I feel 15 years younger."',
-            initials: 'PM',
-            name: 'Patricia M.',
-            role: 'Retired Teacher, Age 62',
-          },
-          {
-            quote: '"I did the 7-Day Reset first. Good. This was different. The community, the weekly calls, the structure — I didn\'t feel alone for the first time in a health program. My energy is completely transformed."',
-            initials: 'DR',
-            name: 'David R.',
-            role: 'Business Owner, 54',
-          },
-          {
-            quote: '"I help clients with health every day, so I almost skipped this. But Ramesh\'s depth and the group dynamic gave me breakthroughs I couldn\'t get on my own. I\'ve referred three clients already."',
-            initials: 'AS',
-            name: 'Anita S.',
-            role: 'Health Coach, 49',
-          },
-        ].map((t) => (
-          <div class="bg-cream rounded-2xl p-8 border border-beige flex flex-col">
-            <div class="flex gap-1 mb-5">
-              {[1,2,3,4,5].map(() => (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D4A35">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              ))}
-            </div>
-            <p class="font-serif italic text-charcoal/80 leading-relaxed flex-grow mb-6">{t.quote}</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-forest text-cream font-sans font-semibold text-sm flex items-center justify-center flex-shrink-0">
-                {t.initials}
-              </div>
-              <div>
-                <p class="font-sans font-semibold text-sm text-charcoal">{t.name}</p>
-                <p class="font-sans text-sm text-charcoal/50">{t.role}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div class="text-center mb-14">
+        <SectionEyebrow text="Client Results" class="text-cream" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-cream leading-tight mt-4">
+          Real People. Real Results.
+        </h2>
       </div>
-
+      <div class="grid md:grid-cols-3 gap-8">
+        <TestimonialCard
+          quote="Ramesh and his amazing coaching changed my life. At 77, I am feeling like I am 45. Indeed, people find it hard to believe what I have accomplished. I just put together a 20-year plan that may turn into the most productive time of my life."
+          name="Max Paul Franklin"
+          role="Asheville, NC"
+        />
+        <TestimonialCard
+          quote="For 19 years, I sought answers and relief for multiple neurological conditions. I saw dozens of doctors, acupuncturists, dietitians, surgeons, physical therapists, and many more. Then I found Ramesh and his fasting program. In 6 days, all my neurological pain was gone. I mean, gone."
+          name="Jared Navarre"
+          role="Nashville, TN"
+        />
+        <TestimonialCard
+          quote="I had tried everything — elimination diets, supplements, therapy. Nothing addressed the root. The Vayda Method was the first time someone looked at everything together. Six weeks later, I finally feel like myself again."
+          name="Sarah M."
+          role="Charlotte, NC"
+        />
+      </div>
     </div>
   </section>
 
@@ -367,7 +319,7 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
         <div class="rounded-2xl overflow-hidden">
           <img
             src="/photos/ramesh-founder.jpg"
-            alt="Ramesh Roar, Co-founder Prama Institute"
+            alt="Ramesh Roar, Vayda Wellness"
             class="w-full h-full object-cover"
             loading="lazy"
           />
@@ -385,12 +337,12 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
             <p><strong>And I suffered for over 3 years.</strong></p>
             <p>Doctors gave me antibiotics. Pain management. The usual. Nothing worked.</p>
             <p>Then I discovered <strong>juice fasting</strong>. 5 weeks later, I was symptom-free. I'd lost 50 pounds. And I finally understood what my body had been trying to tell me.</p>
-            <p>Since then, I've helped <strong>thousands of people</strong> through the Prama Institute decode their own signals and reclaim their vitality.</p>
+            <p>Since then, I've helped <strong>thousands of people</strong> decode their own signals and reclaim their vitality.</p>
           </div>
 
           <p class="font-serif italic text-lg text-charcoal mt-8">
             — Ramesh Roar<br />
-            <span class="font-sans text-sm text-charcoal/50 not-italic">Co-founder, Prama Institute · 20+ years</span>
+            <span class="font-sans text-sm text-charcoal/50 not-italic">Wellness Practitioner · 20+ years</span>
           </p>
         </div>
 
