@@ -8,7 +8,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
   description="A gentle 7-day protocol to reset your Sleep, Digestion & Stress — designed by Dr. Vayda. $47 one-time. 7-day guarantee."
 >
 
-  <!-- ===== MINIMAL HEADER ===== -->
   <header class="bg-white border-b border-beige py-4">
     <div class="max-w-container mx-auto px-6 flex justify-center">
       <a href="/">
@@ -17,9 +16,9 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="bg-forest text-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+  <section class="bg-forest text-cream relative bg-cover bg-center" style="background-image: url('/photos/ramesh/yoga-class-stretching.jpg')">
+    <div class="absolute inset-0 bg-forest/88"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-28 text-center">
 
       <span class="inline-block bg-cream/20 text-cream border border-cream/30 font-sans text-sm font-medium tracking-widest uppercase rounded-full px-5 py-2 mb-8">
         Special Offer for Quiz Completers
@@ -59,7 +58,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== VIDEO ===== -->
   <section class="bg-cream">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
       <div class="max-w-3xl mx-auto text-center">
@@ -70,7 +68,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
 
         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-forest/10 border border-beige flex items-center justify-center mb-4">
           <div class="text-center text-charcoal/40">
-            <!-- Wistia embed goes here -->
             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-3">
               <circle cx="12" cy="12" r="10"/>
               <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
@@ -87,7 +84,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== PROBLEM AGITATION ===== -->
   <section class="bg-white">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
       <div class="max-w-2xl mx-auto text-center">
@@ -106,7 +102,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
           ].map((text) => (
             <div class="flex items-start gap-4 bg-cream rounded-2xl p-5 border border-beige">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-beige flex items-center justify-center mt-0.5">
-                <!-- Warning triangle icon -->
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#657F66" stroke-width="2">
                   <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
                   <line x1="12" y1="9" x2="12" y2="13"/>
@@ -129,7 +124,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== TRANSFORMATION ===== -->
   <section class="bg-forest text-cream">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
 
@@ -138,8 +132,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
       </h2>
 
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-
-        <!-- Before column -->
         <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8">
           <h3 class="font-sans font-semibold text-xs uppercase tracking-widest text-cream/40 mb-6">Before</h3>
           <ul class="space-y-4">
@@ -161,7 +153,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
           </ul>
         </div>
 
-        <!-- After column -->
         <div class="bg-cream text-forest rounded-2xl p-8">
           <h3 class="font-sans font-semibold text-xs uppercase tracking-widest text-forest/40 mb-6">After</h3>
           <ul class="space-y-4">
@@ -186,7 +177,10 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== WHAT YOU'LL RECEIVE ===== -->
+  <div class="w-full overflow-hidden" style="height: 300px">
+    <img src="/photos/ramesh/ramesh-meditating-plants.jpg" alt="The healing process" class="w-full h-full object-cover object-center" />
+  </div>
+
   <section class="bg-cream">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
 
@@ -241,7 +235,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
         ))}
       </div>
 
-      <!-- Value bar -->
       <div class="text-center">
         <p class="font-sans text-charcoal/50 text-lg">
           Total value: <span class="line-through">$197</span>
@@ -254,7 +247,14 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
+  <div class="bg-beige py-12 text-center">
+    <p class="font-sans text-sm text-charcoal/60 mb-4 tracking-wide">Ready to reset your body?</p>
+    <a href="#buy" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl transition-all">
+      Start My 7-Day Reset — $47 →
+    </a>
+    <p class="font-sans text-xs text-charcoal/40 mt-3">7-day money-back guarantee · Instant digital access</p>
+  </div>
+
   <section class="bg-white">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
 
@@ -308,7 +308,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== ABOUT RAMESH ===== -->
   <section class="bg-cream">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
       <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -347,7 +346,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
   <section class="bg-white">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
 
@@ -398,7 +396,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== FINAL CTA ===== -->
   <section id="buy" class="bg-forest text-cream">
     <div class="max-w-container mx-auto px-6 py-20 md:py-28">
       <div class="max-w-2xl mx-auto text-center">
@@ -411,7 +408,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
           7 days. Three systems. One protocol. Designed for exactly where you are right now.
         </p>
 
-        <!-- Price block -->
         <div class="mb-8">
           <p class="font-sans text-cream/50 text-lg line-through mb-1">Value: $197</p>
           <p class="font-serif font-bold text-6xl text-cream mb-2">$47</p>
@@ -426,7 +422,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
-        <!-- Trust badges -->
         <div class="flex flex-wrap justify-center gap-6 mb-10 text-cream/60">
           <span class="flex items-center gap-2 font-sans text-sm">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -450,7 +445,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
           </span>
         </div>
 
-        <!-- Guarantee box -->
         <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8 flex items-start gap-5 text-left">
           <div class="flex-shrink-0 w-14 h-14 rounded-full bg-cream/10 flex items-center justify-center">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -470,7 +464,6 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="bg-charcoal text-white/40 py-10">
     <div class="max-w-container mx-auto px-6 text-center space-y-3">
       <img src="/brand/logo-nav-new.png" alt="Vayda Wellness" class="h-8 mx-auto opacity-50 mb-4" />
