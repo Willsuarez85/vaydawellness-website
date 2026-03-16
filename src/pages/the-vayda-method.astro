@@ -1,256 +1,541 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import SalesLayout from '../layouts/SalesLayout.astro';
 import SectionEyebrow from '../components/SectionEyebrow.astro';
-import { Leaf, Droplets, Wind, Moon, Brain, FlaskConical, Mountain } from 'lucide-astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import WistiaVideo from '../components/WistiaVideo.astro';
 ---
-<BaseLayout
-  title="The Vayda Method — Root-Cause Whole-Body Healing | Vayda Wellness"
-  description="A structured approach to chronic pain and fatigue that addresses Sleep, Digestion, and Stress as one interconnected system."
+
+<SalesLayout
+  title="The Vayda Method — 4 Weeks to Feel Like Yourself Again | Vayda Wellness"
+  description="A 4-week guided transformation with Ramesh — body, mind & spirit. Live group coaching, daily practices, private consultation. First cohort May 1. $497."
 >
 
-  <!-- 1. PAGE HERO -->
-  <section
-    class="relative min-h-[70vh] flex items-center bg-cover bg-center"
-    style="background-image: url('/photos/ramesh-teaching.jpg')"
-  >
-    <div class="absolute inset-0 bg-forest/75"></div>
-    <div class="relative z-10 max-w-container mx-auto px-6 pt-32 pb-20 text-center text-white">
-      <SectionEyebrow text="The Framework" class="text-cream" />
-      <h1 class="font-serif font-bold italic text-5xl md:text-[72px] text-white leading-tight mb-6">
-        The Vayda Method
+  <!-- HEADER -->
+  <header class="bg-white border-b border-beige py-4">
+    <div class="max-w-container mx-auto px-6 flex justify-center">
+      <a href="/">
+        <img src="/brand/logo-nav-new.png" alt="Vayda Wellness" class="h-10" />
+      </a>
+    </div>
+  </header>
+
+  <!-- 1. HERO -->
+  <section class="bg-forest text-cream relative bg-cover bg-center" style="background-image: url('/photos/ramesh/ramesh-teaching-class.jpg')">
+    <div class="absolute inset-0 bg-forest/70"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-32 text-center">
+
+      <div class="inline-flex items-center gap-3 bg-cream/15 border border-cream/30 rounded-full px-5 py-2.5 mb-8">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cream/60 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cream"></span>
+        </span>
+        <span class="font-sans text-sm font-medium text-cream tracking-wide">
+          First Cohort: May 1, 2026 · Only 50 Spots
+        </span>
+      </div>
+
+      <h1 class="font-serif font-bold italic text-4xl md:text-[56px] leading-tight mb-6 max-w-3xl mx-auto">
+        Feel Like <span class="underline decoration-cream/30 underline-offset-4">Yourself</span> Again.
       </h1>
-      <p class="font-sans text-body-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
-        A whole-body diagnostic framework built on 20 years of practice. Seven systems. One root cause. One path forward.
+
+      <p class="font-sans text-lg md:text-xl text-cream/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+        <strong class="text-cream">4 weeks of guided transformation</strong> with Ramesh — body, mind, and spirit. Live coaching. Daily practices. A community that heals together.
       </p>
+
+      <a
+        href="#buy"
+        class="inline-flex items-center gap-3 bg-cream text-forest font-sans font-semibold text-base tracking-wide px-10 py-5 rounded-full hover:bg-white hover:shadow-xl hover:scale-[1.02] transition-all mb-6"
+      >
+        Claim My Spot — $497
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <p class="font-sans text-sm text-cream/50 flex items-center justify-center gap-2 mb-10">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        30-Day Money-Back Guarantee · All Calls Recorded
+      </p>
+
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-cream/40">
+        Live Coaching with Ramesh · 4 Weeks · Limited to 50
+      </p>
+
     </div>
   </section>
 
-  <!-- 2. THE CORE IDEA -->
+  <!-- 2. ATTENTION — The deeper problem -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-8 text-center">
+        You've had glimpses of feeling <span class="text-forest">good</span>. But they don't stay.
+      </h2>
+
+      <div class="space-y-5 font-sans text-charcoal/75 text-lg leading-relaxed text-center max-w-2xl mx-auto">
+        <p>
+          Maybe a cleanse helped for a week. Maybe a good night's sleep reminded you what energy used to feel like. But then the <strong class="text-charcoal">old patterns return</strong> — and each time they do, they take a little more of your confidence with them.
+        </p>
+        <p>
+          Quick fixes can start the process. But chronic patterns took <strong class="text-charcoal">years</strong> to build. They need more than a week to fully unwind. They need <strong class="text-charcoal">structure, support, and someone who knows the path</strong>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. INTEREST — What makes this different -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <div class="text-center mb-12">
+        <SectionEyebrow text="Why This Is Different" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mt-4">
+          Not a course. A guided <span class="text-forest">transformation</span>.
+        </h2>
+      </div>
+
+      <div class="space-y-6 max-w-2xl mx-auto">
+        {[
+          {
+            title: "Ramesh beside you — every step",
+            desc: "This isn't a library of videos you watch alone. It's 4 live group calls where Ramesh works with you directly.",
+          },
+          {
+            title: "Body, mind, and spirit — together",
+            desc: "Most programs fix one thing. The Vayda Method addresses the physical, mental, and spiritual dimensions simultaneously. That's where lasting change happens.",
+          },
+          {
+            title: "A community that heals together",
+            desc: "You're not navigating this alone. The private community creates accountability, shared breakthroughs, and the energy that only comes from doing the work alongside others.",
+          },
+          {
+            title: "Your personal roadmap",
+            desc: "A private 45-minute consultation with Ramesh to build a protocol calibrated to your unique biology, history, and goals.",
+          },
+        ].map((item) => (
+          <div class="flex items-start gap-4 py-2">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D4A35" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-charcoal mb-1">{item.title}</h4>
+              <p class="font-sans text-charcoal/65 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. TRANSFORMATION VIDEO -->
+  <section class="bg-charcoal py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center mb-12">
+        <SectionEyebrow text="See What's Possible" class="text-cream" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-cream leading-tight mt-4">
+          This is what <span class="underline decoration-cream/30 underline-offset-4">transformation</span> looks like.
+        </h2>
+        <p class="font-sans text-cream/50 mt-4 max-w-xl mx-auto leading-relaxed">
+          A real client's story — in their own words.
+        </p>
+      </div>
+
+      <WistiaVideo videoId="j13djtcnel" title="Client transformation story" />
+
+    </div>
+  </section>
+
+  <!-- 5. THE 4-WEEK JOURNEY -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center mb-14">
+        <SectionEyebrow text="The Journey" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mt-4">
+          Your 4-Week Transformation
+        </h2>
+        <p class="font-sans text-charcoal/60 mt-4 max-w-xl mx-auto leading-relaxed">
+          Each week builds on the last — a progressive deepening that your body, mind, and spirit can actually integrate.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative max-w-2xl mx-auto">
+        <!-- Vertical line -->
+        <div class="absolute left-[23px] top-0 bottom-0 w-px bg-forest/20 hidden md:block"></div>
+
+        <div class="space-y-10">
+          {[
+            {
+              week: '01',
+              title: 'Foundation & Detox',
+              desc: 'Reset your baseline. Your first live group call with Ramesh. Daily audio practices begin. The private community opens. You start where you are — no perfection required.',
+            },
+            {
+              week: '02',
+              title: 'Deepening',
+              desc: 'Nutrition intensive. Video lesson on the gut-brain connection. You learn why food is medicine and how to use it. Audio practices continue building the rhythm.',
+            },
+            {
+              week: '03',
+              title: 'Integration',
+              desc: 'Advanced practices for mind and nervous system. Third group call with Ramesh. This is where the work goes deeper — building habits that actually stick.',
+            },
+            {
+              week: '04',
+              title: 'Vitality',
+              desc: 'Final group call. Your private 1:1 consultation with Ramesh. Measure your transformation. Build the roadmap for what comes next.',
+            },
+          ].map((wk) => (
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream font-serif font-bold italic text-lg flex items-center justify-center relative z-10">
+                {wk.week}
+              </div>
+              <div class="pt-1">
+                <h4 class="font-sans font-bold text-charcoal text-lg mb-2">{wk.title}</h4>
+                <p class="font-sans text-charcoal/65 leading-relaxed">{wk.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. WHAT'S INCLUDED -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center mb-12">
+        <SectionEyebrow text="Everything Included" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mt-4">
+          More than a program. A complete <span class="text-forest">system</span>.
+        </h2>
+      </div>
+
+      <div class="max-w-2xl mx-auto space-y-5 mb-12">
+        {[
+          { item: '4 Live Group Calls with Ramesh', detail: '2 hrs each — 8 hrs total live coaching', value: '$800' },
+          { item: 'Weekly Video Lessons', detail: 'Lifetime access to all course material', value: '$297' },
+          { item: '28 Daily Audio Practices', detail: 'Guided meditation, breathwork & movement', value: '$140' },
+          { item: 'Private Community Access', detail: 'Accountability, support & shared breakthroughs', value: '$97' },
+          { item: 'Private 1:1 Consultation with Ramesh', detail: '45-minute session — your personal roadmap', value: '$200' },
+        ].map((row) => (
+          <div class="flex items-start justify-between gap-4 py-4 border-b border-beige last:border-0">
+            <div class="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2D4A35" stroke-width="2.5" class="flex-shrink-0 mt-0.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div>
+                <p class="font-sans font-semibold text-charcoal">{row.item}</p>
+                <p class="font-sans text-sm text-charcoal/55">{row.detail}</p>
+              </div>
+            </div>
+            <span class="font-sans text-sm text-charcoal/40 flex-shrink-0">{row.value}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center border-t border-beige pt-8">
+        <p class="font-sans text-charcoal/50 text-lg">
+          Total value: <span class="line-through">$1,534</span>
+        </p>
+        <p class="font-serif font-bold italic text-5xl text-forest mt-1 mb-6">
+          $497
+        </p>
+        <a href="#buy" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl transition-all">
+          Claim My Spot — $497
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="font-sans text-xs text-charcoal/40 mt-3">30-day money-back guarantee · All calls recorded</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK -->
+  <div class="relative w-full overflow-hidden" style="height: 380px">
+    <img src="/photos/ramesh/group-gratitude-circle.jpg" alt="Vayda community practice" class="w-full h-full object-cover object-center" loading="lazy" />
+    <div class="absolute inset-0 bg-charcoal/50 flex items-center justify-center">
+      <div class="text-center px-6 max-w-2xl">
+        <p class="font-serif italic text-white text-2xl md:text-3xl leading-relaxed mb-4">
+          "This is where the real transformation happens. Not alone — but together."
+        </p>
+        <p class="font-sans text-white/70 text-sm tracking-widest uppercase">— Ramesh Roar</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. SOCIAL PROOF -->
+  <section class="bg-charcoal py-20 md:py-28">
+    <div class="max-w-container mx-auto px-6">
+
+      <div class="text-center mb-14">
+        <SectionEyebrow text="Client Results" class="text-cream" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-cream leading-tight mt-4">
+          Real people. Real results.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <TestimonialCard
+          quote="Ramesh and his amazing coaching <strong>changed my life</strong>. At 77, I am <strong>feeling like I am 45</strong>. People find it hard to believe what I have accomplished. I just put together a 20-year plan that may turn into the most productive time of my life."
+          name="Max Paul Franklin"
+          role="Asheville, NC"
+        />
+        <TestimonialCard
+          quote="For 19 years, I sought answers for multiple <strong>neurological conditions</strong>. I saw dozens of doctors, acupuncturists, dietitians, surgeons, physical therapists. Then I found Ramesh. In <strong>6 days, all my neurological pain was gone</strong>. I mean, gone."
+          name="Jared Navarre"
+          role="Nashville, TN"
+        />
+        <TestimonialCard
+          quote="I had tried everything — elimination diets, supplements, therapy. Nothing addressed the root. The Vayda Method was the first time someone <strong>looked at everything together</strong>. Six weeks later, I finally <strong>feel like myself again</strong>."
+          name="Sarah M."
+          role="Charlotte, NC"
+        />
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-8 mt-14 text-cream/50 font-sans text-xs tracking-[0.2em] uppercase">
+        <span>20+ Years Teaching</span>
+        <span class="text-sage">·</span>
+        <span>500+ Students Transformed</span>
+        <span class="text-sage">·</span>
+        <span>Asheville, NC</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. MEET RAMESH -->
   <section class="bg-cream py-16 md:py-24">
     <div class="max-w-container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <!-- Left: text -->
-        <div class="reveal">
-          <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal mb-8 leading-tight">
-            Your symptoms are <span class="text-forest">signals</span>. Not the problem.
-          </h2>
-          <p class="font-sans text-body text-charcoal/80 leading-relaxed mb-4">
-            Pain medication for chronic pain. Thyroid meds for fatigue. Antidepressants for mood. These address the <strong>signals</strong>, not the source.
-          </p>
-          <p class="font-sans text-body text-charcoal/80 leading-relaxed">
-            The Vayda Method starts differently: every symptom is your body communicating an <strong>imbalance</strong> in one or more of its seven core systems. <strong>Find the imbalance. Fix the root. Watch the symptoms resolve.</strong>
-          </p>
-        </div>
-        <!-- Right: photo -->
-        <div class="reveal reveal-delay-2">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <div class="rounded-2xl overflow-hidden">
           <img
-            src="/photos/meditation-group.jpg"
-            alt="Group meditation session"
-            class="rounded-2xl w-full aspect-[4/3] object-cover shadow-xl"
+            src="/photos/ramesh/ramesh-casual-outdoors.jpg"
+            alt="Ramesh Roar"
+            class="w-full aspect-[3/4] object-cover object-top"
             loading="lazy"
           />
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 3. THE 7 SYSTEMS -->
-  <section class="bg-beige py-16 md:py-24">
-    <div class="max-w-container mx-auto px-6">
-      <div class="text-center mb-14 reveal">
-        <SectionEyebrow text="The Seven Systems" />
-        <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
-          Where the Vayda Method begins.
-        </h2>
-      </div>
+        <div>
+          <SectionEyebrow text="Meet Your Guide" />
+          <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-8">
+            Why I Created This
+          </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-5 font-sans text-charcoal/80 leading-relaxed">
+            <p>In 2004, I was diagnosed with <strong>chronic prostatitis</strong>.</p>
+            <p>I'd been a vegetarian for 30 years. Ate organic. Practiced yoga daily. Did everything "right."</p>
+            <p><strong>And I suffered for over 3 years.</strong></p>
+            <p>Doctors gave me antibiotics. Pain management. The usual. Nothing worked — because nothing addressed the <strong>root cause</strong>.</p>
+            <p>Then I discovered <strong>juice fasting</strong>. 5 weeks later, I was symptom-free. I'd lost 50 pounds. And I finally understood what my body had been trying to tell me for years.</p>
+            <p>The Vayda Method is what I wish I'd had — <strong>a complete system</strong> for body, mind, and spirit that doesn't just manage symptoms, but resolves them. I've spent 20 years refining it. And now I'm offering it to you.</p>
+          </div>
 
-        <!-- System 1 -->
-        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <Leaf size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 01</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Nutrition & Food</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The quality, timing, and composition of what you eat shapes every downstream system. The Vayda Method personalizes nutrition to your biology — not a generic plan.</p>
-          </div>
-        </div>
-
-        <!-- System 2 -->
-        <div class="reveal reveal-delay-2 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <Droplets size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 02</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Hydration & Detox</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Chronic dehydration is invisible and widespread. Proper hydration enables cellular function, toxin elimination, and cognitive clarity. Most people never reach optimal levels.</p>
-          </div>
-        </div>
-
-        <!-- System 3 -->
-        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <Wind size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 03</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Movement & Breath</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Movement isn't just exercise. The right combination of strength, mobility, and breathwork activates healing pathways that no supplement can replicate.</p>
-          </div>
-        </div>
-
-        <!-- System 4 -->
-        <div class="reveal reveal-delay-2 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <Moon size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 04</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Sleep & Recovery</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Sleep is where every other system consolidates its gains. Without deep, restorative sleep, no protocol will hold. It's not optional — it's foundational.</p>
-          </div>
-        </div>
-
-        <!-- System 5 -->
-        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <Brain size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 05</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Mind & Nervous System</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">A chronically activated nervous system suppresses healing. Meditation, mindset work, and stress regulation aren't soft — they're physiologically essential.</p>
-          </div>
-        </div>
-
-        <!-- System 6 -->
-        <div class="reveal reveal-delay-2 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <FlaskConical size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 06</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Lab Work & Biomarkers</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Intuition is valuable. Data is irreplaceable. Biomarker analysis reveals what symptoms often hide — hormonal patterns, inflammatory markers, micronutrient deficiencies.</p>
-          </div>
-        </div>
-
-        <!-- System 7 — full width -->
-        <div class="reveal reveal-delay-1 bg-cream rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow md:col-span-2">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center">
-            <Mountain size={22} />
-          </div>
-          <div>
-            <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-1">System 07</p>
-            <h3 class="font-sans font-bold text-lg text-charcoal mb-2">Environment & Lifestyle</h3>
-            <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Where you live, how you work, what you're exposed to — these forces shape your biology daily. Environmental toxins, EMF, light cycles, and social connection are all active inputs in your health equation.</p>
-          </div>
+          <p class="font-serif italic text-lg text-charcoal mt-8">
+            — Ramesh Roar<br />
+            <span class="font-sans text-sm text-charcoal/50 not-italic">Wellness Practitioner · 20+ years · 500+ lives changed</span>
+          </p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS — 3 STEPS -->
-  <section class="bg-forest py-16 md:py-24">
+  <!-- 9. PRICING + CTA -->
+  <section id="buy" class="bg-forest text-cream py-20 md:py-28">
     <div class="max-w-container mx-auto px-6">
-      <div class="text-center mb-14 reveal">
-        <SectionEyebrow text="The Process" class="text-cream" />
-        <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-cream leading-tight">
-          From first conversation to full protocol.
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Step 1 -->
-        <div class="reveal reveal-delay-1 text-center relative">
-          <div class="relative z-10">
-            <div class="w-16 h-16 rounded-full border-2 border-white/60 text-white font-serif font-bold text-3xl flex items-center justify-center mx-auto mb-6">1</div>
-            <h3 class="font-sans font-bold text-xl text-white mb-4">Root Cause Assessment</h3>
-            <p class="font-sans text-sm text-cream/85 leading-relaxed">We map all seven systems to identify where your health chain is breaking down.</p>
-          </div>
-        </div>
-        <!-- Step 2 -->
-        <div class="reveal reveal-delay-2 text-center relative">
-          <div class="relative z-10">
-            <div class="w-16 h-16 rounded-full border-2 border-white/60 text-white font-serif font-bold text-3xl flex items-center justify-center mx-auto mb-6">2</div>
-            <h3 class="font-sans font-bold text-xl text-white mb-4">Personalized Protocol</h3>
-            <p class="font-sans text-sm text-cream/85 leading-relaxed">You receive a unified plan — not a generic program. Every element calibrated to your biology.</p>
-          </div>
-        </div>
-        <!-- Step 3 -->
-        <div class="reveal reveal-delay-3 text-center relative">
-          <div class="relative z-10">
-            <div class="w-16 h-16 rounded-full border-2 border-white/60 text-white font-serif font-bold text-3xl flex items-center justify-center mx-auto mb-6">3</div>
-            <h3 class="font-sans font-bold text-xl text-white mb-4">Guided Implementation</h3>
-            <p class="font-sans text-sm text-cream/85 leading-relaxed">You're not left to figure it out alone. Ramesh guides the entire process.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="max-w-2xl mx-auto text-center">
 
-  <!-- 5. SCIENCE BACKING -->
-  <section class="bg-cream py-16 md:py-24">
-    <div class="max-w-container mx-auto px-6">
-      <div class="text-center mb-12 reveal">
-        <h2 class="font-serif font-bold text-4xl md:text-h2 text-charcoal leading-tight">
-          Grounded in evidence.
+        <div class="inline-flex items-center gap-2 bg-cream/15 border border-cream/30 rounded-full px-4 py-2 mb-8">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cream/60 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cream"></span>
+          </span>
+          <span class="font-sans text-xs font-medium text-cream tracking-wide">
+            May 1 Cohort · Limited Spots Remaining
+          </span>
+        </div>
+
+        <h2 class="font-serif font-bold italic text-4xl md:text-[52px] leading-tight mb-6">
+          Your Transformation Starts Here
         </h2>
-        <p class="font-sans text-body text-charcoal/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-          The Vayda Method isn't alternative medicine. It draws from peer-reviewed research, functional medicine, and 20+ years of practice and direct coaching experience.
+
+        <p class="font-sans text-cream/70 mb-12 max-w-lg mx-auto leading-relaxed">
+          4 weeks. Live coaching. Daily practices. A complete system for body, mind, and spirit — with Ramesh guiding you every step.
         </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Reference 1 -->
-        <div class="reveal reveal-delay-1 bg-beige rounded-2xl p-8 border border-beige/60">
-          <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-4">Immunology</p>
-          <h3 class="font-sans font-bold text-lg text-charcoal mb-3">Dr. Valter Longo</h3>
-          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Peer-reviewed research demonstrating that targeted fasting protocols (72h) trigger a measurable reset of the immune system — clearing damaged cells and regenerating new ones.</p>
+
+        <div class="mb-8">
+          <p class="font-sans text-cream/50 text-lg line-through mb-1">Value: $1,534</p>
+          <p class="font-serif font-bold text-6xl text-cream mb-2">$497</p>
+          <p class="font-sans text-sm text-cream/50 uppercase tracking-widest">One-time · All Calls Recorded · Lifetime Access</p>
         </div>
-        <!-- Reference 2 -->
-        <div class="reveal reveal-delay-2 bg-beige rounded-2xl p-8 border border-beige/60">
-          <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-4">Nutrition</p>
-          <h3 class="font-sans font-bold text-lg text-charcoal mb-3">Dr. Michael Pollan</h3>
-          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">The plant-based whole food framework: "Eat food. Not too much. Mostly plants." A simple principle backed by decades of epidemiological evidence linking diet quality to long-term health outcomes.</p>
+
+        <a
+          href="https://buy.stripe.com/PLACEHOLDER"
+          class="inline-flex items-center justify-center gap-3 bg-cream text-forest font-sans font-semibold text-lg tracking-wide px-12 py-5 rounded-full hover:bg-white hover:shadow-2xl hover:scale-[1.02] transition-all mb-8 w-full sm:w-auto"
+        >
+          Join the May Cohort — $497
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <div class="flex flex-wrap justify-center gap-6 mb-10 text-cream/60">
+          <span class="flex items-center gap-2 font-sans text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            30-Day Money-Back Guarantee
+          </span>
+          <span class="flex items-center gap-2 font-sans text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.87v6.26a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H3z"/>
+            </svg>
+            All Calls Recorded
+          </span>
+          <span class="flex items-center gap-2 font-sans text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Limited to 50
+          </span>
+          <span class="flex items-center gap-2 font-sans text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+            1:1 Consultation Included
+          </span>
         </div>
-        <!-- Reference 3 -->
-        <div class="reveal reveal-delay-3 bg-beige rounded-2xl p-8 border border-beige/60">
-          <p class="font-sans text-xs font-bold tracking-widest uppercase text-sage mb-4">Nervous System</p>
-          <h3 class="font-sans font-bold text-lg text-charcoal mb-3">HRV Research</h3>
-          <p class="font-sans text-sm text-charcoal/70 leading-relaxed">Modern heart rate variability research confirms what Eastern traditions understood for centuries: nervous system regulation is a trainable skill with direct, measurable effects on recovery and resilience.</p>
+
+        <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8 flex items-start gap-5 text-left">
+          <div class="flex-shrink-0 w-14 h-14 rounded-full bg-cream/20 flex items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF9F2" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-sans font-semibold text-cream mb-2">30-Day Money-Back Guarantee</h4>
+            <p class="font-sans text-sm text-cream/70 leading-relaxed">
+              Complete Week 1. If you don't feel it's right for you, email us within 30 days for a full refund — no questions asked.
+            </p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 6. CTA -->
-  <section
-    class="relative bg-cover bg-center bg-fixed py-16 md:py-24"
-    style="background-image: url('/photos/hero.jpg')"
-  >
-    <div class="absolute inset-0 bg-charcoal/80"></div>
-    <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-      <h2 class="reveal font-serif font-bold italic text-4xl md:text-[56px] text-white mb-10 leading-tight">
-        Ready to discover your <span class="underline decoration-cream/30 underline-offset-4">root cause</span>?
+  <!-- 10. FAQs -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
+        Common Questions
       </h2>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="/quiz"
-          class="inline-block bg-white text-forest hover:bg-cream font-sans font-medium text-sm tracking-wider px-8 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
-        >
-          Discover What's Draining Your Energy
-        </a>
-        <a
-          href="/programs"
-          class="inline-block border border-white text-white hover:bg-white hover:text-forest font-sans font-medium text-sm tracking-wider px-8 py-4 rounded hover:shadow-lg hover:scale-[1.02] transition-all"
-        >
-          View Programs
-        </a>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        {[
+          {
+            q: 'How does the live call schedule work?',
+            a: 'Calls are weekly, scheduled at program start. Each call is 2 hours with Ramesh and the full cohort. All calls are recorded for those who can\'t attend live.',
+          },
+          {
+            q: 'What if I miss a live call?',
+            a: 'All calls are recorded and available within 24 hours. You\'ll never miss the content — though live attendance creates the most impact.',
+          },
+          {
+            q: 'Do I need to do the 7-Day Reset first?',
+            a: 'No — The Vayda Method is a complete experience on its own. The 7-Day Reset is a great intro, but it\'s not required. Many participants come in without having done it first.',
+          },
+          {
+            q: 'What if I\'m currently seeing a doctor or taking medication?',
+            a: 'The Vayda Method complements medical care — it doesn\'t replace it. Always consult your healthcare provider. Many participants work with their doctors alongside the program.',
+          },
+          {
+            q: 'What\'s the refund policy?',
+            a: '30-day money-back guarantee. If you complete Week 1 and don\'t feel it\'s right for you, email us for a full refund — no questions asked.',
+          },
+          {
+            q: 'How is this different from 1:1 coaching with Ramesh?',
+            a: 'The group format creates a powerful shared energy that 1:1 doesn\'t have — the community, the shared breakthroughs, the accountability. Plus, the private consultation is included, so you get both.',
+          },
+          {
+            q: 'When does the May cohort start?',
+            a: 'May 1, 2026. You\'ll receive onboarding materials and community access one week before launch. Spots are limited to 50 participants per cohort.',
+          },
+        ].map((faq) => (
+          <details class="group border border-beige rounded-2xl bg-white overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-sans font-semibold text-charcoal pr-4">{faq.q}</span>
+              <svg
+                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="flex-shrink-0 text-charcoal/40 transition-transform duration-200 group-open:rotate-180"
+              >
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="font-sans text-charcoal/70 leading-relaxed">{faq.a}</p>
+            </div>
+          </details>
+        ))}
       </div>
+
     </div>
   </section>
 
-</BaseLayout>
+  <!-- 11. FINAL CTA -->
+  <section
+    class="relative bg-cover bg-center py-20 md:py-28"
+    style="background-image: url('/photos/ramesh/ramesh-teaching-class.jpg')"
+  >
+    <div class="absolute inset-0 bg-forest/80"></div>
+    <div class="relative z-10 text-center text-cream max-w-3xl mx-auto px-6">
+
+      <p class="font-sans text-xs text-cream/50 uppercase tracking-[0.2em] mb-6">
+        First Cohort · May 1, 2026 · 50 Spots Only
+      </p>
+
+      <h2 class="font-serif font-bold italic text-4xl md:text-[52px] text-cream leading-tight mb-6">
+        Your body is ready. Are you?
+      </h2>
+
+      <p class="font-sans text-cream/65 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
+        4 weeks from now, you could feel like yourself again. The only question is whether you'll start.
+      </p>
+
+      <a
+        href="https://buy.stripe.com/PLACEHOLDER"
+        class="inline-flex items-center justify-center gap-3 bg-cream text-forest font-sans font-semibold text-lg tracking-wide px-12 py-5 rounded-full hover:bg-white hover:shadow-2xl hover:scale-[1.02] transition-all mb-4"
+      >
+        Claim My Spot — $497
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <p class="font-sans text-sm text-cream/50">
+        30-day guarantee · All calls recorded · Limited spots
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-charcoal text-white/40 py-10">
+    <div class="max-w-container mx-auto px-6 text-center space-y-3">
+      <img src="/brand/logo-footer-new.png" alt="Vayda Wellness" class="h-8 mx-auto mb-4" />
+      <p class="font-sans text-sm">&copy; 2026 Vayda Wellness Center. All rights reserved.</p>
+      <p class="font-sans text-xs leading-relaxed max-w-xl mx-auto">
+        This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before starting any new wellness program.
+      </p>
+    </div>
+  </footer>
+
+</SalesLayout>

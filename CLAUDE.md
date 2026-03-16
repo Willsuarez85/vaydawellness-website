@@ -35,16 +35,16 @@ Font size scale (tailwind config):
 - Testimonials must use ONLY: Max Paul Franklin, Jared Navarre, Sarah M.
 - Never repeat the same photo on multiple pages
 - Font contrast: always use Cormorant+Inter together — never one without the other
-- SalesLayout pages (7-day-reset, 4-week-vitality-reset) have their own header/footer
+- SalesLayout pages (7-day-reset, the-vayda-method) have their own header/footer
 
 ## Pages Live (14 total)
 - / (homepage with gallery, quiz CTA, testimonials)
 - /quiz
 - /about
-- /the-vayda-method
-- /programs (4 cards: Quiz, 7-Day Reset, 4-Week Reset, Coaching)
+- /programs (4 cards: Quiz, 7-Day Reset, The Vayda Method, Coaching)
 - /7-day-reset (SalesLayout — $47)
-- /4-week-vitality-reset (SalesLayout — $497)
+- /the-vayda-method (SalesLayout — $497, replaces /4-week-vitality-reset)
+- /4-week-vitality-reset (redirects to /the-vayda-method)
 - /booking ($147 — 1:1 session with Ramesh)
 - /coaching (private coaching program)
 - /blog (Astro content collections)

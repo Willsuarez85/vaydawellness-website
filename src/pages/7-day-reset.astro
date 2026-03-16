@@ -2,13 +2,15 @@
 import SalesLayout from '../layouts/SalesLayout.astro';
 import SectionEyebrow from '../components/SectionEyebrow.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
+import WistiaVideo from '../components/WistiaVideo.astro';
 ---
 
 <SalesLayout
-  title="The 7-Day Reset — Reclaim Your Energy, Sleep & Digestion | Vayda Wellness"
-  description="A gentle 7-day protocol to reset your Sleep, Digestion & Stress — designed by Dr. Vayda. $47 one-time. 7-day guarantee."
+  title="The 7-Day Reset — Your Body Knows How to Heal | Vayda Wellness"
+  description="A 7-day protocol targeting Sleep, Digestion & Stress — the three systems driving your chronic pain and fatigue. $47 one-time. 7-day guarantee."
 >
 
+  <!-- HEADER -->
   <header class="bg-white border-b border-beige py-4">
     <div class="max-w-container mx-auto px-6 flex justify-center">
       <a href="/">
@@ -17,24 +19,21 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     </div>
   </header>
 
+  <!-- 1. HERO -->
   <section class="bg-forest text-cream relative bg-cover bg-center" style="background-image: url('/photos/ramesh/yoga-class-stretching.jpg')">
-    <div class="absolute inset-0 bg-forest/65"></div>
-    <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+    <div class="absolute inset-0 bg-forest/70"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 py-20 md:py-32 text-center">
 
-      <span class="inline-block bg-cream/20 text-cream border border-cream/30 font-sans text-sm font-medium tracking-widest uppercase rounded-full px-5 py-2 mb-8">
-        Special Offer for Quiz Completers
-      </span>
-
-      <h1 class="font-serif font-bold italic text-4xl md:text-[56px] leading-tight mb-6 max-w-3xl mx-auto">
-        Your Body Already Knows How to Heal. It Just Needs a Reset.
-      </h1>
-
-      <p class="font-sans text-sm text-cream/60 tracking-wide mb-4">
-        A video-based program — watch at your own pace, from home.
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-cream/50 mb-8">
+        500+ People Helped · 20+ Years Practice · Science-Based
       </p>
 
+      <h1 class="font-serif font-bold italic text-4xl md:text-[56px] leading-tight mb-6 max-w-3xl mx-auto">
+        Your Body Already Knows How to <span class="underline decoration-cream/30 underline-offset-4">Heal</span>. It Just Needs a Reset.
+      </h1>
+
       <p class="font-sans text-lg md:text-xl text-cream/80 leading-relaxed mb-10 max-w-2xl mx-auto">
-        A 7-day protocol that addresses Sleep, Digestion &amp; Stress — the three systems driving your chronic pain and fatigue.
+        A <strong class="text-cream">7-day protocol</strong> that targets <strong class="text-cream">Sleep, Digestion & Stress</strong> — the three systems driving your chronic pain and fatigue. Video-based. Self-paced. From home.
       </p>
 
       <a
@@ -45,92 +44,168 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <p class="font-sans text-sm text-cream/60 flex items-center justify-center gap-2 mb-10">
+      <p class="font-sans text-sm text-cream/50 flex items-center justify-center gap-2">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         7-Day Money-Back Guarantee · Instant Digital Access
       </p>
 
-      <div class="flex flex-wrap justify-center gap-6 md:gap-10">
-        {['500+ People Helped', '20+ Years Practice', 'Science-Based'].map((stat) => (
-          <span class="font-sans text-xs uppercase tracking-widest text-cream/40">{stat}</span>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEM — You've tried everything -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-8 text-center">
+        You've tried everything. And yet something still <span class="text-forest">feels off</span>.
+      </h2>
+
+      <div class="space-y-5 font-sans text-charcoal/75 text-lg leading-relaxed text-center max-w-2xl mx-auto">
+        <p>
+          You eat well. You exercise. Your labs came back "normal." But you're still <strong class="text-charcoal">exhausted</strong>, <strong class="text-charcoal">foggy</strong>, and not feeling like yourself.
+        </p>
+        <p>
+          You've Googled more supplements, tried elimination diets, booked appointments with specialists. Each one treats a single symptom — <strong class="text-charcoal">but no one looks at the whole picture</strong>.
+        </p>
+        <p class="text-charcoal/55 text-base">
+          The problem isn't you. It's that chronic patterns don't have a single cause — they have a <strong class="text-charcoal/70">root system</strong>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. AGITATE — What happens if you keep ignoring it -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-10 text-center">
+        What happens when you keep <span class="text-forest">ignoring the signals</span>?
+      </h2>
+
+      <div class="space-y-4 mb-12 max-w-2xl mx-auto">
+        {[
+          "The fatigue deepens. What started as afternoon crashes becomes all-day exhaustion.",
+          "Digestion gets worse. Bloating, discomfort, and unpredictability become your normal.",
+          "Sleep deteriorates. Your mind races at 2am and mornings feel like punishment.",
+          "Stress compounds. Your nervous system stays locked in fight-or-flight — and your body pays the price.",
+        ].map((text) => (
+          <div class="flex items-start gap-4 p-5">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-forest/10 flex items-center justify-center mt-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D4A35" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </div>
+            <span class="font-sans text-charcoal/75 leading-relaxed">{text}</span>
+          </div>
         ))}
       </div>
 
-    </div>
-  </section>
-
-  <section class="bg-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
-      <div class="max-w-3xl mx-auto text-center">
-
-        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-10">
-          A Message from Ramesh
-        </h2>
-
-        <div class="aspect-video w-full rounded-2xl overflow-hidden bg-forest/10 border border-beige flex items-center justify-center mb-4">
-          <div class="text-center text-charcoal/40">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-3">
-              <circle cx="12" cy="12" r="10"/>
-              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
-            </svg>
-            <p class="font-sans text-sm mt-3">Video loading — Wistia ID pending</p>
-          </div>
-        </div>
-
-        <p class="font-sans text-sm text-charcoal/50 text-center">
-          In 90 seconds, Ramesh explains why the quiz results you just got point to one root cause — and what to do about it.
+      <div class="bg-forest/[0.06] border border-forest/15 rounded-2xl p-8 max-w-2xl mx-auto text-center">
+        <p class="font-serif italic text-xl text-charcoal leading-relaxed mb-3">
+          "Or you can give your body a clear, structured signal:"
         </p>
-
+        <p class="font-sans font-semibold text-forest text-lg">
+          "We're resetting now."
+        </p>
       </div>
+
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
-      <div class="max-w-2xl mx-auto text-center">
+  <!-- 4. TRANSFORMATION VIDEO -->
+  <section class="bg-charcoal py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-6">
 
-        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mb-10">
-          You Took the Quiz. You Know Which Systems Are Off.
-          <br />
-          <span class="text-charcoal/50">But Knowing Isn't Fixing.</span>
+      <div class="text-center mb-12">
+        <SectionEyebrow text="Real Transformation" class="text-cream" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-cream leading-tight mt-4">
+          See what's possible when your body gets what it <span class="underline decoration-cream/30 underline-offset-4">needs</span>.
         </h2>
-
-        <p class="font-sans text-charcoal/70 leading-relaxed text-lg mb-10">
-          You're tired — not just physically, but of trying. You've changed things, cut things out, added things in, and still wake up feeling like your body is running on fumes. Something is clearly off. You just haven't found the thing that actually fixes it.
+        <p class="font-sans text-cream/50 mt-4 max-w-xl mx-auto leading-relaxed">
+          A real client's story — in their own words.
         </p>
+      </div>
 
-        <div class="space-y-4 mb-12 text-left">
-          {[
-            "Google more supplements? You've been there. More confusion, not less.",
-            "Wait and hope? Chronic patterns don't resolve on their own — they compound.",
-            "Another 8-week overhaul? You don't have the bandwidth to change everything at once.",
-          ].map((text) => (
-            <div class="flex items-start gap-4 bg-cream rounded-2xl p-5 border border-beige">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-beige flex items-center justify-center mt-0.5">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#657F66" stroke-width="2">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                  <line x1="12" y1="9" x2="12" y2="13"/>
-                  <line x1="12" y1="17" x2="12.01" y2="17"/>
-                </svg>
-              </div>
-              <span class="font-sans text-charcoal/80 leading-relaxed">{text}</span>
+      <WistiaVideo videoId="j13djtcnel" title="Client transformation story" />
+
+    </div>
+  </section>
+
+  <!-- 5. SOLUTION — What's inside the 7-Day Reset -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center mb-14">
+        <SectionEyebrow text="The Protocol" />
+        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal leading-tight mt-4">
+          What's Inside the 7-Day Reset
+        </h2>
+        <p class="font-sans text-charcoal/60 mt-4 max-w-xl mx-auto leading-relaxed">
+          Six targeted tools — designed to work together across your three core systems.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 mb-14">
+        {[
+          {
+            icon: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+            title: '7-Day Intermittent Fasting Plan',
+            desc: "Reset digestion, balance blood sugar, and activate your body's natural repair process.",
+          },
+          {
+            icon: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+            title: 'Guided Yoga for Digestion',
+            desc: 'Simple postures that support gut motility and release tension held in the body.',
+          },
+          {
+            icon: '<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
+            title: 'Mindfulness Meditation Audio',
+            desc: 'Daily audio sessions to quiet the nervous system and interrupt the stress loop.',
+          },
+          {
+            icon: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+            title: 'Three Longevity Exercises',
+            desc: 'Science-backed movements to build strength, improve flexibility, and support healthy aging.',
+          },
+          {
+            icon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+            title: 'Heart-Healthy Diet Guide',
+            desc: 'Foods and eating rhythms that reduce inflammation and support sustained energy.',
+          },
+          {
+            icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>',
+            title: '6 Super Smoothie & Juice Recipes',
+            desc: 'Nutrient-dense recipes designed to support gut health, skin, and natural detox.',
+          },
+        ].map((item) => (
+          <div class="bg-white rounded-2xl border border-beige p-6 flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A35" stroke-width="1.5" set:html={item.icon} />
             </div>
-          ))}
-        </div>
-
-        <div class="bg-forest/[0.08] border border-forest/20 rounded-2xl p-8">
-          <p class="font-sans text-charcoal leading-relaxed">
-            <strong class="text-forest block text-lg mb-2">"Or give your body a clear, structured signal: 'We're resetting now.'"</strong>
-            That's the 7-Day Reset. Not a lifestyle overhaul. A precise, 7-day protocol targeting the exact systems your quiz revealed.
-          </p>
-        </div>
-
+            <div>
+              <h4 class="font-sans font-semibold text-charcoal mb-1">{item.title}</h4>
+              <p class="font-sans text-sm text-charcoal/60 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
+
+      <div class="text-center">
+        <a href="#buy" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl transition-all">
+          Start My 7-Day Reset — $47
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="font-sans text-xs text-charcoal/40 mt-3">7-day money-back guarantee · Instant digital access</p>
+      </div>
+
     </div>
   </section>
 
-  <section class="bg-forest text-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+  <!-- 6. BEFORE / AFTER -->
+  <section class="bg-forest text-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
 
       <h2 class="font-serif font-bold italic text-3xl md:text-[48px] leading-tight mb-14 text-center">
         7 Days From Now
@@ -177,13 +252,14 @@ import TestimonialCard from '../components/TestimonialCard.astro';
             ))}
           </ul>
         </div>
-
       </div>
+
     </div>
   </section>
 
+  <!-- PHOTO BREAK -->
   <div class="relative w-full overflow-hidden" style="height: 380px">
-    <img src="/photos/ramesh/outdoor-group-session.jpg" alt="Group healing session" class="w-full h-full object-cover object-center" />
+    <img src="/photos/ramesh/meditation-close.jpg" alt="Meditation practice" class="w-full h-full object-cover object-center" loading="lazy" />
     <div class="absolute inset-0 bg-charcoal/50 flex items-center justify-center">
       <div class="text-center px-6 max-w-2xl">
         <p class="font-serif italic text-white text-2xl md:text-3xl leading-relaxed mb-4">
@@ -194,120 +270,56 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     </div>
   </div>
 
-  <section class="bg-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
-
-      <div class="text-center mb-14">
-        <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal">
-          What's Inside the 7-Day Reset
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-5 mb-12">
-        {[
-          {
-            icon: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
-            title: '7-Day Intermittent Fasting Plan',
-            desc: "Reset digestion, balance blood sugar, and activate your body's natural repair process.",
-          },
-          {
-            icon: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
-            title: 'Guided Yoga for Digestion',
-            desc: 'Simple postures that support gut motility and release tension held in the body.',
-          },
-          {
-            icon: '<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
-            title: 'Mindfulness Meditation Audio',
-            desc: 'Daily audio sessions to quiet the nervous system and interrupt the stress loop.',
-          },
-          {
-            icon: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
-            title: 'Three Longevity Exercises',
-            desc: 'Science-backed movements to build strength, improve flexibility, and support healthy aging.',
-          },
-          {
-            icon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
-            title: 'Heart-Healthy Diet Guide',
-            desc: 'Foods and eating rhythms that reduce inflammation and support sustained energy.',
-          },
-          {
-            icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>',
-            title: '6 Super Smoothie & Juice Recipes',
-            desc: 'Nutrient-dense recipes designed to support gut health, skin, and natural detox.',
-          },
-        ].map((item) => (
-          <div class="bg-white rounded-2xl border border-beige p-6 flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A35" stroke-width="1.5" set:html={item.icon} />
-            </div>
-            <div>
-              <h4 class="font-sans font-semibold text-charcoal mb-1">{item.title}</h4>
-              <p class="font-sans text-sm text-charcoal/60 leading-relaxed">{item.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="text-center">
-        <p class="font-sans text-charcoal/50 text-lg">
-          Total value: <span class="line-through">$197</span>
-        </p>
-        <p class="font-serif font-bold italic text-4xl text-forest mt-1">
-          Today only: $47
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="bg-beige py-12 text-center">
-    <p class="font-sans text-sm text-charcoal/60 mb-4 tracking-wide">Ready to reset your body?</p>
-    <a href="#buy" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-10 py-5 rounded-full hover:bg-forest/90 hover:shadow-xl transition-all">
-      Start My 7-Day Reset — $47 →
-    </a>
-    <p class="font-sans text-xs text-charcoal/40 mt-3">7-day money-back guarantee · Instant digital access</p>
-  </div>
-
-  <section class="bg-charcoal">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+  <!-- 7. SOCIAL PROOF -->
+  <section class="bg-charcoal py-20 md:py-28">
+    <div class="max-w-container mx-auto px-6">
 
       <div class="text-center mb-14">
         <SectionEyebrow text="Client Results" class="text-cream" />
         <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-cream leading-tight mt-4">
-          Real People. Real Results.
+          Real people. Real results.
         </h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         <TestimonialCard
-          quote="Ramesh and his amazing coaching changed my life. At 77, I am feeling like I am 45. Indeed, people find it hard to believe what I have accomplished. I just put together a 20-year plan that may turn into the most productive time of my life."
+          quote="Ramesh and his amazing coaching <strong>changed my life</strong>. At 77, I am <strong>feeling like I am 45</strong>. People find it hard to believe what I have accomplished. I just put together a 20-year plan that may turn into the most productive time of my life."
           name="Max Paul Franklin"
           role="Asheville, NC"
         />
         <TestimonialCard
-          quote="For 19 years, I sought answers and relief for multiple neurological conditions. I saw dozens of doctors, acupuncturists, dietitians, surgeons, physical therapists, and many more. Then I found Ramesh and his fasting program. In 6 days, all my neurological pain was gone. I mean, gone."
+          quote="For 19 years, I sought answers for multiple <strong>neurological conditions</strong>. I saw dozens of doctors, acupuncturists, dietitians, surgeons, physical therapists. Then I found Ramesh. In <strong>6 days, all my neurological pain was gone</strong>. I mean, gone."
           name="Jared Navarre"
           role="Nashville, TN"
         />
         <TestimonialCard
-          quote="I had tried everything — elimination diets, supplements, therapy. Nothing addressed the root. The Vayda Method was the first time someone looked at everything together. Six weeks later, I finally feel like myself again."
+          quote="I had tried everything — elimination diets, supplements, therapy. Nothing addressed the root. The Vayda Method was the first time someone <strong>looked at everything together</strong>. Six weeks later, I finally <strong>feel like myself again</strong>."
           name="Sarah M."
           role="Charlotte, NC"
         />
       </div>
 
+      <div class="flex flex-wrap justify-center gap-8 mt-14 text-cream/50 font-sans text-xs tracking-[0.2em] uppercase">
+        <span>20+ Years Teaching</span>
+        <span class="text-sage">·</span>
+        <span>500+ Students Transformed</span>
+        <span class="text-sage">·</span>
+        <span>Asheville, NC</span>
+      </div>
+
     </div>
   </section>
 
-  <section class="bg-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+  <!-- 8. MEET RAMESH -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
 
         <div class="rounded-2xl overflow-hidden">
           <img
-            src="/photos/ramesh-founder.jpg"
-            alt="Ramesh Roar, Vayda Wellness"
-            class="w-full h-full object-cover"
+            src="/photos/ramesh/ramesh-portrait-outdoor.jpg"
+            alt="Ramesh Roar outdoors"
+            class="w-full aspect-[3/4] object-cover object-top"
             loading="lazy"
           />
         </div>
@@ -324,7 +336,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
             <p><strong>And I suffered for over 3 years.</strong></p>
             <p>Doctors gave me antibiotics. Pain management. The usual. Nothing worked.</p>
             <p>Then I discovered <strong>juice fasting</strong>. 5 weeks later, I was symptom-free. I'd lost 50 pounds. And I finally understood what my body had been trying to tell me.</p>
-            <p>Since then, I've helped <strong>thousands of people</strong> decode their own signals and reclaim their vitality.</p>
+            <p>Since then, I've helped <strong>500+ people</strong> decode their own body's signals and reclaim their vitality.</p>
           </div>
 
           <p class="font-serif italic text-lg text-charcoal mt-8">
@@ -337,65 +349,16 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
-
-      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
-        Common Questions
-      </h2>
-
-      <div class="max-w-3xl mx-auto space-y-4">
-        {[
-          {
-            q: 'Is this a physical product?',
-            a: 'No — the 7-Day Reset is delivered digitally. You get instant access to all materials immediately after purchase.',
-          },
-          {
-            q: 'Do I need any special equipment?',
-            a: 'Nothing. The protocol uses bodyweight movements, accessible food choices, and audio-guided practices. Everything works at home.',
-          },
-          {
-            q: 'I have dietary restrictions. Will this work for me?',
-            a: 'The protocol is designed to be adaptable. The fasting approach is gentle and the recipes are plant-based and flexible.',
-          },
-          {
-            q: "What if I don't see results?",
-            a: "You're covered by a 7-day money-back guarantee. If you don't feel a noticeable shift within 7 days, email us for a full refund — no questions asked.",
-          },
-          {
-            q: 'How is this different from a general wellness program?',
-            a: "The 7-Day Reset targets the specific systems the quiz identified: Sleep, Digestion, and Stress. It's not generic — it's designed for the exact pattern you're in.",
-          },
-        ].map((faq) => (
-          <details class="group border border-beige rounded-2xl bg-white overflow-hidden">
-            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-              <span class="font-sans font-semibold text-charcoal pr-4">{faq.q}</span>
-              <svg
-                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                class="flex-shrink-0 text-charcoal/40 transition-transform duration-200 group-open:rotate-180"
-              >
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="px-6 pb-6">
-              <p class="font-sans text-charcoal/70 leading-relaxed">{faq.a}</p>
-            </div>
-          </details>
-        ))}
-      </div>
-
-    </div>
-  </section>
-
-  <section id="buy" class="bg-forest text-cream">
-    <div class="max-w-container mx-auto px-6 py-20 md:py-28">
+  <!-- 9. PRICING + CTA -->
+  <section id="buy" class="bg-forest text-cream py-20 md:py-28">
+    <div class="max-w-container mx-auto px-6">
       <div class="max-w-2xl mx-auto text-center">
 
         <h2 class="font-serif font-bold italic text-4xl md:text-[52px] leading-tight mb-6">
           Your Reset Starts Today
         </h2>
 
-        <p class="font-sans text-cream/70 mb-12">
+        <p class="font-sans text-cream/70 mb-12 max-w-lg mx-auto leading-relaxed">
           7 days. Three systems. One protocol. Designed for exactly where you are right now.
         </p>
 
@@ -437,15 +400,16 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         </div>
 
         <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8 flex items-start gap-5 text-left">
-          <div class="flex-shrink-0 w-[70px] h-[70px] rounded-full border-2 border-cream/60 ring-4 ring-cream/20 flex flex-col items-center justify-center text-center gap-0.5">
-            <span class="text-cream font-sans font-bold text-lg leading-none">✓</span>
-            <span class="text-cream font-serif font-bold italic text-sm leading-none">7-Day</span>
-            <span class="text-cream/80 font-sans text-[9px] leading-none tracking-tight">Money Back</span>
+          <div class="flex-shrink-0 w-14 h-14 rounded-full bg-cream/20 flex items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF9F2" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
           </div>
           <div>
             <h4 class="font-sans font-semibold text-cream mb-2">100% Money-Back Guarantee</h4>
             <p class="font-sans text-sm text-cream/70 leading-relaxed">
-              Try it for 7 days. If you don't feel a difference, email us and we'll refund every penny. No questions asked. We've never had to honor it — but it's there.
+              Try it for 7 days. If you don't feel a difference, email us and we'll refund every penny. No questions asked.
             </p>
           </div>
         </div>
@@ -454,25 +418,90 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     </div>
   </section>
 
-  <section class="bg-beige border-t border-beige">
-    <div class="max-w-container mx-auto px-6 py-12 text-center">
-      <p class="font-sans text-sm text-charcoal/50 uppercase tracking-widest mb-3">Ready for the full transformation?</p>
-      <h3 class="font-serif font-bold italic text-2xl md:text-3xl text-charcoal mb-4">
-        The 4-Week Vitality Reset — $497
-      </h3>
-      <p class="font-sans text-charcoal/70 mb-6 max-w-xl mx-auto">
-        4 live group calls with Ramesh, weekly video lessons, daily audio practices, private community, and a personal 1:1 consultation. The complete transformation.
-      </p>
-      <a href="/4-week-vitality-reset" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-8 py-4 rounded-full hover:bg-forest/90 transition-all">
-        See the 4-Week Program →
-      </a>
+  <!-- 10. FAQs -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+
+      <h2 class="font-serif font-bold italic text-3xl md:text-[42px] text-charcoal text-center mb-14">
+        Common Questions
+      </h2>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        {[
+          {
+            q: 'Is this a physical product?',
+            a: 'No — the 7-Day Reset is delivered digitally. You get instant access to all materials immediately after purchase.',
+          },
+          {
+            q: 'Do I need any special equipment?',
+            a: 'Nothing. The protocol uses bodyweight movements, accessible food choices, and audio-guided practices. Everything works at home.',
+          },
+          {
+            q: 'I have dietary restrictions. Will this work for me?',
+            a: 'The protocol is designed to be adaptable. The fasting approach is gentle and the recipes are plant-based and flexible.',
+          },
+          {
+            q: "What if I don't see results?",
+            a: "You're covered by a 7-day money-back guarantee. If you don't feel a noticeable shift within 7 days, email us for a full refund — no questions asked.",
+          },
+          {
+            q: 'How is this different from a general wellness program?',
+            a: "The 7-Day Reset targets three specific systems: Sleep, Digestion, and Stress. It's not generic — it's designed for the exact pattern you're in.",
+          },
+          {
+            q: 'Can I do this alongside my current medications?',
+            a: "The protocol is gentle and non-invasive. That said, always consult your healthcare provider before starting any new wellness program.",
+          },
+        ].map((faq) => (
+          <details class="group border border-beige rounded-2xl bg-white overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-sans font-semibold text-charcoal pr-4">{faq.q}</span>
+              <svg
+                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="flex-shrink-0 text-charcoal/40 transition-transform duration-200 group-open:rotate-180"
+              >
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="font-sans text-charcoal/70 leading-relaxed">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
     </div>
   </section>
 
+  <!-- 11. UPSELL TO THE VAYDA METHOD -->
+  <section class="bg-beige py-16 md:py-20">
+    <div class="max-w-container mx-auto px-6 text-center">
+
+      <p class="font-sans text-xs text-charcoal/40 uppercase tracking-[0.2em] mb-4">Ready for the full transformation?</p>
+
+      <h3 class="font-serif font-bold italic text-2xl md:text-[36px] text-charcoal leading-tight mb-4 max-w-2xl mx-auto">
+        The Vayda Method — 4 Weeks to Feel Like <span class="text-forest">Yourself</span> Again
+      </h3>
+
+      <p class="font-sans text-charcoal/65 mb-8 max-w-xl mx-auto leading-relaxed">
+        4 live group calls with Ramesh, weekly video lessons, daily audio practices, private community, and a personal 1:1 consultation. The complete transformation — <strong class="text-charcoal">body, mind, and spirit</strong>.
+      </p>
+
+      <a href="/the-vayda-method" class="inline-flex items-center gap-2 bg-forest text-cream font-sans font-semibold px-8 py-4 rounded-full hover:bg-forest/90 hover:shadow-lg transition-all">
+        See The Vayda Method — $497
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <p class="font-sans text-xs text-charcoal/40 mt-4">First cohort: May 1, 2026 · Only 50 spots available</p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="bg-charcoal text-white/40 py-10">
     <div class="max-w-container mx-auto px-6 text-center space-y-3">
       <img src="/brand/logo-footer-new.png" alt="Vayda Wellness" class="h-8 mx-auto mb-4" />
-      <p class="font-sans text-sm">© 2026 Vayda Wellness Center. All rights reserved.</p>
+      <p class="font-sans text-sm">&copy; 2026 Vayda Wellness Center. All rights reserved.</p>
       <p class="font-sans text-xs leading-relaxed max-w-xl mx-auto">
         This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before starting any new wellness program.
       </p>
