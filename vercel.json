@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/4-week-vitality-reset",
+      "destination": "/the-vayda-method",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

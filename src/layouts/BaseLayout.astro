@@ -15,7 +15,7 @@ export interface Props {
 const {
   title = 'Vayda Wellness — Whole-Body Healing for Chronic Pain & Fatigue',
   description = "When doctors say 'normal' but your body says otherwise — Ramesh finds the root cause. Discover which of your 3 vital systems needs attention.",
-  ogImage = '/brand/logo-footer-new.png',
+  ogImage = '/photos/hero.jpg',
   ogType = 'website',
   canonicalUrl = Astro.url.href,
   noindex = false,
@@ -29,12 +29,75 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Ramesh Bjonnes",
-  "jobTitle": "Wellness Coach",
+  "jobTitle": "Holistic Wellness Coach",
+  "description": "Holistic health coach specializing in root-cause healing for chronic pain, fatigue, and hormonal imbalance. Creator of The Vayda Method.",
   "url": siteUrl,
+  "image": `${siteUrl}/photos/ramesh/ramesh-founder.jpg`,
   "sameAs": [],
   "worksFor": {
     "@type": "Organization",
-    "name": "Vayda Wellness"
+    "name": "Vayda Wellness",
+    "url": siteUrl
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Vayda Wellness",
+  "url": siteUrl,
+  "description": "Whole-body healing for chronic pain, fatigue, and hormonal imbalance — root-cause approach by Ramesh Bjonnes.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/blog?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Vayda Wellness",
+  "url": siteUrl,
+  "logo": `${siteUrl}/brand/logo-nav-new.png`,
+  "image": `${siteUrl}/photos/hero.jpg`,
+  "description": "Whole-body healing for chronic pain, fatigue, and hormonal imbalance. Root-cause approach by Ramesh Bjonnes.",
+  "founder": {
+    "@type": "Person",
+    "name": "Ramesh Bjonnes"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Vayda Wellness Programs",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Course",
+          "name": "The 7-Day Reset",
+          "description": "A 7-day protocol targeting Sleep, Digestion & Stress — the three systems driving chronic pain and fatigue.",
+          "url": `${siteUrl}/7-day-reset`,
+          "provider": { "@type": "Person", "name": "Ramesh Bjonnes" }
+        },
+        "price": "47",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Course",
+          "name": "The Vayda Method",
+          "description": "A 4-week guided transformation — body, mind & spirit. Live group coaching, daily practices, private consultation.",
+          "url": `${siteUrl}/the-vayda-method`,
+          "provider": { "@type": "Person", "name": "Ramesh Bjonnes" }
+        },
+        "price": "497",
+        "priceCurrency": "USD"
+      }
+    ]
   }
 };
 ---
@@ -73,8 +136,10 @@ const personSchema = {
       rel="stylesheet"
     />
 
-    <!-- Schema.org: Person -->
+    <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
     <slot name="head" />
   </head>
