@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         'forest':  '#2D4A35',
-        'cream':   '#F8F5F0',
-        'sage':    '#657F66',
+        'cream':   '#FBF9F2',
+        'sage':    '#8DA491',
         'beige':   '#D7D5C6',
         'charcoal':'#2D3436',
       },
