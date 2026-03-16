@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionEyebrow from '../components/SectionEyebrow.astro';
 import WistiaVideo from '../components/WistiaVideo.astro';
-import { Leaf, Droplets, Wind, Moon, Brain, FlaskConical } from 'lucide-astro';
+import { Leaf, Droplets, Wind, Moon, Brain, FlaskConical, BookOpen, GraduationCap } from 'lucide-astro';
 ---
 <BaseLayout
   title="About Ramesh Bjonnes — The Vayda Method | Vayda Wellness"
@@ -85,6 +85,117 @@ import { Leaf, Droplets, Wind, Moon, Brain, FlaskConical } from 'lucide-astro';
         <p class="font-sans text-charcoal/70 leading-relaxed">
           Blending the traditions of East and West, <strong class="text-charcoal">Vayda</strong> derives from the Indian word <em>"Veda"</em> — signifying <strong class="text-charcoal">knowledge</strong> and <strong class="text-charcoal">wisdom</strong>. <em>"Ve"</em> represents knowledge, while <em>"da"</em> means to bestow or gift. Vayda Wellness exists to gift you the knowledge your body has been waiting for.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2c. RAMESH'S BELIEFS -->
+  <section class="bg-cream py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <SectionEyebrow text="What He Believes" />
+        <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-charcoal leading-tight mt-4">
+          Three truths that guide everything.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="reveal reveal-delay-1 text-center">
+          <p class="font-serif italic text-5xl text-forest/20 mb-4">01</p>
+          <p class="font-sans text-charcoal/80 leading-relaxed">
+            <strong class="text-charcoal">Life is far too brief and precious</strong> to engage in activities that fail to spark your joy and enthusiasm.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-2 text-center">
+          <p class="font-serif italic text-5xl text-forest/20 mb-4">02</p>
+          <p class="font-sans text-charcoal/80 leading-relaxed">
+            We are all <strong class="text-charcoal">perfectly imperfect beings</strong> and shouldn't be afraid to show our flaws.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-3 text-center">
+          <p class="font-serif italic text-5xl text-forest/20 mb-4">03</p>
+          <p class="font-sans text-charcoal/80 leading-relaxed">
+            <strong class="text-charcoal">Plant-based diets</strong> lower chronic disease risk, enhance performance, and are better for the planet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2d. PUBLISHED AUTHOR -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <SectionEyebrow text="Published Author" />
+        <h2 class="font-serif font-bold italic text-4xl md:text-h2 text-charcoal leading-tight mt-4">
+          Three books. Decades of wisdom.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="reveal reveal-delay-1 text-center">
+          <a href="https://a.co/d/24Uzmcg" target="_blank" rel="noopener noreferrer" class="block group">
+            <img
+              src="/photos/ramesh/book-sacred-body-spirit.jpg"
+              alt="Sacred Body, Sacred Spirit by Ramesh Bjonnes"
+              class="w-40 mx-auto rounded-lg shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all mb-6"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="font-sans font-bold text-charcoal text-sm mb-2">Sacred Body, Sacred Spirit</h3>
+          <p class="font-sans text-xs text-charcoal/60 leading-relaxed mb-3">A Personal Guide to the Wisdom of Yoga and Tantra</p>
+          <div class="bg-cream rounded-xl p-4 border border-beige">
+            <p class="font-sans text-xs text-charcoal/70 italic leading-relaxed">
+              "An insightful, balanced approach to the frequently misunderstood pursuit of spiritual growth and personal well-being."
+            </p>
+            <p class="font-sans text-[10px] text-charcoal/40 mt-2 uppercase tracking-wider">— Kirkus Review</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 text-center">
+          <a href="https://a.co/d/24Uzmcg" target="_blank" rel="noopener noreferrer" class="block group">
+            <img
+              src="/photos/ramesh/book-tantra-yoga-love.jpg"
+              alt="Tantra: The Yoga of Love and Awakening by Ramesh Bjonnes"
+              class="w-40 mx-auto rounded-lg shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all mb-6"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="font-sans font-bold text-charcoal text-sm mb-2">Tantra: The Yoga of Love and Awakening</h3>
+          <p class="font-sans text-xs text-charcoal/60 leading-relaxed mb-3">Everything we do can become a sacred experience</p>
+        </div>
+
+        <div class="reveal reveal-delay-3 text-center">
+          <a href="https://a.co/d/24Uzmcg" target="_blank" rel="noopener noreferrer" class="block group">
+            <img
+              src="/photos/ramesh/book-brief-history-yoga.jpg"
+              alt="A Brief History of Yoga by Ramesh Bjonnes"
+              class="w-40 mx-auto rounded-lg shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all mb-6"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="font-sans font-bold text-charcoal text-sm mb-2">A Brief History of Yoga</h3>
+          <p class="font-sans text-xs text-charcoal/60 leading-relaxed mb-3">From its Tantric Roots to the Modern Yoga Studio</p>
+        </div>
+      </div>
+
+      <!-- Credentials -->
+      <div class="mt-16 reveal">
+        <div class="flex flex-wrap justify-center gap-6 text-charcoal/50 font-sans text-xs tracking-[0.15em] uppercase">
+          <span class="flex items-center gap-2">
+            <GraduationCap size={14} />
+            Embodied Philosophy Faculty
+          </span>
+          <span class="text-beige">·</span>
+          <span class="flex items-center gap-2">
+            <GraduationCap size={14} />
+            Asheville Community Yoga Faculty
+          </span>
+          <span class="text-beige">·</span>
+          <span class="flex items-center gap-2">
+            <GraduationCap size={14} />
+            Neohumanist College Faculty
+          </span>
+        </div>
       </div>
     </div>
   </section>
