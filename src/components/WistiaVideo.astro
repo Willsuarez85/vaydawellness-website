@@ -3,21 +3,135 @@ interface Props {
   videoId: string;
   title?: string;
 }
+
 const { videoId, title = '' } = Astro.props;
+const safeTitle = title || 'Watch video';
+const thumbnail = `https://fast.wistia.com/embed/medias/${videoId}/swatch`;
 ---
 
-<div class="wistia_responsive_padding relative rounded-2xl overflow-hidden shadow-xl" style="padding:56.25% 0 0 0;">
-  <div class="wistia_responsive_wrapper absolute inset-0">
+<div
+  class="js-wistia-lazy wistia_responsive_padding relative overflow-hidden rounded-2xl shadow-xl"
+  style="padding:56.25% 0 0 0;"
+  data-video-id={videoId}
+  data-title={safeTitle}
+>
+  <button
+    type="button"
+    class="js-wistia-play group absolute inset-0 block h-full w-full cursor-pointer border-0 bg-charcoal p-0 text-left"
+    aria-label={`Play video: ${safeTitle}`}
+  >
+    <img
+      src={thumbnail}
+      alt={safeTitle}
+      class="h-full w-full object-cover opacity-85 transition-transform duration-300 group-hover:scale-[1.01]"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-charcoal/30"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-forest shadow-xl transition-transform duration-200 hover:scale-105">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="8,5 19,12 8,19"></polygon>
+        </svg>
+      </span>
+    </div>
+  </button>
+  <div class="js-wistia-frame absolute inset-0 hidden"></div>
+</div>
+
+<noscript>
+  <div class="relative overflow-hidden rounded-2xl shadow-xl" style="padding:56.25% 0 0 0;">
     <iframe
       src={`https://fast.wistia.net/embed/iframe/${videoId}?videoFoam=true&autoPlay=false`}
-      title={title}
+      title={safeTitle}
       allow="autoplay; fullscreen"
       allowtransparency="true"
       frameborder="0"
       scrolling="no"
-      class="wistia_embed w-full h-full"
+      class="absolute inset-0 h-full w-full"
       allowfullscreen
     ></iframe>
   </div>
-</div>
-<script src="https://fast.wistia.com/assets/external/E-v1.js" async is:inline></script>
+</noscript>
+
+<script is:inline>
+  (() => {
+    if (window.__vaydaWistiaLazyInitialized) return;
+    window.__vaydaWistiaLazyInitialized = true;
+
+    let wistiaScriptRequested = false;
+    const WISTIA_SCRIPT_ID = 'wistia-external-script';
+
+    const requestWistiaScript = () => {
+      if (wistiaScriptRequested || document.getElementById(WISTIA_SCRIPT_ID)) return;
+      wistiaScriptRequested = true;
+      const script = document.createElement('script');
+      script.id = WISTIA_SCRIPT_ID;
+      script.src = 'https://fast.wistia.com/assets/external/E-v1.js';
+      script.async = true;
+      document.head.appendChild(script);
+    };
+
+    const mountPlayer = (container, autoPlay = true) => {
+      if (!container || container.dataset.playerMounted === 'true') return;
+      const videoId = container.dataset.videoId;
+      const title = container.dataset.title || 'Watch video';
+      if (!videoId) return;
+
+      requestWistiaScript();
+
+      const frameHost = container.querySelector('.js-wistia-frame');
+      if (!frameHost) return;
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://fast.wistia.net/embed/iframe/${videoId}?videoFoam=true&autoPlay=${autoPlay ? 'true' : 'false'}`;
+      iframe.title = title;
+      iframe.allow = 'autoplay; fullscreen';
+      iframe.setAttribute('allowtransparency', 'true');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('scrolling', 'no');
+      iframe.setAttribute('allowfullscreen', 'true');
+      iframe.className = 'wistia_embed h-full w-full';
+
+      frameHost.innerHTML = '';
+      frameHost.appendChild(iframe);
+      frameHost.classList.remove('hidden');
+
+      const button = container.querySelector('.js-wistia-play');
+      button?.remove();
+      container.dataset.playerMounted = 'true';
+    };
+
+    document.addEventListener('click', (event) => {
+      const playButton = event.target instanceof Element ? event.target.closest('.js-wistia-play') : null;
+      if (!playButton) return;
+      const container = playButton.closest('.js-wistia-lazy');
+      mountPlayer(container, true);
+    });
+
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              requestWistiaScript();
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: '250px 0px' }
+        )
+      : null;
+
+    const initLazyContainers = () => {
+      if (!observer) return;
+      document.querySelectorAll('.js-wistia-lazy').forEach((container) => {
+        if (container.dataset.observerAttached === 'true') return;
+        container.dataset.observerAttached = 'true';
+        observer.observe(container);
+      });
+    };
+
+    initLazyContainers();
+    document.addEventListener('DOMContentLoaded', initLazyContainers);
+  })();
+</script>

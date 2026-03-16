@@ -17,15 +17,19 @@ const { navLight = false } = Astro.props;
       <!-- White version: visible on hero (dark bg) -->
       <img
         id="logo-white"
-        src="/brand/logo-footer-new.png"
+        src="/brand/logo-footer-new.webp"
         alt="Vayda"
+        width="194"
+        height="70"
         class={`h-10 w-auto transition-opacity duration-300 ${navLight ? 'opacity-0' : ''}`}
       />
       <!-- Dark version: visible on scroll (light bg) -->
       <img
         id="logo-dark"
-        src="/brand/logo-nav-new.png"
+        src="/brand/logo-nav-new.webp"
         alt="Vayda"
+        width="194"
+        height="70"
         class={`h-10 w-auto absolute transition-opacity duration-300 ${navLight ? '' : 'opacity-0'}`}
       />
     </a>

@@ -15,6 +15,7 @@ const {
 
 const siteUrl = 'https://vaydahealth.com';
 const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const googleFontsHref = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap';
 ---
 <!doctype html>
 <html lang="en">
@@ -40,9 +41,25 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogIm
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href={googleFontsHref}
     />
+    <link
+      rel="stylesheet"
+      href={googleFontsHref}
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href={googleFontsHref}
+      />
+    </noscript>
+
+    <link rel="preconnect" href="https://embed-ssl.wistia.com" />
+    <link rel="preconnect" href="https://pipedream.wistia.com" />
   </head>
   <body class="bg-cream text-charcoal font-sans antialiased">
     <slot />
