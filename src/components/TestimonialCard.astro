@@ -9,7 +9,7 @@ const { quote, name, role, class: className = '' } = Astro.props;
 ---
 <div class:list={['bg-cream/10 border border-cream/20 backdrop-blur-sm rounded-2xl p-8 flex flex-col reveal', className]}>
   <span class="font-display text-5xl text-sage leading-none mb-4">"</span>
-  <p class="font-display italic text-lg text-cream leading-relaxed flex-1">{quote}</p>
+  <p class="font-display italic text-lg text-cream leading-relaxed flex-1" set:html={quote} />
   <div class="mt-6 pt-6 border-t border-cream/20">
     <p class="font-sans font-bold text-cream text-sm">{name}</p>
     <p class="font-sans text-cream/50 text-xs mt-1">{role}</p>
