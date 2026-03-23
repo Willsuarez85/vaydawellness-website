@@ -112,7 +112,13 @@ import SectionEyebrow from '../components/SectionEyebrow.astro';
             <p class="font-sans text-charcoal/70 mb-8 leading-relaxed">
               Enter your email to see which systems need attention and get your personalized next step.
             </p>
-            <form id="email-form" class="flex flex-col gap-4">
+            <!-- WebMCP: Declarative API — agent-callable wellness quiz lead capture -->
+            <form 
+              id="email-form" 
+              class="flex flex-col gap-4"
+              toolname="GetWellnessQuizResults"
+              tooldescription="Get personalized wellness quiz results from Vayda Wellness. Provide name and email to receive a customized wellness assessment identifying which body systems need attention and personalized next steps."
+            >
               <input
                 type="text"
                 id="lead-name"

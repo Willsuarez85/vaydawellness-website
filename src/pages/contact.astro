@@ -36,7 +36,14 @@ import { Mail, MapPin, Clock } from 'lucide-astro';
             What's on your mind?
           </h2>
 
-          <form action="#" method="POST" class="space-y-6">
+          <!-- WebMCP: Declarative API — agent-callable wellness consultation request -->
+          <form 
+            action="#" 
+            method="POST" 
+            class="space-y-6"
+            toolname="RequestWellnessConsultation"
+            tooldescription="Request a wellness consultation or send a message to Vayda Wellness. Provide name, email, and message. Vayda offers functional wellness coaching, energy healing, and personalized wellness programs."
+          >
             <div>
               <label for="name" class="block font-sans text-sm font-medium text-charcoal mb-2">
                 Your Name
